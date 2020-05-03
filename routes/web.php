@@ -42,4 +42,10 @@ Route::get('/users', function () {
 Route::get('/products/add', function ()
 {
     return 0;
+<<<<<<< HEAD
 });
+
+// Route::livewire('/r/{referral_id}');
+=======
+});
+>>>>>>> ce29c08d1a3621fce39b63f2f736eb451706352b
