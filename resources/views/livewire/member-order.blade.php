@@ -1,4 +1,4 @@
-	<div class="page">
+<div class="page">
 		<div class="page-main">
 			<!--App-Header-->
 			<div class="app-header1 header py-1 d-flex">

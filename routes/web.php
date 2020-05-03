@@ -33,15 +33,14 @@ Route::group(['middleware' => 'auth'], function () {
         });
         Route::get('/products/add', function () {
             return view('admin.add-product');
-
+        });
         Route::get('/members', function ()
         {
             return view('admin.member-list');
         });
+        Route::get('/members/orders', function ()
+        {
+            return view('admin.member-order');
+        });
     });
-});
-
-
-Route::get('/users', function () {
-    return view('admin.user-list');
 });
