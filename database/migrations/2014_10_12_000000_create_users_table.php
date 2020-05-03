@@ -9,6 +9,7 @@ class CreateUsersTable extends Migration
     /**
      * Run the migrations.
      *
+     * 6282230634412
      * @return void
      */
     public function up()
@@ -18,7 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->unsignedBigInteger('phone_number');
             $table->string('password');
+            $table->string('referral_code')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
