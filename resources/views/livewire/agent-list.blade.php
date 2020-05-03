@@ -60,7 +60,7 @@
 						</div>
 						<div class="user-info">
 						<h2>{{auth()->user()->name}}</h2>
-							<span>Web Designer</span>
+						<span>{{auth()->user()->role->name}}</span>
 						</div>
 					</div>
 				</div>

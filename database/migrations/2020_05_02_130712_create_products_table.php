@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('photo');
+            $table->string('type');
+            $table->unsignedSmallInteger('ac');
             $table->unsignedInteger('price');
             $table->string('front_view');
             $table->string('first_floor');
@@ -25,7 +27,9 @@ class CreateProductsTable extends Migration
             $table->string('room_video');
             $table->string('survey_video');
             $table->string('description');
-            $table->enum('show_status', [0, 1]);
+            $table->unsignedSmallInteger('bedroom');
+            $table->unsignedSmallInteger('bathroom');
+            $table->enum('show_status', [0, 1])->default(0);
         });
     }
 

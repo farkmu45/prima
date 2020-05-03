@@ -125,12 +125,12 @@
 												<tr>
 													<th>No.</th>
 													<th>Name</th>
-													<th>Email</th>
-													<th>Phone Number</th>
-													<th>Position</th>
-													<th>Referral Code</th>
-													<th>Commission</th>
-													<th>Action</th>
+													<th>Type</th>
+													<th>Price</th>
+													<th>Description</th>
+													<th>Bedroom</th>
+													<th>Bathroom</th>
+													<th>Show Status</th>
 												</tr>
 											</thead>
 											<tbody>

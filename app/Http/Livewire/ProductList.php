@@ -9,7 +9,6 @@ class ProductList extends Component
 {
     public function render()
     {
-        Product::all();
-        return view('livewire.product-list');
+        return view('livewire.product-list', ['products' => Product::all()]);
     }
 }
