@@ -43,7 +43,7 @@
 								class="angle fa fa-angle-right"></i></a>
 						<ul class="slide-menu">
 							<li><a class="slide-item" href="/admin/products">Product List</a></li>
-							<li><a class="slide-item" href="/admin/products/create">Add Product</a></li>
+							<li><a class="slide-item" href="/admin/products/add">Add Product</a></li>
 						</ul>
 					</li>
 					<li class="slide">

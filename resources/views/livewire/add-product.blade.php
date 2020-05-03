@@ -46,52 +46,7 @@
         <!--/App-Header-->
 
         <!-- Sidebar menu-->
-        <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-        <aside class="app-sidebar doc-sidebar">
-            <div class="app-sidebar__user clearfix">
-                <div class="dropdown user-pro-body">
-                    <div>
-                        <img src="../assets/images/faces/male/25.jpg" alt="user-img" class="avatar avatar-lg brround">
-                        <a href="editprofile.html" class="profile-img">
-                            <span class="fa fa-pencil" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                    <div class="user-info">
-                        <h2>{{auth()->user()->name}}</h2>
-                        <span>{{auth()->user()->role->name}}</span>
-                    </div>
-                </div>
-            </div>
-            <ul class="side-menu">
-                <li class="slide">
-                    <a class="side-menu__item" href="#"><i class="side-menu__icon fa fa-pie-chart"></i>Dashboard</a>
-                </li>
-                <li class="slide">
-                    <a class="side-menu__item active" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Agent</span><i class="angle fa fa-angle-right"></i></a>
-                    <ul class="slide-menu">
-                        <li><a class="slide-item" href="/admin/agents">Agent List</a></li>
-                        <li><a class="slide-item" href="/admin/agents/add">Agent Order</a></li>
-                    </ul>
-                </li>
-                <li class="slide">
-                    <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Member</span><i class="angle fa fa-angle-right"></i></a>
-                    <ul class="slide-menu">
-                        <li><a class="slide-item" href="admin-pricing.html">Member List</a></li>
-                        <li><a class="slide-item" href="Ads.html">Member Order</a></li>
-                    </ul>
-                </li>
-                <li class="slide">
-                    <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-tag"></i><span class="side-menu__label">Product</span><i class="angle fa fa-angle-right"></i></a>
-                    <ul class="slide-menu">
-                        <li><a class="slide-item active" href="Ads.html">Product List</a></li>
-                        <li><a class="slide-item" href="admin-pricing.html">Add Product</a></li>
-                    </ul>
-                </li>
-                <li class="slide">
-                    <a class="side-menu__item" href="#"><i class="side-menu__icon fa fa-cogs"></i>Product</a>
-                </li>
-            </ul>
-        </aside>
+        @include('layouts.sidebar')
         <!-- /Sidebar menu-->
 
         <!--App-Content-->
@@ -114,74 +69,139 @@
                                 <h3 class="card-title">Form Add Product</h3>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form method="post" enctype="multipart/form-data" wire:submit.prevent="addProduct">
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label" for="exampleInputEmail1">Name</label>
-                                                <input type="text" class="form-control" name="name" placeholder="Product Name">
+                                                <label class="form-label" for="name">Name</label>
+                                                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" wire:model="name" placeholder="Product Name">
+                                                @error('name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label" for="exampleInputEmail1">Price</label>
-                                                <input type="text" class="form-control" name="price" placeholder="Product Price">
+                                                <label class="form-label" for="price">Price</label>
+                                                <input type="number" class="form-control @error('price') is-invalid @enderror" wire:model="price" placeholder="Product Price">
+                                                @error('price')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputEmail4" class="col-form-label">Type</label>
-                                            <input type="text" class="form-control" name="type" placeholder="Product Type">
+                                            <input type="text" class="form-control @error('type') is-invalid @enderror" wire:model="type" placeholder="Product Type">
+                                            @error('type')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputPassword4" class="col-form-label">AC</label>
-                                            <input type="text" class="form-control" name="ac" placeholder="Product Ac">
+                                            <input type="number" class="form-control @error('ac') is-invalid @enderror" wire:model="ac" placeholder="Product Ac">
+                                            @error('ac')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputPassword4" class="col-form-label">Bedroom</label>
-                                            <input type="text" class="form-control" name="bedroom" placeholder="Product Bedroom">
+                                            <input type="number" class="form-control @error('bedroom') is-invalid @enderror" wire:model="bedroom" placeholder="Product Bedroom">
+                                            @error('bedroom')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputPassword4" class="col-form-label">Bathroom</label>
-                                            <input type="text" class="form-control" name="bathroom" placeholder="Product Bathroom">
+                                            <input type="number" class="form-control @error('bathroom') is-invalid @enderror" wire:model="bathroom" placeholder="Product Bathroom">
+                                            @error('bathroom')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4" class="col-form-label">Room Video</label>
-                                            <input type="text" class="form-control" name="room_video" placeholder="Product Bedroom">
+                                            <input type="text" class="form-control @error('room_video') is-invalid @enderror" wire:model="room_video" placeholder="Product Bedroom">
+                                            @error('room_video')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4" class="col-form-label">Survey Video</label>
-                                            <input type="text" class="form-control" name="survey_video" placeholder="Product Bathroom">
+                                            <input type="text" class="form-control @error('survey_video') is-invalid @enderror" wire:model="survey_video" placeholder="Product Bathroom">
+                                            @error('survey_video')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="exampleInputEmail1">Photo</label>
-                                                <input type="file" class="dropify" name="photo" data-height="180" />
+                                                <input type="file" accept="image/png,image/jpg,image/jpeg" class="dropify @error('photo') is-invalid @enderror" wire:model="photo" data-height="180" />
+                                                @error('photo')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="exampleInputEmail1">Front View</label>
-                                                <input type="file" class="dropify" name="front_view" data-height="180" />
+                                                <input type="file" class="dropify @error('front_view') is-invalid @enderror" wire:model="front_view" data-height="180" />
+                                                @error('front_view')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="exampleInputEmail1">First Floor</label>
-                                                <input type="file" class="dropify" name="first_floor" data-height="180" />
+                                                <input type="file" class="dropify @error('first_floor') is-invalid @enderror" wire:model="first_floor" data-height="180" />
+                                                @error('first_floor')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="exampleInputEmail1">Second Floor</label>
-                                                <input type="file" class="dropify" name="second_floor" data-height="180" />
+                                                <input type="file" class="dropify @error('second_floor') is-invalid @enderror" wire:model="second_floor" data-height="180" />
+                                                @error('second_floor')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-form-label">Description</label>
-                                        <textarea class="form-control" name="description" rows="4" placeholder="Product Description"></textarea>
+                                        <textarea class="form-control @error('description') is-invalid @enderror" wire:model="description" rows="4" placeholder="Product Description"></textarea>
+                                        @error('description')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
                                     <button type="submit" class="btn btn-primary ">Add Product</button>
                                 </form>
