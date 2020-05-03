@@ -20,6 +20,7 @@ Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => '/admin'], function () {
+
         Route::get('/dashboard', function () {
             return view('admin.dashboard');
         });
@@ -34,6 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/products/add', function () {
             return view('admin.add-product');
         });
+
         Route::get('/members', function ()
         {
             return view('admin.member-list');
