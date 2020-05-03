@@ -57,4 +57,9 @@ Route::get('/users', function () {
     return view('admin.user-list');
 });
 
+Route::get('/products/add', function ()
+{
+    return 0;
+})
+
 // Route::livewire('/r/{referral_id}');
