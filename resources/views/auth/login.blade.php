@@ -70,7 +70,7 @@
                                         <label class="custom-control custom-checkbox">
                                             <a href="forgot-password.html" class="float-right small text-dark mt-1">Forgot
                                                 password</a>
-                                            <input type="checkbox" class="custom-control-input">
+                                            <input name="remember" type="checkbox" class="custom-control-input">
                                             <span class="custom-control-label text-dark">Remember me</span>
                                         </label>
                                     </div>

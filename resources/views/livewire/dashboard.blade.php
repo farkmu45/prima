@@ -60,8 +60,8 @@
 							</a>
 						</div>
 						<div class="user-info">
-							<h2>Rubin Carmody</h2>
-							<span>Web Designer</span>
+							<h2>{{auth()->user()->name}}</h2>
+						<span>{{auth()->user()->role->name}}</span>
 						</div>
 					</div>
 				</div>

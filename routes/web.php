@@ -36,13 +36,24 @@ Route::get('/home', 'HomeController@index');
 //     Route::livewire('/products/{product}/payments/{payment}/edit');
 // })->middleware('verified');
 
-Route::get('/dashboard', function ()
-{
-    return  view('admin.dashboard');
+Route::group(['middleware' => 'auth'], function () {
+    Route::group(['prefix' => '/admin'], function () {
+        Route::get('/dashboard', function () {
+            return view('admin.dashboard');
+        });
+
+        Route::get('/agents', function () {
+            return view('admin.agent-list');
+        });
+
+        Route::get('/products', function () {
+            return view('admin.product-list');
+        });
+    });
 });
 
-Route::get('/users', function()
-{
+
+Route::get('/users', function () {
     return view('admin.user-list');
 });
 
