@@ -31,6 +31,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/products', function () {
             return view('admin.product-list');
         });
+        Route::get('/products/add', function () {
+            return view('admin.add-product');
+        });
     });
 });
 
@@ -39,13 +42,5 @@ Route::get('/users', function () {
     return view('admin.user-list');
 });
 
-Route::get('/products/add', function ()
-{
-    return 0;
-<<<<<<< HEAD
-});
 
 // Route::livewire('/r/{referral_id}');
-=======
-});
->>>>>>> ce29c08d1a3621fce39b63f2f736eb451706352b

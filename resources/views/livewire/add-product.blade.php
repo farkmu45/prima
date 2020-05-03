@@ -111,69 +111,79 @@
                     <div class="col-md-12">
                         <div class="card m-b-20">
                             <div class="card-header">
-                                <h3 class="card-title">Form row</h3>
+                                <h3 class="card-title">Form Add Product</h3>
                             </div>
                             <div class="card-body">
                                 <form>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label" for="exampleInputEmail1">First Name</label>
-                                                <input type="text" class="form-control" id="name1" placeholder="First Name">
+                                                <label class="form-label" for="exampleInputEmail1">Name</label>
+                                                <input type="text" class="form-control" name="name" placeholder="Product Name">
                                             </div>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label" for="exampleInputEmail1">Last Name</label>
-                                                <input type="text" class="form-control" id="name2" placeholder="Last Name">
+                                                <label class="form-label" for="exampleInputEmail1">Price</label>
+                                                <input type="text" class="form-control" name="price" placeholder="Product Price">
                                             </div>
                                         </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4" class="col-form-label">Email</label>
-                                            <input type="email" class="form-control" id="inputEmail5" placeholder="Email">
+                                        <div class="form-group col-md-3">
+                                            <label for="inputEmail4" class="col-form-label">Type</label>
+                                            <input type="text" class="form-control" name="type" placeholder="Product Type">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="inputPassword4" class="col-form-label">AC</label>
+                                            <input type="text" class="form-control" name="ac" placeholder="Product Ac">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="inputPassword4" class="col-form-label">Bedroom</label>
+                                            <input type="text" class="form-control" name="bedroom" placeholder="Product Bedroom">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="inputPassword4" class="col-form-label">Bathroom</label>
+                                            <input type="text" class="form-control" name="bathroom" placeholder="Product Bathroom">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="inputPassword4" class="col-form-label">Password</label>
-                                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                            <label for="inputPassword4" class="col-form-label">Room Video</label>
+                                            <input type="text" class="form-control" name="room_video" placeholder="Product Bedroom">
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-form-label">Address</label>
-                                        <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Address.."></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-form-label">Address 2</label>
-                                        <textarea class="form-control" name="example-textarea-input" rows="4" placeholder="Address2.."></textarea>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4" class="col-form-label">Survey Video</label>
+                                            <input type="text" class="form-control" name="survey_video" placeholder="Product Bathroom">
+                                        </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                            <label for="inputCity" class="col-form-label">City</label>
-                                            <input type="text" class="form-control" id="inputCity">
+                                        <div class="form-group col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="exampleInputEmail1">Photo</label>
+                                                <input type="file" class="dropify" name="photo" data-height="180" />
+                                            </div>
                                         </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="inputState" class="col-form-label">State</label>
-                                            <select id="inputState" class="form-control">
-                                                <option>Choose</option>
-                                                <option>California</option>
-                                                <option>Washington</option>
-                                                <option>Texas</option>
-                                                <option>Italy</option>
-                                                <option>France</option>
-                                            </select>
+                                        <div class="form-group col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="exampleInputEmail1">Front View</label>
+                                                <input type="file" class="dropify" name="front_view" data-height="180" />
+                                            </div>
                                         </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="inputZip" class="col-form-label">Zip</label>
-                                            <input type="text" class="form-control" id="inputZip">
+                                        <div class="form-group col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="exampleInputEmail1">First Floor</label>
+                                                <input type="file" class="dropify" name="first_floor" data-height="180" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="form-check pl-0">
-                                            <div class="checkbox checkbox-secondary"><input id="checkbox1" type="checkbox">
-                                                <label for="checkbox1"><span> I Agree !</span></label>
+                                        <div class="form-group col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="exampleInputEmail1">Second Floor</label>
+                                                <input type="file" class="dropify" name="second_floor" data-height="180" />
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary ">Sign in</button>
+                                    <div class="form-group">
+                                        <label class="col-form-label">Description</label>
+                                        <textarea class="form-control" name="description" rows="4" placeholder="Product Description"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary ">Add Product</button>
                                 </form>
                             </div>
                         </div>
@@ -238,6 +248,8 @@
 <script src="{{url('/assets/plugins/echarts/echarts.js')}}"></script>
 <script src="{{url('/assets/plugins/echarts/echarts.js')}}"></script>
 <script src="{{url('/assets/js/index1.js')}}"></script>
+
+<script src="{{url('/assets/plugins/fileuploads/js/dropify.js')}}"></script>
 
 <!-- Custom Js-->
 <script src="{{url('/assets/js/admin-custom.js')}}"></script>
