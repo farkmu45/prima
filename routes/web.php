@@ -60,6 +60,6 @@ Route::get('/users', function () {
 Route::get('/products/add', function ()
 {
     return 0;
-})
+});
 
 // Route::livewire('/r/{referral_id}');
