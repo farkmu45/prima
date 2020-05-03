@@ -17,6 +17,6 @@ class AgentList extends Component
 
     public function render()
     {
-        return view('livewire.agent-list', ['agents' => User::where('role_id','!=', 1)->get()]);
+        return view('livewire.agent-list', ['agents' => User::where('role_id','>', 2)->get()]);
     }
 }

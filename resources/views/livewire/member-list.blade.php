@@ -26,16 +26,13 @@
 										class="avatar avatar-md brround">
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow ">
-									<a class="dropdown-item" href="profile.html">
+									<a class="dropdown-item" href="/profile">
 										<i class="dropdown-icon icon icon-user"></i> My Profile
-									</a>
-									<a class="dropdown-item" href="emailservices.html">
-										<i class="dropdown-icon icon icon-speech"></i> Inbox
 									</a>
 									<a class="dropdown-item" href="editprofile.html">
 										<i class="dropdown-icon  icon icon-settings"></i> Account Settings
 									</a>
-									<a class="dropdown-item" href="login.html">
+									<a class="dropdown-item">
 										<i class="dropdown-icon icon icon-power"></i> Log out
 									</a>
 								</div>
@@ -47,64 +44,7 @@
 			<!--/App-Header-->
 
 			<!-- Sidebar menu-->
-			<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-			<aside class="app-sidebar doc-sidebar">
-				<div class="app-sidebar__user clearfix">
-					<div class="dropdown user-pro-body">
-						<div>
-							<img src="../assets/images/faces/male/25.jpg" alt="user-img"
-								class="avatar avatar-lg brround">
-							<a href="editprofile.html" class="profile-img">
-								<span class="fa fa-pencil" aria-hidden="true"></span>
-							</a>
-						</div>
-						<div class="user-info">
-						<h2>{{auth()->user()->name}}</h2>
-							<span>{{auth()->user()->role->name}}</span>
-						</div>
-					</div>
-				</div>
-				<ul class="side-menu">
-					<li class="slide">
-						<a class="side-menu__item" href="/admin/dashboard"><i class="side-menu__icon fa fa-pie-chart"></i>Dashboard</a>
-					</li>
-					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="#"><i
-								class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Agent</span><i
-								class="angle fa fa-angle-right"></i></a>
-						<ul class="slide-menu">
-							<li><a class="slide-item" href="/admin/agents">Agent List</a></li>
-							<li><a class="slide-item" href="/admin/agents/add">Agent Order</a></li>
-						</ul>
-					</li>
-					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="#"><i
-								class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Member</span><i
-								class="angle fa fa-angle-right"></i></a>
-						<ul class="slide-menu">
-							<li><a class="slide-item" href="/admin/members">Member List</a></li>
-							<li><a class="slide-item" href="/admin/members/orders">Member Order</a></li>
-						</ul>
-					</li>
-					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="#"><i
-								class="side-menu__icon fa fa-tag"></i><span class="side-menu__label">Product</span><i
-								class="angle fa fa-angle-right"></i></a>
-						<ul class="slide-menu">
-							<li><a class="slide-item" href="/admin/products">Product List</a></li>
-							<li><a class="slide-item" href="/admin/products/create">Add Product</a></li>
-						</ul>
-					</li>
-					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="#"><i
-								class="side-menu__icon fa fa-money"></i><span class="side-menu__label">Payment</span><i
-								class="angle fa fa-angle-right"></i></a>
-						<ul class="slide-menu">
-							<li><a class="slide-item" href="/admin/payments">Payment List</a></li>
-						</ul>
-					</li>
-				</ul>
-			</aside>
+			@include('layouts.sidebar')
 			<!-- /Sidebar menu-->
 
 			<!--App-Content-->
@@ -113,10 +53,10 @@
 
 					<!-- Page-Header-->
 					<div class="page-header">
-						<h4 class="page-title">Agent</h4>
+						<h4 class="page-title">Member</h4>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item">Agent</li>
-							<li class="breadcrumb-item active" aria-current="page">Agent List</li>
+							<li class="breadcrumb-item">Member</li>
+							<li class="breadcrumb-item active" aria-current="page">Member List</li>
 						</ol>
 					</div>
 					<!-- /Page-Header-->
@@ -124,7 +64,7 @@
 						<div class="col-md-12 col-lg-12">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title">All Agent</div>
+									<div class="card-title">All Member</div>
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
@@ -143,15 +83,15 @@
 											</thead>
 											<tbody>
 
-												@foreach ($agents as $key => $agent)	
+												@foreach ($members as $key => $member)	
 												<tr>
 												<td>{{$key + 1}}</td>
-													<td>{{$agent->name}}</td>
-													<td>{{$agent->email}}</td>
-													<td>{{$agent->phone_number}}</td>
-													<td>{{$agent->role->name}}</td>
-													<td>{{$agent->referral_code == null ? 'Empty' : 3}}</td>
-													<td>{{$agent->role->commission}}%</td>
+													<td>{{$member->name}}</td>
+													<td>{{$member->email}}</td>
+													<td>{{$member->phone_number}}</td>
+													<td>{{$member->role->name}}</td>
+													<td>{{$member->referral_code == null ? 'Empty' : 3}}</td>
+													<td>{{$member->role->commission}}%</td>
 													<td><a href="" class="btn btn-warning">Edit</a> <button class="btn btn-danger" wire:submit.prevent="delete($id}})">Delete</button></td>
 												</tr>
 												@endforeach
