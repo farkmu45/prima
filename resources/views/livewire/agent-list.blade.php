@@ -82,8 +82,8 @@
 								class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Member</span><i
 								class="angle fa fa-angle-right"></i></a>
 						<ul class="slide-menu">
-							<li><a class="slide-item" href="admin-pricing.html">Member List</a></li>
-							<li><a class="slide-item" href="Ads.html">Member Order</a></li>
+							<li><a class="slide-item" href="/admin/members">Member List</a></li>
+							<li><a class="slide-item" href="/admin/members/orders">Member Order</a></li>
 						</ul>
 					</li>
 					<li class="slide">
@@ -91,8 +91,8 @@
 								class="side-menu__icon fa fa-tag"></i><span class="side-menu__label">Product</span><i
 								class="angle fa fa-angle-right"></i></a>
 						<ul class="slide-menu">
-							<li><a class="slide-item active" href="Ads.html">Product List</a></li>
-							<li><a class="slide-item" href="admin-pricing.html">Add Product</a></li>
+							<li><a class="slide-item active" href="/admin/products">Product List</a></li>
+							<li><a class="slide-item" href="/admin/products/orders">Add Product</a></li>
 						</ul>
 					</li>
 					<li class="slide">

@@ -75,9 +75,9 @@
 								class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Agent</span><i
 								class="angle fa fa-angle-right"></i></a>
 						<ul class="slide-menu">
-							<li><a class="slide-item" href="admin-pricing.html">Add Agent</a></li>
-							<li><a class="slide-item" href="admin-pricing.html">Agent List</a></li>
-							<li><a class="slide-item" href="Ads.html">Agent Order</a></li>
+							<li><a class="slide-item" href="/admin/agents/add">Add Agent</a></li>
+							<li><a class="slide-item" href="/admin/agents">Agent List</a></li>
+							<li><a class="slide-item" href="/admin/agents/orders">Agent Order</a></li>
 						</ul>
 					</li>
 					<li class="slide">
@@ -85,13 +85,13 @@
 								class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Member</span><i
 								class="angle fa fa-angle-right"></i></a>
 						<ul class="slide-menu">
-							<li><a class="slide-item" href="admin-pricing.html">Add Member</a></li>
-							<li><a class="slide-item" href="admin-pricing.html">Member List</a></li>
-							<li><a class="slide-item" href="Ads.html">Member Order</a></li>
+							<li><a class="slide-item" href="/admin/members">Add Member</a></li>
+							<li><a class="slide-item" href="/admin/members/add">Member List</a></li>
+							<li><a class="slide-item" href="/admin/members/orders">Member Order</a></li>
 						</ul>
 					</li>
 					<li class="slide">
-						<a class="side-menu__item" href="#"><i class="side-menu__icon fa fa-tag"></i>Promo</a>
+						<a class="side-menu__item" href="#"><i class="side-menu__icon fa fa-tag"></i>Payment</a>
 					</li>
 					<li class="slide">
 						<a class="side-menu__item" href="#"><i class="side-menu__icon fa fa-cogs"></i>Product</a>
