@@ -57,13 +57,13 @@
 						</div>
 						<div class="user-info">
 						<h2>{{auth()->user()->name}}</h2>
-							<span>Web Designer</span>
+							<span>{{auth()->user()->role->name}}</span>
 						</div>
 					</div>
 				</div>
 				<ul class="side-menu">
 					<li class="slide">
-						<a class="side-menu__item" href="#"><i class="side-menu__icon fa fa-pie-chart"></i>Dashboard</a>
+						<a class="side-menu__item" href="/admin/dashboard"><i class="side-menu__icon fa fa-pie-chart"></i>Dashboard</a>
 					</li>
 					<li class="slide">
 						<a class="side-menu__item" data-toggle="slide" href="#"><i
@@ -79,8 +79,8 @@
 								class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Member</span><i
 								class="angle fa fa-angle-right"></i></a>
 						<ul class="slide-menu">
-							<li><a class="slide-item" href="admin-pricing.html">Member List</a></li>
-							<li><a class="slide-item" href="Ads.html">Member Order</a></li>
+							<li><a class="slide-item" href="/admin/members">Member List</a></li>
+							<li><a class="slide-item" href="/admin/members/orders">Member Order</a></li>
 						</ul>
 					</li>
 					<li class="slide">
