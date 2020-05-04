@@ -148,7 +148,7 @@
                             <div class="item-card overflow-hidden">
                                 <div class="card text-center overflow-hidden">
                                     <div class="card-img">
-                                        <img src="{{url('/assets/images/product/promo.png')}}')}}" alt="img" class="cover-image">
+                                        <img src="{{url('/assets/images/product/promo.png')}}" alt="img" class="cover-image">
                                     </div>
                                 </div>
                             </div>
@@ -209,7 +209,7 @@
                         <div class="card mb-0">
                             <div class="item-card7-imgs">
                                 <a href="col-left.html"></a>
-                                <img src="{{url('/assets/images/product/Myrra Kost tipe 75  6 kamar.jpg')}}')}}" alt="img" class="cover-image">
+                                <img src="{{url('/assets/images/product/Myrra Kost tipe 75  6 kamar.jpg')}}" alt="img" class="cover-image">
                             </div>
                             <div class="card-body">
                                 <div class="item-card7-desc">
@@ -253,7 +253,7 @@
                         <div class="arrow-ribbon bg-purple">Di Jual</div>
                         <div class="item-card7-imgs">
                             <a href="col-left.html"></a>
-                            <img src="{{url('/assets/images/product/Myrra Kost tipe 75  6 kamar.jpg')}}')}}" alt="img" class="cover-image">
+                            <img src="{{url('/assets/images/product/Myrra Kost tipe 75  6 kamar.jpg')}}" alt="img" class="cover-image">
                         </div>
                         <div class="item-card7-overlaytext">
                             <a href="col-left.html" class="text-white">Myyra Residence</a>
