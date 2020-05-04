@@ -1,7 +1,9 @@
 <?php
 
 use App\Product;
+use App\User;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,14 +28,39 @@ Route::get('/pricing', function () {
     return view('pricing');
 });
 
-Route::get('/member/dashboard', function () {
-    return view('member-area');
-});
-Route::get('/member/order', function () {
-    return view('order');
-});
-Route::get('/member/profile', function () {
-    return view('profile');
+
+Route::group(['middleware' => ['verified', 'isNotAdmin']], function ()
+{
+    Route::get('/member/dashboard', function () {
+        return view('member-area');
+    });
+    Route::get('/member/order', function () {
+        return view('order');
+    });
+    Route::get('/member/profile', function () {
+        return view('profile');
+    });
+
+    Route::put('/member/profile', function ()
+    {
+        $user = User::find(auth()->user()->id);
+        
+        $photo = $user->photo;
+        $id_photo = $user->id_photo;
+        if (request()->photo) {
+            Storage::delete($user->photo);
+            $photo = request()->file('photo')->store('userImages');
+        } else if(request()->id_photo) {
+            Storage::delete($user->id_photo);
+            $id_photo = request()->file('id_photo')->store('userImages');
+        }
+        $user->update(request()->all());
+        $user->update(['id_photo' => $id_photo, 'photo' => $photo]);
+
+        
+
+        return redirect('/member/profile');
+    });
 });
 
 
@@ -63,6 +90,7 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
                 'name' => ['string', 'required'],
                 'price' => ['numeric', 'required'],
                 'type' => ['string', 'required'],
+                'address' => ['string', 'required'],
                 'ac' => ['string', 'required', 'max:10'],
                 'bedroom' => ['string', 'required', 'max:10'],
                 'bathroom' => ['string', 'required', 'max:10'],
@@ -95,3 +123,8 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
         });
     });
 });
+
+Route::get('/r/{user:referral_code}', function (\App\User $user)
+{
+    return view('auth.register')->withUser($user);
+})->middleware('guest');

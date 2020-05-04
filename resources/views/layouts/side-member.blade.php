@@ -7,10 +7,10 @@
             <div class="profile-pic">
                 <div class="profile-pic-img">
                     <span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
-                    <img src="../assets/images/faces/male/25.jpg" class="brround" alt="user">
+                <img src="{{url(auth()->user()->photo)}}" class="brround" style="width: 100%; height: 100%; object-fit: cover" alt="user">
                 </div>
                 <a href="userprofile.html" class="text-dark">
-                    <h4 class="mt-3 mb-0 font-weight-semibold">Robert McLean</h4>
+                    <h4 class="mt-3 mb-0 font-weight-semibold">{{auth()->user()->name}}</h4>
                 </a>
             </div>
         </div>

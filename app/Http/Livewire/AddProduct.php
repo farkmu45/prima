@@ -14,6 +14,7 @@ class AddProduct extends Component
     public $type;
     public $ac;
     public $bedroom;
+    public $address;
     public $bathroom;
     public $room_video;
     public $survey_video;
@@ -29,6 +30,7 @@ class AddProduct extends Component
         $this->validateOnly($field, [
             'name' => ['string', 'required'],
             'price' => ['numeric', 'required'],
+            'address' => ['string', 'required'],
             'type' => ['string', 'required'],
             'ac' => ['string', 'required', 'max:10'],
             'bedroom' => ['string', 'required', 'max:10'],

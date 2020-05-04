@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->enum('gender', ["L", "P"]);
             $table->string('address')->nullable();
             $table->string('village')->nullable();
-            $table->string('sub-district')->nullable();
+            $table->string('sub_district')->nullable();
             $table->string('city')->nullable();
             $table->string('province')->nullable();
             $table->string('bank_name')->nullable();

@@ -91,7 +91,7 @@
 													<td>{{$member->role->name}}</td>
 													<td>{{$member->referral_code == null ? 'Empty' : 3}}</td>
 													<td>{{$member->role->commission}}%</td>
-													<td><a href="" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal3">Edit</a> <button class="btn btn-danger" wire:submit.prevent="delete($id}})">Delete</button></td>
+													<td><a href="" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal3" wire:click="editUser({{$member->id}})">Edit</a> <button class="btn btn-danger" wire:submit.prevent="delete($id}})">Delete</button></td>
 												</tr>
 												@endforeach
 											</tbody>
@@ -131,12 +131,15 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form>
+					<form wire:submit.prevent="edit">
 						<div class="form-group">
 							<label for="recipient-name" class="form-control-label">Role Member</label>
 							<select class="form-control" name="role">
+
 								<option selected>Select Role Member</option>
-								<option value="">Role</option>
+								@foreach ($roles as $role)
+							<option value="{{$role->id}}">{{$role->name}}</option>
+								@endforeach
 							</select>
 						</div>
 					</form>
