@@ -26,7 +26,7 @@ Route::get('/product', function()
 Route::get('/pricing', function()
 {
     return view('pricing');
-})
+});
 
 
 Auth::routes(['verify' => true]);
