@@ -121,6 +121,12 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
         Route::get('/members/orders', function () {
             return view('admin.member-order');
         });
+        Route::get('/payments', function () {
+            return view('admin.payment-list');
+        });
+        Route::get('/payments/add', function () {
+            return view('admin.payment-add');
+        });
     });
 });
 
