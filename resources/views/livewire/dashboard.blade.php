@@ -214,47 +214,47 @@
 	<a href="#top" id="back-to-top" ><i class="fa fa-rocket"></i></a>
 
 		<!-- JQuery js-->
-		<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}"></script>
+		<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
 
 		<!-- Bootstrap js -->
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}"></script>
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}"></script>
+		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
+		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
 
 		<!--JQuery Sparkline Js-->
-		<script src="{{url('/assets/js/vendors/jquery.sparkline.min.js')}}"></script>
+		<script src="{{url('/assets/js/vendors/jquery.sparkline.min.js')}}" defer></script>
 
 		<!-- Circle Progress Js-->
-		<script src="{{url('/assets/js/vendors/circle-progress.min.js')}}"></script>
+		<script src="{{url('/assets/js/vendors/circle-progress.min.js')}}" defer></script>
 
 		<!-- Star Rating Js-->
-		<script src="{{url('/assets/plugins/rating/jquery.rating-stars.js')}}"></script>
+		<script src="{{url('/assets/plugins/rating/jquery.rating-stars.js')}}" defer></script>
 
 		<!--EChart Js-->
-		<script src="{{url('/assets/plugins/echarts/echarts.js')}}"></script>
+		<script src="{{url('/assets/plugins/echarts/echarts.js')}}" defer></script>
 
 		<!-- Fullside-menu Js-->
-		<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}"></script>
+		<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
 
 		<!-- Charts Plugin -->
-		<script src="{{url('/assets/plugins/chart/Chart.bundle.js')}}"></script>
-		<script src="{{url('/assets/plugins/chart/utils.js')}}"></script>
+		<script src="{{url('/assets/plugins/chart/Chart.bundle.js')}}" defer></script>
+		<script src="{{url('/assets/plugins/chart/utils.js')}}" defer></script>
 
 		<!-- Input Mask Plugin -->
-		<script src="{{url('/assets/plugins/input-mask/jquery.mask.min.js')}}"></script>
+		<script src="{{url('/assets/plugins/input-mask/jquery.mask.min.js')}}" defer></script>
 
 		<!--Morris.js Charts Plugin -->
-		<script src="{{url('/assets/plugins/morris/raphael-min.js')}}"></script>
-		<script src="{{url('/assets/plugins/morris/morris.js')}}"></script>
+		<script src="{{url('/assets/plugins/morris/raphael-min.js')}}" defer></script>
+		<script src="{{url('/assets/plugins/morris/morris.js')}}" defer></script>
 
         <!-- Index Scripts -->
-		<script src="{{url('/assets/js/index2.js')}}"></script>
+		<script src="{{url('/assets/js/index2.js')}}" defer></script>
 
 		<!-- Custom scroll bar Js-->
-		<script src="{{url('/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+		<script src="{{url('/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js')}}" defer></script>
 
 		<!--Counters -->
-		<script src="{{url('/assets/plugins/counters/counterup.min.js')}}"></script>
-		<script src="{{url('/assets/plugins/counters/waypoints.min.js')}}"></script>
+		<script src="{{url('/assets/plugins/counters/counterup.min.js')}}" defer></script>
+		<script src="{{url('/assets/plugins/counters/waypoints.min.js')}}" defer></script>
 
 		<!-- Custom Js-->
-		<script src="{{url('/assets/js/admin-custom.js')}}"></script>
+		<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>

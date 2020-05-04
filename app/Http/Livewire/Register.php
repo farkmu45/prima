@@ -11,7 +11,6 @@ class Register extends Component
     public $name;
     public $email;
     public $phone_number;
-    public $role_id;
     public $password;
     public $password_confirmation;
 
@@ -21,7 +20,6 @@ class Register extends Component
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone_number' => ['required'],
-            'role_id' => ['exists:roles,id'],
             'password' => ['required', 'string', 'min:8'],
         ]);
     }

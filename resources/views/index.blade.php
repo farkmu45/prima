@@ -1,5 +1,7 @@
 @extends('layouts.app')
-<meta charset="UTF-8">
+
+@section('head')
+	<meta charset="UTF-8">
 		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content="Reallist- Bootstrap Responsive Real estate Classifieds, Dealer, Rentel, Builder and Agent Multipurpose HTML Template" name="description">
@@ -16,19 +18,31 @@
 		<!-- Bootstrap Css -->
 		<link href="{{url('/assets/plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css')}}" rel="stylesheet" />
 
-		<!-- Sidemenu Css -->
-		<link href="{{url('/assets/plugins/toggle-sidebar/sidemenu.css')}}" rel="stylesheet" />
-
-		<!-- Dashboard css -->
+		<!-- Style css -->
 		<link href="{{url('/assets/css/style.css')}}" rel="stylesheet" />
-		<link href="{{url('/assets/css/admin-custom.css')}}" rel="stylesheet" />
 
-		<!-- c3.js Charts Plugin -->
-		<link href="{{url('/assets/plugins/charts-c3/c3-chart.css')}}" rel="stylesheet" />
-
-		<!---Font icons-->
+		<!-- Font-awesome  Css -->
 		<link href="{{url('/assets/css/icons.css')}}" rel="stylesheet"/>
-		<link rel="stylesheet" href="{{url('/assets/fonts/fonts/font-awesome.min.css')}}">
+
+		<!--Horizontal Menu-->
+		<link href="{{url('/assets/plugins/horizontal-menu/horizontal.css')}}" rel="stylesheet" />
+
+		<!--Select2 Plugin -->
+		<link href="{{url('/assets/plugins/select2/select2.min.css')}}" rel="stylesheet" />
+
+		<!-- Cookie css -->
+		<link href="{{url('/assets/plugins/cookie/cookie.css')}}" rel="stylesheet">
+
+		<!-- Owl Theme css-->
+		<link href="{{url('/assets/plugins/owl-carousel/owl.carousel.css')}}" rel="stylesheet" />
+
+		<!-- Custom scroll bar css-->
+		<link href="{{url('/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css')}}" rel="stylesheet" />
+
+		<!-- Color skin-->
+		<link id="theme" rel="stylesheet" type="text/css" media="all" href="{{url('/assets/skins/color-skins/color15.css')}}" />
+@endsection
+		
 @section('content')
-    <livewire:register>
+	<livewire:index>
 @endsection

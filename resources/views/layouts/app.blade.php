@@ -3,6 +3,7 @@
 <head>
     @yield('head')
     @livewireStyles
+<script src="{{url('/js/app.js')}}"></script>
 </head>
 <body>
     @yield('content')

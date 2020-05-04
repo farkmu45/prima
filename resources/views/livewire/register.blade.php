@@ -38,18 +38,6 @@
                                               @enderror
                                           </div>
                                           <div class="form-group">
-                                              <label class="form-label text-dark" for="role">Register As</label>
-                                              <select wire:model="role_id" name="role_id" id="role" class="form-control @error('role_id') is-invalid @enderror"">
-                                                <option value="2">Member</option>
-                                                <option value="3">Agent</option>
-                                              </select>
-                                              @error('role_id')
-                                              <span class="invalid-feedback" role="alert">
-                                                  <strong>{{ $message }}</strong>
-                                              </span>
-                                              @enderror
-                                          </div>
-                                          <div class="form-group">
                                               <label class="form-label text-dark" for="password">Password</label>
                                               <input type="password" wire:model="password" name="password" class="form-control @error('password') is-invalid @enderror"" id=" password" placeholder="Password">
                                               @error('password')
@@ -83,30 +71,30 @@
               </div>
 
 		<!-- JQuery js-->
-		<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}"></script>
+		<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
 
 		<!-- Bootstrap js -->
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}"></script>
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}"></script>
+		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
+		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
 
 		<!--JQuery Sparkline Js-->
-		<script src="{{url('/assets/js/vendors/jquery.sparkline.min.js')}}"></script>
+		<script src="{{url('/assets/js/vendors/jquery.sparkline.min.js')}}" defer></script>
 
 		<!-- Circle Progress Js-->
-		<script src="{{url('/assets/js/vendors/circle-progress.min.js')}}"></script>
+		<script src="{{url('/assets/js/vendors/circle-progress.min.js')}}" defer></script>
 
 		<!-- Star Rating Js-->
-		<script src="{{url('/assets/plugins/rating/jquery.rating-stars.js')}}"></script>
+		<script src="{{url('/assets/plugins/rating/jquery.rating-stars.js')}}" defer></script>
 
 		<!-- Custom scroll bar Js-->
-		<script src="{{url('/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+		<script src="{{url('/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js')}}" defer></script>
 
 		<!-- Fullside-menu Js-->
-		<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}"></script>
+		<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
 
 		<!--Counters -->
-		<script src="{{url('/assets/plugins/counters/counterup.min.js')}}"></script>
-		<script src="{{url('/assets/plugins/counters/waypoints.min.js')}}"></script>
+		<script src="{{url('/assets/plugins/counters/counterup.min.js')}}" defer></script>
+		<script src="{{url('/assets/plugins/counters/waypoints.min.js')}}" defer></script>
 
 		<!-- Custom Js-->
-		<script src="{{url('/assets/js/admin-custom.js')}}"></script>
+		<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>
