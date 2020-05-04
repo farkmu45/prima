@@ -28,6 +28,19 @@ Route::get('/pricing', function()
     return view('pricing');
 });
 
+Route::get('/member/dashboard', function()
+{
+    return view('member-area');
+});
+Route::get('/member/order', function()
+{
+    return view('order');
+});
+Route::get('/member/profile', function()
+{
+    return view('profile');
+});
+
 
 Auth::routes(['verify' => true]);
 
