@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Product;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 class AddProduct extends Component
@@ -67,8 +68,8 @@ class AddProduct extends Component
         // $data['first_floor'] = request()->file('first_floor')->store('productImages');
         // $data['second_floor'] = request()->file('second_floor')->store('productImages');
 
-        dd($this->photo);
-        // Product::create($data);
+        // request()->file('photo')->store('productImages');
+        dd(request()->all());
 
         return redirect()->to('/admin/products');
     }

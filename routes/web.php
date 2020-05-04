@@ -1,5 +1,6 @@
 <?php
 
+use App\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,31 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function ()
-{
+Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/product', function()
-{
+Route::get('/product', function () {
     return view('product-details');
 });
 
-Route::get('/pricing', function()
-{
+Route::get('/pricing', function () {
     return view('pricing');
 });
 
-Route::get('/member/dashboard', function()
-{
+Route::get('/member/dashboard', function () {
     return view('member-area');
 });
-Route::get('/member/order', function()
-{
+Route::get('/member/order', function () {
     return view('order');
 });
-Route::get('/member/profile', function()
-{
+Route::get('/member/profile', function () {
     return view('profile');
 });
 
@@ -45,7 +40,7 @@ Route::get('/member/profile', function()
 Auth::routes(['verify' => true]);
 
 
-// Route::group(['middleware' => [''], function () {
+Route::group(['middleware' => ['verified', 'isAdmin']], function () {
     Route::group(['prefix' => '/admin'], function () {
 
         Route::get('/dashboard', function () {
@@ -63,13 +58,40 @@ Auth::routes(['verify' => true]);
             return view('admin.add-product');
         });
 
-        Route::get('/members', function ()
-        {
+        Route::post('/products', function () {
+            $data = request()->validate([
+                'name' => ['string', 'required'],
+                'price' => ['numeric', 'required'],
+                'type' => ['string', 'required'],
+                'ac' => ['string', 'required', 'max:10'],
+                'bedroom' => ['string', 'required', 'max:10'],
+                'bathroom' => ['string', 'required', 'max:10'],
+                'room_video' => ['active_url', 'string', 'required'],
+                'survey_video' => ['active_url', 'string', 'required'],
+                'survey_video' => ['active_url', 'string', 'required'],
+                'photo' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
+                'front_view' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
+                'first_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
+                'second_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
+                'description' => ['string', 'required'],
+            ]);
+
+            $data['photo'] = request()->file('photo')->store('productImages');
+            $data['front_view'] = request()->file('front_view')->store('productImages');
+            $data['first_floor'] = request()->file('first_floor')->store('productImages');
+            $data['second_floor'] = request()->file('second_floor')->store('productImages');
+
+            Product::create($data);
+
+            return redirect('/admin/products');
+        });
+
+        Route::get('/members', function () {
             return view('admin.member-list');
         });
-        Route::get('/members/orders', function ()
-        {
+
+        Route::get('/members/orders', function () {
             return view('admin.member-order');
         });
     });
-// });
+});
