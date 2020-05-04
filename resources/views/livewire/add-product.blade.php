@@ -45,9 +45,7 @@
         </div>
         <!--/App-Header-->
 
-        <!-- Sidebar menu-->
         @include('layouts.sidebar')
-        <!-- /Sidebar menu-->
 
         <!--App-Content-->
         <div class="app-content  my-3 my-md-5">

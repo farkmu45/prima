@@ -54,5 +54,9 @@ Auth::routes(['verify' => true]);
         {
             return view('admin.member-list');
         });
+        Route::get('/members/orders', function ()
+        {
+            return view('admin.member-order');
+        });
     });
 // });
