@@ -67,7 +67,7 @@
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
-										<table id="example2" class="hover table-bordered border-top-0 border-bottom-0" wire:poll>
+										<table id="example2" class="hover table-bordered border-top-0 border-bottom-0">
 											<thead>
 												<tr>
 													<th>No.</th>

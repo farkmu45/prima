@@ -20,7 +20,7 @@ class CreatePaymentsTable extends Migration
             $table->unsignedInteger('price');
             $table->unsignedInteger('installment')->nullable();
             $table->unsignedInteger('itj');
-            $table->unsignedInteger('down_paymet');
+            $table->unsignedInteger('down_payment');
             $table->unsignedInteger('installment_amout')->nullable();
             $table->unsignedInteger('repayment')->nullable();
         });

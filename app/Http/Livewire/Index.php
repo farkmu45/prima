@@ -9,7 +9,7 @@ class Index extends Component
 {
     public function render()
     {
-        Product::all()
-        return view('livewire.index');
+
+        return view('livewire.index', ['products' => Product::all(), 'singleProduct' => Product::where('show_status', 1)]);
     }
 }

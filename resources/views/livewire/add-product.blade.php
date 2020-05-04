@@ -70,7 +70,7 @@
                                 <form method="post" enctype="multipart/form-data" action="/admin/products">
                                     @csrf
                                     <div class="form-row">
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-4">
                                             <div class="form-group">
                                                 <label class="form-label" for="name">Name</label>
                                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" wire:model="name" name="name" placeholder="Product Name">
@@ -81,7 +81,18 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-4">
+                                            <div class="form-group">
+                                                <label class="form-label">Address</label>
+                                                <input type="text" class="form-control @error('adress') is-invalid @enderror" wire:model="address" name="address" placeholder="Product Name">
+                                                @error('address')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
                                             <div class="form-group">
                                                 <label class="form-label" for="price">Price</label>
                                                 <input type="number" class="form-control @error('price') is-invalid @enderror" wire:model="price" name="price" placeholder="Product Price">
