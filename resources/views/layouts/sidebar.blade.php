@@ -52,6 +52,7 @@
 								class="angle fa fa-angle-right"></i></a>
 						<ul class="slide-menu">
 							<li><a class="slide-item" href="/admin/payments">Payment List</a></li>
+							<li><a class="slide-item" href="/admin/payments/add">Add Payment</a></li>
 						</ul>
 					</li>
 				</ul>
