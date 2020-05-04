@@ -47,5 +47,5 @@
 
 
 @section('content')
-	<livewire:product-details>
+	<livewire:product-details :product="$product">
 @endsection

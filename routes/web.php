@@ -17,20 +17,28 @@ use Illuminate\Support\Facades\Storage;
 */
 
 Route::get('/', function () {
+    // $rand = substr(uniqid('', true), -7);
+    // return $rand;
     return view('index');
 });
 
-Route::get('/product', function () {
-    return view('product-details');
-});
 
-Route::get('/pricing', function () {
-    return view('pricing');
+Route::get('/product/{product}', function (\App\Product $product) {
+    return view('product-details', ['product' => $product]);
 });
 
 
 Route::group(['middleware' => ['verified', 'isNotAdmin']], function ()
 {
+    Route::get('/product/{product}/pricing', function (\App\Product $product) {
+        return view('pricing', ['product' => $product]);
+    });
+
+    Route::get('/invoice/{invoice:code}', function (\App\UserOrder $invoice) {
+        return view('invoice', ['invoice' => $invoice]);
+    });
+
+
     Route::get('/member/dashboard', function () {
         return view('member-area');
     });
@@ -88,6 +96,7 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
         Route::post('/products', function () {
             $data = request()->validate([
                 'name' => ['string', 'required'],
+                'unit' => ['string', 'required'],
                 'price' => ['numeric', 'required'],
                 'type' => ['string', 'required'],
                 'address' => ['string', 'required'],
@@ -124,8 +133,8 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
         Route::get('/payments', function () {
             return view('admin.payment-list');
         });
-        Route::get('/payments/add', function () {
-            return view('admin.payment-add');
+        Route::get('/products/{product}/payments/add', function (\App\Product $product) {
+            return view('admin.payment-add', ['product' => $product]);
         });
     });
 });

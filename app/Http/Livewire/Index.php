@@ -10,7 +10,7 @@ class Index extends Component
     public function render()
     {
 
-        dd(Product::where('show_status', '1'));
+        // $show = Product::where('show_status', '1')->get();
 
         return view('livewire.index', ['products' => Product::all()]);
     }

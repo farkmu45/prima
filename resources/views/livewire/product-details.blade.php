@@ -35,9 +35,9 @@
                         <div class="card-body">
                             <div class="product-slider">
                                 <div id="carousel" class="carousel slide" data-ride="carousel">
-                                    <div class="arrow-ribbon2 bg-primary">Rp. 150.000.000 <span class="fs-12  font-weight-normal">Per Kamar</span></div>
+                                    <div class="arrow-ribbon2 bg-primary">Rp. {{number_format($product->price,0,',','.')}} <span class="fs-12  font-weight-normal">Per Kamar</span></div>
                                     <div class="carousel-inner">
-                                        <div class="carousel-item active"> <img src="{{url('/assets/images/product/Myrra Kost tipe 75  6 kamar.jpg')}}" alt="img"> </div>
+                                        <div class="carousel-item active"> <img src="{{url($product->photo)}}" alt="img"> </div>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                         <div class="card">
                                             <div class="item-card">
                                                 <div class="item-card-img">
-                                                    <img src="{{url('/assets/images/product/Myrra Kost tipe 75  6 kamar.jpg')}}" alt="img" class="br-tr-7 br-tl-7">
+                                                    <img src="{{url($product->front_view)}}" alt="img" class="br-tr-7 br-tl-7">
                                                 </div>
                                             </div>
                                         </div>
@@ -78,7 +78,7 @@
                                         <div class="card">
                                             <div class="item-card">
                                                 <div class="item-card-img">
-                                                    <img src="{{url('/assets/images/product/myra rukos tpe 75 lt.1.jpg')}}" alt="img" class="br-tr-7 br-tl-7">
+                                                    <img src="{{url($product->first_floor)}}" alt="img" class="br-tr-7 br-tl-7">
                                                 </div>
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@
                                         <div class="card">
                                             <div class="item-card">
                                                 <div class="item-card-img">
-                                                    <img src="{{url('/assets/images/product/myra rukos tipe 75 lt.2.jpg')}}" alt="img" class="br-tr-7 br-tl-7">
+                                                    <img src="{{url($product->second_floor)}}" alt="img" class="br-tr-7 br-tl-7">
                                                 </div>
                                             </div>
                                         </div>
@@ -107,8 +107,7 @@
                             <div class="tab-pane" id="tab-6">
                                 <h3 class="card-title mb-3 font-weight-semibold">Description</h3>
                                 <div class="mb-4">
-                                    <p>Laxury Home For Sale odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atcorrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                                    <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoraliz the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble thena bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>
+                                <p>{{$product->description}}</p>
                                 </div>
                                 <h4 class="mb-4">Specifications</h4>
                                 <div class="row">
@@ -118,35 +117,19 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>Type</td>
-                                                        <td><span class="font-weight-bold">2BHK Flat</span></td>
+                                                    <td><span class="font-weight-bold">{{$product->type}}</span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Listed By </td>
-                                                        <td><span class="font-weight-bold">Owner</span></td>
+                                                        <td>Bedrooms </td>
+                                                    <td><span class="font-weight-bold">{{$product->bedroom}}</span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>BedRooms </td>
-                                                        <td><span class="font-weight-bold">2</span></td>
+                                                        <td>Bathroom</td>
+                                                        <td><span class="font-weight-bold">{{$product->bathroom}}</span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>BathRooms</td>
-                                                        <td><span class="font-weight-bold">2</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Furnishing</td>
-                                                        <td><span class="font-weight-bold">Unfurnished</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Car Parking</td>
-                                                        <td><span class="font-weight-bold">2</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Total Foolrs</td>
-                                                        <td><span class="font-weight-bold">2</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Facing </td>
-                                                        <td><span class="font-weight-bold">East face</span></td>
+                                                        <td>AC</td>
+                                                        <td><span class="font-weight-bold">{{$product->ac}}</span></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -162,15 +145,14 @@
                                         <a class="mb-0">Classified ID : #8256358</a>
                                     </div>
                                     <div class="col col-auto">
-                                        Posted By <a class="mb-0 font-weight-bold">Individual</a> / 21st Dec 2019
+                                         {{$product->created_at}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer bg-white details-tab">
                             <div class="icons">
-                                <a href="#" class="btn btn-info icons"><i class="icon icon-share mr-1"></i> Share Ad</a>
-                                <a href="#" class="btn btn-secondary icons"><i class="fas fa-money-check-alt"></i> Booking Now !</a>
+                            <a href="/product/{{$product->id}}/pricing" class="btn btn-secondary icons"><i class="fas fa-money-check-alt"></i> Book Now</a>
                             </div>
                         </div>
                     </div>

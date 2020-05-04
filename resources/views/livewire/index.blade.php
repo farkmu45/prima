@@ -205,36 +205,44 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <!-- Wrapper for carousel items -->
-                    <div class="item">
+
+                    @foreach ($products as $product)
+                        @if ($product->show_status == '1')
+                            <div class="item">
                         <div class="card mb-0">
                             <div class="item-card7-imgs">
                                 <a href="col-left.html"></a>
-                                <img src="" alt="img" class="cover-image">
+                            <img src="{{url($product->photo)}}" alt="img" class="cover-image">
                             </div>
                             <div class="card-body">
                                 <div class="item-card7-desc">
                                     <div class="item-card7-text">
-                                        <a href="col-left.html" class="text-dark">
-                                            <h4 class="">Rumah Hunian</h4>
+                                        <a href="" class="text-dark">
+                                            <h4 class="">{{$product->name}}</h4>
                                         </a>
-                                        <p class=""><i class="icon icon-location-pin text-muted mr-1"></i> Malang Jawa Timur </p>
+                                        <p class=""><i class="icon icon-location-pin text-muted mr-1"></i> {{$product->address}} </p>
                                     </div>
                                     <ul class="item-cards7-ic mb-0">
-                                        <li><a href="#"><i class="fa fa-arrows-alt text-muted mr-1"></i> 75/60 Luas</a></li>
-                                        <li><a href="#" class="icons"><i class="fa fa-bed text-muted mr-1"></i> 1 Kamar Tidur</a></li>
-                                        <li><a href="#" class="icons"><i class="fa fa-car text-muted mr-1"></i> 1 Carport</a></li>
-                                        <li><a href="#" class="icons"><i class="fa fa-bath text-muted mr-1"></i> 1 Kamar Mandi</a></li>
+                                        <li><a href="#"><i class="fa fa-arrows-alt text-muted mr-1"></i> {{$product->type}} Luas</a></li>
+                                        <li><a href="#" class="icons"><i class="fa fa-bed text-muted mr-1"></i> {{$product->bedroom}} Kamar Tidur</a></li>
+                                        <li><a href="#" class="icons"><i class="fa fa-car text-muted mr-1"></i> {{$product->ac}} AC</a></li>
+                                        <li><a href="#" class="icons"><i class="fa fa-bath text-muted mr-1"></i> {{$product->bathroom}} Kamar Mandi</a></li>
                                     </ul>
-                                    <h5 class="font-weight-bold mb-0">Rp. 150.000.000 <span class="fs-12  font-weight-normal">Per Kamar</span></h5>
+                                    <h5 class="font-weight-bold mb-0">Rp. {{number_format($product->price,0,',','.')}} <span class="fs-12  font-weight-normal">Per Kamar</span></h5>
                                 </div>
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex mb-0">
-                                    <a href="#" class="btn btn-info">Tertarik?</a>
+                                <a href="/product/{{$product->id}}" class="btn btn-info">Tertarik?</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                        @endif
+                    @endforeach
+                    
+
+
                 </div>
             </div>
         </div>
@@ -255,10 +263,10 @@
                         <div class="arrow-ribbon bg-purple">Di Jual</div>
                         <div class="item-card7-imgs">
                             <a href="col-left.html"></a>
-                            <img src="{{url('/assets/images/product/Myrra Kost tipe 75  6 kamar.jpg')}}" alt="img" class="cover-image">
+                            <img src="{{url($product->photo)}}" alt="img" class="cover-image">
                         </div>
                         <div class="item-card7-overlaytext">
-                            <a href="col-left.html" class="text-white">Myyra Residence</a>
+                            <a href="col-left.html" class="text-white">{{$product->unit}}</a>
                             <span class="mb-0 fs-13"><i class="fa fa fa-heart-o"></i></span>
                         </div>
                         <div class="card-body">
@@ -275,7 +283,7 @@
                                     <li><a href="#" class="icons"><i class="fa fa-car text-muted mr-1"></i> {{$product->ac}} AC</a></li>
                                     <li><a href="#" class="icons"><i class="fa fa-bath text-muted mr-1"></i> {{$product->bathroom}} Kamar Mandi</a></li>
                                 </ul>
-                                <h5 class="font-weight-bold mb-0">Rp. {{$product->price}}</h5>
+                                <h5 class="font-weight-bold mb-0">Rp. {{number_format($product->price,0,',','.')}}</h5>
                             </div>
                         </div>
                         <div class="card-footer">

@@ -11,6 +11,7 @@ class AddProduct extends Component
 
     public $name;
     public $price;
+    public $unit;
     public $type;
     public $ac;
     public $bedroom;
@@ -31,6 +32,7 @@ class AddProduct extends Component
             'name' => ['string', 'required'],
             'price' => ['numeric', 'required'],
             'address' => ['string', 'required'],
+            'unit' => ['string', 'required'],
             'type' => ['string', 'required'],
             'ac' => ['string', 'required', 'max:10'],
             'bedroom' => ['string', 'required', 'max:10'],

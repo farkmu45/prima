@@ -17,11 +17,12 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->string('unit');
             $table->string('photo');
             $table->string('address');
             $table->string('type');
             $table->unsignedSmallInteger('ac');
-            $table->unsignedInteger('price');
+            $table->unsignedBigInteger('price');
             $table->string('front_view');
             $table->string('first_floor');
             $table->string('second_floor');

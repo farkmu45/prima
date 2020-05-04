@@ -67,13 +67,13 @@
                                 <h3 class="card-title">Form Add Payment</h3>
                             </div>
                             <div class="card-body">
-                                <form method="post" enctype="multipart/form-data" action="/admin/payments">
+                                <form method="post" wire:submit.prevent="create">
                                     @csrf
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                             <div class="form-group">
                                                 <label class="form-label" for="name">Name</label>
-                                                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" wire:model="name" name="name">
+                                                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" wire:model="name">
                                                 @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                                         <div class="form-group col-md-4">
                                             <div class="form-group">
                                                 <label class="form-label">Cicilan</label>
-                                                <input type="text" class="form-control @error('installment') is-invalid @enderror" wire:model="installment" name="installment">
+                                                <input type="text" class="form-control @error('installment') is-invalid @enderror" wire:model="installment">
                                                 @error('installment')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -95,7 +95,7 @@
                                         <div class="form-group col-md-4">
                                             <div class="form-group">
                                                 <label class="form-label" for="price">Angsuran</label>
-                                                <input type="number" class="form-control @error('installment_amount') is-invalid @enderror" wire:model="installment_amount" name="installment_amount">
+                                                <input type="number" class="form-control @error('installment_amount') is-invalid @enderror" wire:model="installment_amount">
                                                 @error('installment_amount')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -105,7 +105,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputEmail4" class="col-form-label">Uang Muka</label>
-                                            <input type="text" class="form-control @error('down_payment') is-invalid @enderror" wire:model="down_payment" name="down_payment">
+                                            <input type="text" class="form-control @error('down_payment') is-invalid @enderror" wire:model="down_payment">
                                             @error('down_payment')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -114,7 +114,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputPassword4" class="col-form-label">Harga</label>
-                                            <input type="number" class="form-control @error('price') is-invalid @enderror" wire:model="price" name="price">
+                                            <input type="number" class="form-control @error('price') is-invalid @enderror" wire:model="price">
                                             @error('price')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -123,7 +123,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputPassword4" class="col-form-label">ITJ</label>
-                                            <input type="number" class="form-control @error('itj') is-invalid @enderror" wire:model="itj" name="itj">
+                                            <input type="number" class="form-control @error('itj') is-invalid @enderror" wire:model="itj">
                                             @error('itj')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -132,7 +132,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputPassword4" class="col-form-label">Pelunasan</label>
-                                            <input type="number" class="form-control @error('repayment') is-invalid @enderror" wire:model="repayment" name="repayment">
+                                            <input type="number" class="form-control @error('repayment') is-invalid @enderror" wire:model="repayment">
                                             @error('repayment')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

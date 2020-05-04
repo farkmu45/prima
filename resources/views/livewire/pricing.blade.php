@@ -39,65 +39,31 @@
     <div class="sptb">
         <div class="container">
             <div class="row">
+                @foreach ($product->payments as $key => $payment)    
                 <div class="col-xl-4 col-md-6 col-sm-12 col-lg-4">
                     <div class="pricingTable2 pink mb-4 mb-xl-0">
                         <div class="pricingTable2-header">
-                            <h3>Cast</h3>
+                            <h3>{{$payment->name}}</h3>
                         </div>
                         <div class="pricing-plans">
-                            <span class="price-value1">150JT</span>
+                        <span class="price-value1">Rp. {{number_format($payment->price,0,',','.')}}</span>
                         </div>
                         <div class="pricingContent2">
                             <ul>
-                                <li><b>ITJ</b> 5 Juta</li>
-                                <li><b>Pelunasan</b> 145 Juta</li>
+                                <li>ITJ : <b>{{number_format($payment->itj,0,',','.')}}</b></li>
+                                <li>Uang Muka : <b>{{number_format($payment->down_payment,0,',','.')}}</b></li>
+                                <li>Jumlah Angsuran : <b>{{number_format($payment->installment_amount,0,',','.')}}</b></li>
+                                <li>Pelunasan : <b>{{number_format($payment->repayment,0,',','.')}}</b></li>
                             </ul>
                         </div><!-- CONTENT BOX-->
                         <div class="pricingTable2-sign-up">
-                            <a href="#" class="btn btn-block btn-primary">Order</a>
+                            <form method="post" wire:submit.prevent="order({{$payment->id}})">
+                                <button class="btn btn-block btn-primary">Order</a>
+                            </form>
                         </div><!-- BUTTON BOX-->
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 col-sm-12 col-lg-4">
-                    <div class="pricingTable2 blue mb-4 mb-xl-0">
-                        <div class="pricingTable2-header">
-                            <h3>Inhouse 6X</h3>
-                        </div>
-                        <div class="pricing-plans">
-                            <span class="price-value1">150JT</span>
-                        </div>
-                        <div class="pricingContent2">
-                            <ul>
-                                <li><b>ITJ</b> 5 Juta</li>
-                                <li><b>DP</b> 100 Juta</li>
-                                <li><b>Cicilan 6X</b> 12,5 Juta</li>
-                            </ul>
-                        </div><!-- CONTENT BOX-->
-                        <div class="pricingTable2-sign-up">
-                            <a href="#" class="btn btn-block btn-secondary">Order</a>
-                        </div><!-- BUTTON BOX-->
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-12 col-lg-4">
-                    <div class="pricingTable2 green mb-4 mb-sm-0">
-                        <div class="pricingTable2-header">
-                            <h3>Inhouse 12X</h3>
-                        </div>
-                        <div class="pricing-plans">
-                            <span class="price-value1">150JT</span>
-                        </div>
-                        <div class="pricingContent2">
-                            <ul>
-                                <li><b>ITJ</b> 5 Juta</li>
-                                <li><b>DP</b> 100 Juta</li>
-                                <li><b>Cicilan 12X</b> 8 Juta</li>
-                            </ul>
-                        </div><!-- CONTENT BOX-->
-                        <div class="pricingTable2-sign-up">
-                            <a href="#" class="btn btn-block btn-success">Order</a>
-                        </div><!-- BUTTON BOX-->
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

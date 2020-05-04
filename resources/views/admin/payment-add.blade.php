@@ -44,5 +44,5 @@
 @endsection
 
 @section('content')
-    <livewire:payment-add>
+<livewire:payment-add :product="$product">
 @endsection
