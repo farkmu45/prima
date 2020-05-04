@@ -90,7 +90,7 @@
 												@foreach ($products as $key => $product)
 												<tr>
 													<td>{{$key + 1}}</td>
-													<td>{{$product->name}}</td>
+												<td><a style="color: #ed5151 !important" href="/admin/products/{{$product->id}}/payments">{{$product->name}}</a></td>
 													<td>{{$product->type}}</td>
 													<td>{{$product->price}}</td>
 													<td>{{$product->bedroom}}</td>

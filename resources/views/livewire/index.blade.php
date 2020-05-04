@@ -209,7 +209,7 @@
                         <div class="card mb-0">
                             <div class="item-card7-imgs">
                                 <a href="col-left.html"></a>
-                                <img src="{{url('/assets/images/product/Myrra Kost tipe 75  6 kamar.jpg')}}" alt="img" class="cover-image">
+                                <img src="" alt="img" class="cover-image">
                             </div>
                             <div class="card-body">
                                 <div class="item-card7-desc">
@@ -248,7 +248,9 @@
                 <h2>Produk Lainnya</h2>
             </div>
             <div id="myCarousel1" class="owl-carousel owl-carousel-icons2">
-                <div class="item">
+
+                @foreach ($products as $product)
+                    <div class="item">
                     <div class="card mb-0">
                         <div class="arrow-ribbon bg-purple">Di Jual</div>
                         <div class="item-card7-imgs">
@@ -263,22 +265,22 @@
                             <div class="item-card7-desc">
                                 <div class="item-card7-text">
                                     <a href="col-left.html" class="text-dark">
-                                        <h4 class="">Rumah Hunian</h4>
+                                        <h4 class="">{{$product->name}}</h4>
                                     </a>
-                                    <p class=""><i class="icon icon-location-pin text-muted mr-1"></i> Malang Jawa Timur </p>
+                                <p class=""><i class="icon icon-location-pin text-muted mr-1"></i> {{$product->address}}</p>
                                 </div>
                                 <ul class="item-cards7-ic mb-0">
-                                    <li><a href="#"><i class="fa fa-arrows-alt text-muted mr-1"></i> 75/60 Luas</a></li>
-                                    <li><a href="#" class="icons"><i class="fa fa-bed text-muted mr-1"></i> 3 Kamar Tidur</a></li>
-                                    <li><a href="#" class="icons"><i class="fa fa-car text-muted mr-1"></i> 1 Carport</a></li>
-                                    <li><a href="#" class="icons"><i class="fa fa-bath text-muted mr-1"></i> 2 Kamar Mandi</a></li>
+                                    <li><a href="#"><i class="fa fa-arrows-alt text-muted mr-1"></i> {{$product->type}} Luas</a></li>
+                                    <li><a href="#" class="icons"><i class="fa fa-bed text-muted mr-1"></i> {{$product->bedroom}} Kamar Tidur</a></li>
+                                    <li><a href="#" class="icons"><i class="fa fa-car text-muted mr-1"></i> {{$product->ac}} AC</a></li>
+                                    <li><a href="#" class="icons"><i class="fa fa-bath text-muted mr-1"></i> {{$product->bathroom}} Kamar Mandi</a></li>
                                 </ul>
-                                <h5 class="font-weight-bold mb-0">Rp. 745.000.000</h5>
+                                <h5 class="font-weight-bold mb-0">Rp. {{$product->price}}</h5>
                             </div>
                         </div>
                         <div class="card-footer">
                             <div class="d-flex mb-0">
-                                <span class="fs-12"><i class="icon icon-event mr-2 mt-1"></i>Jul 05 2019 </span>
+                                <span class="fs-12"><i class="icon icon-event mr-2 mt-1"></i>{{$product->created_at}} </span>
                                 <div class="ml-auto">
                                     <a href="#" class="" data-toggle="tooltip" data-placement="top" title="Share Property"><i class="icon icon-share text-muted"></i></a>
                                 </div>
@@ -286,6 +288,8 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
+                
             </div>
         </div>
     </section>
