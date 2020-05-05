@@ -32,7 +32,7 @@
     </section>
     <!--/Section-->
 
-    <section class="sptb bg-white">
+    <section class="sptb bg-white" id="why">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>MENGAPA INVESTASI PROPERTI SYARIAH ???</h2>
