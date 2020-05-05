@@ -22,6 +22,8 @@ class ProductEdit extends Component
     public $first_floor;
     public $second_floor;
     public $description;
+    public $product_id;
+    public $show_status;
 
 
     public function updated($field)
@@ -43,11 +45,14 @@ class ProductEdit extends Component
             'first_floor' => ['between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
             'second_floor' => ['between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
             'description' => ['string', 'required'],
+            'show_status' => ['in:0,1']
         ]);
     }
 
     public function mount(Product $product)
     {
+        $this->show_status = $product->show_status;
+        $this->product_id = $product->id;
         $this->name = $product->name;
         $this->price = $product->price;
         $this->unit = $product->unit;
@@ -68,6 +73,6 @@ class ProductEdit extends Component
 
     public function render()
     {
-        return view('livewire.product-edit')->withPhoto($this->photo)->withFrontView($this->front_view)->withFirstFloor($this->first_floor)->withSecondFloor($this->second_floor);
+        return view('livewire.product-edit')->withPhoto($this->photo)->withFrontView($this->front_view)->withFirstFloor($this->first_floor)->withSecondFloor($this->second_floor)->withId($this->product_id)->withShow_Status($this->show_status);
     }
 }

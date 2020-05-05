@@ -108,11 +108,12 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
                 'room_video' => ['active_url', 'string', 'required'],
                 'survey_video' => ['active_url', 'string', 'required'],
                 'survey_video' => ['active_url', 'string', 'required'],
-                'photo' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
-                'front_view' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
-                'first_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
-                'second_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
+                'photo' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png'],
+                'front_view' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png'],
+                'first_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png'],
+                'second_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png'],
                 'description' => ['string', 'required'],
+                'show_status' => ['in:0,1']
             ]);
 
             if (request()->photo) {
@@ -136,8 +137,7 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             }
 
         $product->update($data);            
-        return redirect('/products');
-            // return view('admin.product-edit')->withProduct($product);
+        return redirect('/admin/products');
         });
 
         Route::get('/products/add', function () {

@@ -23,7 +23,7 @@
 	<link href="{{url('/assets/css/style.css')}}" rel="stylesheet" />
     <link href="{{url('/assets/css/admin-custom.css')}}" rel="stylesheet" />
     
-    <link href="{{url('assets/plugins/fileuploads/css/droPpify.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('assets/plugins/fileuploads/css/dropify.css')}}" rel="stylesheet" type="text/css" />
 
 	<!-- Sidemenu Css -->
 	<link href="{{url('/assets/plugins/toggle-sidebar/sidemenu.css')}}" rel="stylesheet" />

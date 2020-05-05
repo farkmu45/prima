@@ -26,8 +26,9 @@
                                 <h3 class="card-title">Form Add Product</h3>
                             </div>
                             <div class="card-body">
-                                <form method="post" enctype="multipart/form-data" action="/admin/products">
+                            <form method="post" enctype="multipart/form-data" action="/admin/products/{{$id}}">
                                     @csrf
+                                    @method('patch')
                                     <div class="form-row">
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
@@ -135,11 +136,9 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label" for="exampleInputEmail1">Photo</label>
-                                                <input type="file" class="@error('photo') is-invalid @enderror" name="photo" />
+                                                <input type="file" name="photo" />
                                                 @error('photo')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                            <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
@@ -149,11 +148,9 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label" for="exampleInputEmail1">Front View</label>
-                                                <input type="file" class="dropify @error('front_view') is-invalid @enderror" name="front_view" data-height="180" />
+                                                <input type="file" name="front_view" />
                                                 @error('front_view')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                                    <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
@@ -163,11 +160,9 @@
                                                 <img src="{{url($firstFloor)}}" alt="" srcset="" style="width: 100%; height: 100%; object-fit: cover">
                                             </div>
                                                 <label class="form-label" for="exampleInputEmail1">First Floor</label>
-                                                <input type="file" class="dropify @error('first_floor') is-invalid @enderror" name="first_floor" data-height="180" />
+                                                <input type="file" name="first_floor" />
                                                 @error('first_floor')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                                    <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
@@ -177,11 +172,9 @@
                                                     <img src="{{url($secondFloor)}}" alt="" srcset="" style="width: 100%; height: 100%; object-fit: cover">
                                                 </div>
                                                 <label class="form-label" for="exampleInputEmail1">Second Floor</label>
-                                                <input type="file" class="dropify @error('second_floor') is-invalid @enderror" name="second_floor" data-height="180" />
+                                                <input type="file" name="second_floor"/>
                                                 @error('second_floor')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                            <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
@@ -195,7 +188,21 @@
                                         </span>
                                         @enderror
                                     </div>
-                                    <button type="submit" class="btn btn-primary ">Add Product</button>
+                                    <div class="form-group">
+                                        <label class="col-form-label">Show Status</label>
+                                        <select wire:model="show_status" class="form-control" name="show_status" id="">
+                                            <option value="0" {{$show_status == "0" ? 'selected' : ''}}>False</option>
+                                            <option value="1" {{$show_status == "1" ? 'selected' : ''}}>True</option>
+                                        </select>
+
+                                        {{-- <textarea class="form-control @error('description') is-invalid @enderror" wire:model="description" name="description" rows="4" placeholder="Product Description"></textarea> --}}
+                                        @error('show_status')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                    <button type="submit" class="btn btn-primary ">Update</button>
                                 </form>
                             </div>
                         </div>
