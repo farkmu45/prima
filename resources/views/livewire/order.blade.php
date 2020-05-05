@@ -26,7 +26,7 @@
                 <div class="col-xl-9 col-lg-12 col-md-12">
                     <div class="card mb-0">
                         <div class="card-header">
-                            <h3 class="card-title">Orders</h3>
+                            <h3 class="card-title">Petunjuk Pembayaran</h3>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -37,17 +37,17 @@
                                                 <div class="tab-pane active show" id="tab1">
                                                     <dl class="card-text">
                                                         <dt>BANK: </dt>
-                                                        <dd> THE UNION BANK 0456</dd>
+                                                        <dd>BRI</dd>
                                                     </dl>
                                                     <dl class="card-text">
-                                                        <dt>Accaunt number: </dt>
+                                                        <dt>No. Rekening: </dt>
                                                         <dd> 67542897653214</dd>
                                                     </dl>
                                                     <dl class="card-text">
-                                                        <dt>IBAN: </dt>
-                                                        <dd>543218769</dd>
+                                                        <dt>Atas Nama: </dt>
+                                                        <dd>PRIMA</dd>
                                                     </dl>
-                                                    <p class="mb-0"><strong>Note:</strong> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+                                                    <p class="mb-0"><strong>Catatan:</strong> Lakukan pembayaran melalui bank diatas sesuai dengan pemesanan yang telah anda lakukan</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="card mt-5">
                         <div class="card-header">
-                            <h3 class="card-title">Orders</h3>
+                            <h3 class="card-title">Pemesanan</h3>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -67,22 +67,32 @@
                                         <table class="table table-bordered table-hover text-nowrap">
                                             <thead>
                                                 <tr>
-                                                    <th>Order ID</th>
-                                                    <th>Category</th>
-                                                    <th>Date</th>
-                                                    <th>Price</th>
+                                                    <th>ID</th>
+                                                    <th>Nama Pesanan</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Harga</th>
                                                     <th>Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-primary">#89345</td>
-                                                    <td>Apartments</td>
-                                                    <td>07-12-2019</td>
-                                                    <td class="font-weight-semibold fs-16">$893</td>
-                                                    <td>
-                                                        <a href="#" class="badge badge-danger">Pending</a>
+                                                    @foreach (auth()->user()->orders as $order)
+                                                    <td class="text-primary">
+                                                        <a href="/invoice/{{$order->code}}">{{$order->code}}</a>
                                                     </td>
+                                                    <td>{{$order->payment->products->name}}</td>
+                                                <td>{{date('d-M-y', strtotime($order->created_at))}} </td>
+                                                <td class="font-weight-semibold fs-16">Rp. {{number_format($order->payment->price,0,',','.')}} </td>
+                                                <td>
+                                                    @if ($order->status == 1)
+                                                    <a href="#" class="badge badge-danger">Pending</a>
+                                                    @endif
+                                                    @if ($order->status == 2)
+                                                    <a href="#" class="badge badge-primary">Success</a>
+                                                    @endif
+                                                </td>
+                                                    @endforeach
+                                                    
                                                 </tr>
                                             </tbody>
                                         </table>

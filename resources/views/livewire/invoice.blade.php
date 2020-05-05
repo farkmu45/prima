@@ -43,34 +43,39 @@
                     <div class="table-responsive push">
                         <table class="table table-bordered table-hover text-nowrap">
                             <tr>
-                                <th class="text-center "></th>
+                                <th class="text-center ">No.</th>
                                 <th>Item</th>
-                                <th class="text-center">Jumlah</th>
-                                <th class="text-right">Harga</th>
+                                <th>Pembayaran</th>
+                                <th>ITJ</th>
+                                <th class="text-right">Total Harga</th>
                             </tr>
                             <tr>
                                 <td class="text-center">1</td>
                                 <td>
-                                    <p class="font-w600 mb-1">Homes</p>
-                                    <div class="text-muted">Laxury Home For Sale odio dignissimos ducimus qui </div>
+                                    <p class="font-w600 mb-1">{{$invoice->payment->products->name}}</p>
+                                    <div class="text-muted">Tipe {{$invoice->payment->products->type}} </div>
                                 </td>
-                                <td class="text-center">1</td>
+                                <td>
+                                    {{$invoice->payment->name}}
+                                </td>
+                                <td>
+                                    Rp. {{number_format($invoice->payment->itj,0,',','.')}}
+                                </td>
 
-                                <td class="text-right">Rp. 1,800.00</td>
+                                <td class="text-right">Rp. {{number_format($invoice->payment->price,0,',','.')}}</td>
                             </tr>
                             <tr>
-                                <td colspan="3" class="font-w600 text-right">ITJ</td>
-                                <td class="text-right">Rp. 5.000.000</td>
-                            </tr>
-                            <tr>
+                                <td></td>
                                 <td colspan="3" class="font-w600 text-right">No Rekening</td>
-                                <td class="text-right">24998920</td>
+                                <td class="text-right">12389083120</td>
                             </tr>
                             <tr>
+                                <td></td>
                                 <td colspan="3" class="font-weight-semibold text-uppercase text-right">Total</td>
-                                <td class="font-weight-bold text-right fs-18">RP. 5.000.000</td>
+                                <td class="font-weight-bold text-right fs-18">RP. {{number_format($invoice->payment->price,0,',','.')}}</td>
                             </tr>
                             <tr>
+                                <td></td>
                                 <td colspan="4" class="text-right">
                                     <button type="button" class="btn btn-info" onClick="javascript:window.print();"><i class="icon icon-printer"></i> Print Invoice</button>
                                 </td>

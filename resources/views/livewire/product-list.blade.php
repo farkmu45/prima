@@ -1,11 +1,11 @@
-	<div class="page">
+	<div class="page app sidebar-mini">
 		<div class="page-main">
 			<!--App-Header-->
 			<div class="app-header1 header py-1 d-flex">
 				<div class="container-fluid">
 					<div class="d-flex">
 						<a class="header-brand" href="index.html">
-							<img src="../assets/images/brand/logo.png" class="header-brand-img" alt="Reallist logo">
+							<img src="{{url('/assets/images/brand/logo.png')}}" class="header-brand-img" alt="Reallist logo">
 						</a>
 						<a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
 						<div class="header-navicon">
@@ -22,7 +22,7 @@
 							</div>
 							<div class="dropdown ">
 								<a href="#" class="nav-link pr-0 leading-none user-img" data-toggle="dropdown">
-									<img src="../assets/images/faces/male/25.jpg" alt="profile-img" class="avatar avatar-md brround">
+									<img src="{{url('/assets/images/faces/male/25.jpg')}}" alt="profile-img" class="avatar avatar-md brround">
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow ">
 									<a class="dropdown-item" href="/profile">
@@ -134,43 +134,21 @@
 	<!-- Back to top -->
 	<a href="#top" id="back-to-top"><i class="fa fa-rocket"></i></a>
 
-	<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
+		<!-- JQuery js-->
+		
+		<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}"></script>
 
+		<!-- Bootstrap js -->
+		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}"></script>
+		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}"></script>
 
-	<!-- Bootstrap js -->
-	<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
-	<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
+		<!-- Fullside-menu Js-->
+		<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}"></script>
 
-	<!--JQuery Sparkline Js-->
-	<script src="{{url('/assets/js/vendors/jquery.sparkline.min.js')}}" defer></script>
+		<!-- Data tables -->
+		<script src="{{url('/assets/plugins/datatable/jquery.dataTables.min.js')}}"></script>
+		<script src="{{url('/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}"></script>
+		<script src="{{url('/assets/js/datatable.js')}}"></script>
 
-	<!-- Circle Progress Js-->
-	<script src="{{url('/assets/js/vendors/circle-progress.min.js')}}" defer></script>
-
-	<script src="{{url('/assets/plugins/datatable/jquery.dataTables.min.js')}}" defer></script>
-	<script src="{{url('/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}" defer></script>
-	<script src="{{url('/assets/js/datatable.js')}}" defer></script>
-	<!-- Star Rating Js-->
-	<script src="{{url('/assets/plugins/rating/jquery.rating-stars.js')}}" defer></script>
-
-	<!--Counters -->
-	<script src="{{url('/assets/plugins/counters/counterup.min.js')}}" defer></script>
-	<script src="{{url('/assets/plugins/counters/waypoints.min.js')}}" defer></script>
-
-	<!-- Fullside-menu Js-->
-	<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
-
-	<!-- CHARTJS CHART -->
-	<script src="{{url('/assets/plugins/chart/Chart.bundle.js')}}" defer></script>
-	<script src="{{url('/assets/plugins/chart/utils.js')}}" defer></script>
-
-	<!-- Custom scroll bar Js-->
-	<script src="{{url('/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js')}}" defer></script>
-
-	<!-- ECharts Plugin -->
-	<script src="{{url('/assets/plugins/echarts/echarts.js')}}" defer></script>
-	<script src="{{url('/assets/plugins/echarts/echarts.js')}}" defer></script>
-	<script src="{{url('/assets/js/index1.js')}}" defer></script>
-
-	<!-- Custom Js-->
-	<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>
+		<!-- Custom Js-->
+		<script src="{{url('/assets/js/admin-custom.js')}}"></script>

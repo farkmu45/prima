@@ -13,6 +13,7 @@ class Register extends Component
     public $phone_number;
     public $password;
     public $password_confirmation;
+    public $user;
 
     public function updated($field)
     {
@@ -24,9 +25,14 @@ class Register extends Component
         ]);
     }
 
+    public function mount($user)
+    {
+            $this->user = $user;
+    }
+
 
     public function render()
     {
-        return view('livewire.register');
+        return view('livewire.register', ['user' => $this->user]);
     }
 }

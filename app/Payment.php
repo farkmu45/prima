@@ -10,6 +10,6 @@ class Payment extends Model
 
     public function products()
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(Product::class, 'product_id');
     }
 }
