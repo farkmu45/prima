@@ -12,6 +12,7 @@ class AgentList extends Component
     {
         $user = User::where('id', $id);
         $user->delete();
+        return redirect('/admin/agents');
     }
 
 

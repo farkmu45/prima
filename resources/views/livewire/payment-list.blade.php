@@ -14,10 +14,10 @@
 
 					<!-- Page-Header-->
 					<div class="page-header">
-						<h4 class="page-title">Product</h4>
+						<h4 class="page-title">Payment</h4>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item">Product</li>
-							<li class="breadcrumb-item active" aria-current="page">Product List</li>
+							<li class="breadcrumb-item">Payment</li>
+							<li class="breadcrumb-item active" aria-current="page">Payment List</li>
 						</ol>
 					</div>
 					<!-- /Page-Header-->
@@ -25,7 +25,7 @@
 						<div class="col-md-12 col-lg-12">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title">All Product</div>
+									<div class="card-title">All Payment</div>
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
@@ -34,37 +34,29 @@
 												<tr>
 													<th>No.</th>
 													<th>Name</th>
+													<th>ITJ</th>
+													<th>Installment</th>
+													<th>Installment Amount</th>
+													<th>Down Payment</th>
+													<th>Repayment</th>
+													<th>Product Name</th>
+													<th>Unit</th>
 													<th>Type</th>
-													<th>Price</th>
-													<th>Bedroom</th>
-													<th>Bathroom</th>
-													<th>Photo</th>
-													<th>First Floor</th>
-													<th>Second Floor</th>
-													<th>Room Video</th>
-													<th>Survey Video</th>
-													<th>Description</th>
-													<th>Show Status</th>
-													<th>Action</th>
 												</tr>
 											</thead>
 											<tbody>
-												@foreach ($products as $key => $product)
+												@foreach ($payments as $key => $payment)
 												<tr>
 													<td>{{$key + 1}}</td>
-												<td><a style="color: #ed5151 !important" href="/admin/products/{{$product->id}}/payments/add">{{$product->name}}</a></td>
-													<td>{{$product->type}}</td>
-													<td>{{$product->price}}</td>
-													<td>{{$product->bedroom}}</td>
-													<td>{{$product->bathroom}}</td>
-													<td> <img src="{{url($product->photo)}}" class="img-fluid" width="100px" alt="" srcset=""></td>
-													<td> <img src="{{url($product->first_floor)}}" class="img-fluid" width="100px" alt="" srcset=""></td>
-													<td> <img src="{{url($product->second_floor)}}" class="img-fluid" width="100px" alt="" srcset=""></td>
-													<td>{{url($product->room_video)}}</td>
-													<td>{{url($product->survey_video)}}</td>
-													<td>{{$product->description}}</td>
-													<td>{{$product->show_status == 0 ? "False" : "True"}}</td>
-													<td><a href="" class="btn btn-warning">Edit</a> <button class="btn btn-danger" wire:submit.prevent="delete($id}})">Delete</button></td>
+													<td>{{$payment->name}}</td>
+													<td>{{'Rp. '.number_format($payment->itj,0,',','.')}}</td>
+													<td>{{$payment->installment ? 'Rp. '.number_format($payment->installment,0,',','.') : 0}}</td>
+													<td>{{$payment->installment_amount ? $payment->installment_amount : 0}}</td>
+													<td>{{'Rp. '.number_format($payment->down_payment,0,',','.')}}</td>
+                                                    <td>{{$payment->repayment ? 'Rp. '.number_format($payment->repayment,0,',','.') : 0}}</td>
+                                                    <td>{{$payment->products->name}}</td>
+                                                    <td>{{$payment->products->unit}}</td>
+                                                    <td>{{$payment->products->type}}</td>
 												</tr>
 												@endforeach
 											</tbody>
@@ -92,6 +84,10 @@
 
 		</div>
 	</div>
+
+	
+	<!-- Back to top -->
+	<a href="#top" id="back-to-top"><i class="fa fa-rocket"></i></a>
 
 		<!-- JQuery js-->
 <script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>

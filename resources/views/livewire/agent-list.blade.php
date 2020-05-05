@@ -1,110 +1,11 @@
-	<div class="page">
+	<div class="page app sidebar-mini">
 		<div class="page-main">
 			<!--App-Header-->
-			<div class="app-header1 header py-1 d-flex">
-				<div class="container-fluid">
-					<div class="d-flex">
-						<a class="header-brand" href="index.html">
-							<img src="../assets/images/brand/logo.png" class="header-brand-img" alt="Reallist logo">
-						</a>
-						<a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
-						<div class="header-navicon">
-							<a href="#" data-toggle="search" class="nav-link d-lg-none navsearch-icon">
-								<i class="fa fa-search"></i>
-							</a>
-						</div>
-
-						<div class="d-flex order-lg-2 ml-auto">
-							<div class="dropdown d-none d-md-flex">
-								<a class="nav-link icon full-screen-link">
-									<i class="fe fe-maximize-2" id="fullscreen-button"></i>
-								</a>
-							</div>
-							<div class="dropdown ">
-								<a href="#" class="nav-link pr-0 leading-none user-img" data-toggle="dropdown">
-									<img src="../assets/images/faces/male/25.jpg" alt="profile-img"
-										class="avatar avatar-md brround">
-								</a>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow ">
-									<a class="dropdown-item" href="profile.html">
-										<i class="dropdown-icon icon icon-user"></i> My Profile
-									</a>
-									<a class="dropdown-item" href="emailservices.html">
-										<i class="dropdown-icon icon icon-speech"></i> Inbox
-									</a>
-									<a class="dropdown-item" href="editprofile.html">
-										<i class="dropdown-icon  icon icon-settings"></i> Account Settings
-									</a>
-									<a class="dropdown-item" href="login.html">
-										<i class="dropdown-icon icon icon-power"></i> Log out
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			@include('layouts.header')
 			<!--/App-Header-->
 
 			<!-- Sidebar menu-->
-			<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-			<aside class="app-sidebar doc-sidebar">
-				<div class="app-sidebar__user clearfix">
-					<div class="dropdown user-pro-body">
-						<div>
-							<img src="../assets/images/faces/male/25.jpg" alt="user-img"
-								class="avatar avatar-lg brround">
-							<a href="editprofile.html" class="profile-img">
-								<span class="fa fa-pencil" aria-hidden="true"></span>
-							</a>
-						</div>
-						<div class="user-info">
-						<h2>{{auth()->user()->name}}</h2>
-							<span>{{auth()->user()->role->name}}</span>
-						</div>
-					</div>
-				</div>
-				<ul class="side-menu">
-					<li class="slide">
-						<a class="side-menu__item" href="/admin/dashboard"><i class="side-menu__icon fa fa-pie-chart"></i>Dashboard</a>
-					</li>
-					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="#"><i
-								class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Agent</span><i
-								class="angle fa fa-angle-right"></i></a>
-						<ul class="slide-menu">
-							<li><a class="slide-item" href="/admin/agents">Agent List</a></li>
-							<li><a class="slide-item" href="/admin/agents/add">Agent Order</a></li>
-						</ul>
-					</li>
-					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="#"><i
-								class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Member</span><i
-								class="angle fa fa-angle-right"></i></a>
-						<ul class="slide-menu">
-							<li><a class="slide-item" href="/admin/members">Member List</a></li>
-							<li><a class="slide-item" href="/admin/members/orders">Member Order</a></li>
-						</ul>
-					</li>
-					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="#"><i
-								class="side-menu__icon fa fa-tag"></i><span class="side-menu__label">Product</span><i
-								class="angle fa fa-angle-right"></i></a>
-						<ul class="slide-menu">
-							<li><a class="slide-item" href="/admin/products">Product List</a></li>
-							<li><a class="slide-item" href="/admin/products/create">Add Product</a></li>
-						</ul>
-					</li>
-					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="#"><i
-								class="side-menu__icon fa fa-money"></i><span class="side-menu__label">Payment</span><i
-								class="angle fa fa-angle-right"></i></a>
-						<ul class="slide-menu">
-							<li><a class="slide-item" href="/admin/payments">Payment List</a></li>
-						</ul>
-					</li>
-				</ul>
-			</aside>
+			@include('layouts.sidebar')
 			<!-- /Sidebar menu-->
 
 			<!--App-Content-->
@@ -152,7 +53,10 @@
 													<td>{{$agent->role->name}}</td>
 													<td>{{$agent->referral_code == null ? 'Empty' : 3}}</td>
 													<td>{{$agent->role->commission}}%</td>
-													<td><a href="" class="btn btn-warning">Edit</a> <button class="btn btn-danger" wire:submit.prevent="delete($id}})">Delete</button></td>
+													<td>
+														<a href="" class="btn btn-warning">Edit</a> 
+														<button class="btn btn-danger" wire:click="delete({{$agent->id}})">Delete</button>
+													</td>
 												</tr>
 												@endforeach
 											</tbody>

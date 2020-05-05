@@ -52,10 +52,10 @@
 
 					<!-- Page-Header-->
 					<div class="page-header">
-						<h4 class="page-title">Product</h4>
+						<h4 class="page-title">Referral</h4>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item">Product</li>
-							<li class="breadcrumb-item active" aria-current="page">Product List</li>
+							<li class="breadcrumb-item">Referral</li>
+							<li class="breadcrumb-item active" aria-current="page">Referral List</li>
 						</ol>
 					</div>
 					<!-- /Page-Header-->
@@ -63,7 +63,7 @@
 						<div class="col-md-12 col-lg-12">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title">All Product</div>
+									<div class="card-title">All Referral</div>
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
@@ -72,28 +72,25 @@
 												<tr>
 													<th>No.</th>
 													<th>User Name</th>
+													<th>User Email</th>
 													<th>Invited By</th>
+													<th>Inviter Email</th>
 													<th>Date</th>
 													<th>Action</th>
 												</tr>
 											</thead>
 											<tbody>
-												@foreach ($products as $key => $product)
+												@foreach ($referralList as $key => $referral)
 												<tr>
 													<td>{{$key + 1}}</td>
-												<td><a style="color: #ed5151 !important" href="/admin/products/{{$product->id}}/payments/add">{{$product->name}}</a></td>
-													<td>{{$product->type}}</td>
-													<td>{{$product->price}}</td>
-													<td>{{$product->bedroom}}</td>
-													<td>{{$product->bathroom}}</td>
-													<td> <img src="{{url($product->photo)}}" class="img-fluid" width="100px" alt="" srcset=""></td>
-													<td> <img src="{{url($product->first_floor)}}" class="img-fluid" width="100px" alt="" srcset=""></td>
-													<td> <img src="{{url($product->second_floor)}}" class="img-fluid" width="100px" alt="" srcset=""></td>
-													<td>{{url($product->room_video)}}</td>
-													<td>{{url($product->survey_video)}}</td>
-													<td>{{$product->description}}</td>
-													<td>{{$product->show_status == 0 ? "False" : "True"}}</td>
-													<td><a href="" class="btn btn-warning">Edit</a> <button class="btn btn-danger" wire:submit.prevent="delete($id}})">Delete</button></td>
+													<td>{{$referral->user->name}}</td>
+													<td>{{$referral->user->email}}</td>
+													<td>{{$referral->referrer->name}}</td>
+													<td>{{$referral->referrer->email}}</td>
+													<td>{{$referral->created_at}}</td>
+													<td>
+														<button class="btn btn-danger" wire:click="delete({{$referral->id}})">Delete</button>
+													</td>
 												</tr>
 												@endforeach
 											</tbody>

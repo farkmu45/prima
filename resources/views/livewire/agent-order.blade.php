@@ -14,10 +14,10 @@
 
 					<!-- Page-Header-->
 					<div class="page-header">
-						<h4 class="page-title">Member</h4>
+						<h4 class="page-title">Agent</h4>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item">Member</li>
-							<li class="breadcrumb-item active" aria-current="page">Member List</li>
+							<li class="breadcrumb-item">Agent</li>
+							<li class="breadcrumb-item active" aria-current="page">Agent List</li>
 						</ol>
 					</div>
 					<!-- /Page-Header-->
@@ -25,7 +25,7 @@
 						<div class="col-md-12 col-lg-12">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title">All Member Order</div>
+									<div class="card-title">All Agent Order</div>
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
@@ -75,7 +75,7 @@
 															@endif
 													</td>
 													<td>
-														<form action="/admin/members/orders/{{$order->id}}" method="post">
+														<form action="/admin/agents/orders/{{$order->id}}" method="post">
 															@csrf
 															@method('PATCH')
 															<select class="form-control" name="orderId" onchange="this.form.submit">
@@ -147,10 +147,3 @@
 
 		<!-- Custom Js-->
 		<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>
-
-		<script defer>
-			function submitEdit() {
-				var form = document.getElementById('editOrder')
-				form.submit()
-			}
-		</script>

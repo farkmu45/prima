@@ -69,31 +69,38 @@
                                                 <tr>
                                                     <th>ID</th>
                                                     <th>Nama Pesanan</th>
+                                                    <th>Unit Bisnis</th>
+                                                    <th>Tipe</th>
                                                     <th>Tanggal</th>
-                                                    <th>Harga</th>
+                                                    <th>ITJ</th>
                                                     <th>Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    @foreach (auth()->user()->orders as $order)
+                                                @foreach (auth()->user()->orders as $order)
+                                                    <tr>
                                                     <td class="text-primary">
                                                         <a href="/invoice/{{$order->code}}">{{$order->code}}</a>
                                                     </td>
                                                     <td>{{$order->payment->products->name}}</td>
-                                                <td>{{date('d-M-y', strtotime($order->created_at))}} </td>
-                                                <td class="font-weight-semibold fs-16">Rp. {{number_format($order->payment->price,0,',','.')}} </td>
-                                                <td>
-                                                    @if ($order->status == 1)
-                                                    <a href="#" class="badge badge-danger">Pending</a>
-                                                    @endif
-                                                    @if ($order->status == 2)
-                                                    <a href="#" class="badge badge-primary">Success</a>
-                                                    @endif
-                                                </td>
+                                                    <td>{{$order->payment->products->unit}}</td>
+                                                    <td>{{$order->payment->products->type}}</td>
+                                                    <td>{{date('d-M-y', strtotime($order->created_at))}} </td>
+                                                    <td class="font-weight-semibold fs-16">Rp. {{number_format($order->payment->itj,0,',','.')}} </td>
+                                                    <td>
+                                                        @if ($order->status == '1')
+                                                        <p href="#" class="badge badge-danger">Pending</p>
+                                                        @endif
+                                                        @if ($order->status == '2')
+                                                        <p href="#" class="badge badge-warning">Processing</p>
+                                                        @endif
+                                                        @if ($order->status == '3')
+                                                        <p href="#" class="badge badge-success">Success</p>
+                                                        @endif
+                                                    </td>
+                                                    </tr>
                                                     @endforeach
                                                     
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

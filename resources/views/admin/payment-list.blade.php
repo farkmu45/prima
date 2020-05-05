@@ -32,5 +32,5 @@
 @endsection
 
 @section('content')
-    <livewire:member-list>
+    <livewire:payment-list>
 @endsection

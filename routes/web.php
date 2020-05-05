@@ -2,6 +2,7 @@
 
 use App\Product;
 use App\User;
+use App\UserOrder;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -86,6 +87,18 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             return view('admin.agent-list');
         });
 
+        Route::get('/agents/orders', function () {
+            return view('admin.agent-order');
+        });
+
+        Route::patch('/agents/orders/{order}', function (UserOrder $order) {
+            $order->update([
+                'status' => strval(request()->orderId)
+            ]);
+
+            return redirect('/admin/agents/orders');
+        });
+
         Route::get('/products', function () {
             return view('admin.product-list');
         });
@@ -127,22 +140,42 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             return view('admin.member-list');
         });
 
+        Route::patch('/members/{member}', function (User $member) {
+            $member->update([
+                'role_id' => request()->role_id
+            ]);
+
+            return redirect('/admin/members');
+        });
+
         Route::get('/members/orders', function () {
             return view('admin.member-order');
         });
+
+        Route::patch('/members/orders/{order}', function (UserOrder $order)
+        {
+            $order->update([
+                'status' => strval(request()->orderId)
+            ]);
+
+            return redirect('/admin/members/orders');
+        });
+
         Route::get('/payments', function () {
             return view('admin.payment-list');
         });
         Route::get('/products/{product}/payments/add', function (\App\Product $product) {
             return view('admin.payment-add', ['product' => $product]);
         });
-        Route::get('/referals', function () {
-            return view('admin.referal-list');
+
+        Route::get('/referrals', function () {
+            return view('admin.referral-list');
         });
     });
 });
 
 Route::get('/r/{user:referral_code}', function (\App\User $user)
 {
+    abort_if($user->role_id <= 2, 404);
     return view('auth.register')->withUser($user);
 })->middleware('guest');

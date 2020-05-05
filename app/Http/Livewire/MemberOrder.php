@@ -2,13 +2,25 @@
 
 namespace App\Http\Livewire;
 
-use App\User;
+use App\UserOrder;
 use Livewire\Component;
 
 class MemberOrder extends Component
 {
+
+    public $orderId;
+
+    public function updateOrder()
+    {
+        dd(request()->orderId);
+    }
+
     public function render()
     {
-        return view('livewire.member-order', ['members' => User::where('role_id', 2)->get()]);
+        $orders = UserOrder::whereHas('user', function ($query)
+        {
+            $query->where('role_id',2);
+        })->with(['user', 'payment.products'])->get();
+        return view('livewire.member-order', ['orders' => $orders]);
     }
 }

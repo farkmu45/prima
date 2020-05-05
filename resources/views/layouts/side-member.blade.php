@@ -7,9 +7,9 @@
             <div class="profile-pic">
                 <div class="profile-pic-img">
                     <span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
-                <img src="{{url(auth()->user()->photo !== null ? auth()->user()->photo : '' )}}" class="brround" style="width: 100%; height: 100%; object-fit: cover" alt="user">
+                <img src="{{url(auth()->user()->photo !== null ? auth()->user()->photo : '' )}}" class="brround" style="width: 100%; height: 100%; object-fit: cover">
                 </div>
-                <a href="userprofile.html" class="text-dark">
+                <a href="#" class="text-dark">
                     <h4 class="mt-3 mb-0 font-weight-semibold">{{auth()->user()->name}}</h4>
                 </a>
             </div>

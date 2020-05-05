@@ -272,7 +272,7 @@
                         <div class="card-body">
                             <div class="item-card7-desc">
                                 <div class="item-card7-text">
-                                    <a href="col-left.html" class="text-dark">
+                                    <a href="/product/{{$product->id}}" class="text-dark">
                                         <h4 class="">{{$product->name}}</h4>
                                     </a>
                                 <p class=""><i class="icon icon-location-pin text-muted mr-1"></i> {{$product->address}}</p>
