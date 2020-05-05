@@ -8,17 +8,20 @@
           </div>
           <nav class="horizontalMenu clearfix d-md-flex">
               <ul class="horizontalMenu-list">
-                  <li aria-haspopup="true"><a href="/">Beranda</a></li>
+                  <li aria-haspopup="true"><a href="#home">Beranda</a></li>
                   <li aria-haspopup="true"><a href="#why">Kenapa Investasi</a></li>
                   <li aria-haspopup="true"><a href="#invest">Investasi Online</a></li>
                   <li aria-haspopup="true"><a href="#about">Profil</a></li>
                   <li aria-haspopup="true"><a href="#special">Penawaran Spesial</a></li>
                   <li aria-haspopup="true"><a href="#product">Produk</a></li>
-                  <li aria-haspopup="true">
+              </ul>
+              <ul class="mb-0 mr-2">
+                  <li aria-haspopup="true" class="mt-3 d-none d-lg-block top-postbtn">
                       <form action="/logout" method="post">
-                        @csrf
-                        <button type="submit">Logout</button>
-                    </form></li>
+                          @csrf
+                          <button type="submit" class="btn btn-secondary ad-post">Logout</button>
+                      </form>
+                  </li>
               </ul>
               <ul class="mb-0">
                   <li aria-haspopup="true" class="mt-3 d-none d-lg-block top-postbtn">

@@ -1,5 +1,5 @@
 <div>
-    <div class="header-main">
+    <div class="header-main" id="home">
 
         <!-- Header -->
         <div class="horizontal-header clearfix ">
@@ -32,7 +32,7 @@
     </section>
     <!--/Section-->
 
-    <section class="sptb bg-white">
+    <section class="sptb bg-white" id="why">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>MENGAPA INVESTASI PROPERTI SYARIAH ???</h2>
@@ -136,7 +136,7 @@
     <!--/Section-->
 
     <!--Section-->
-    <section class="sptb">
+    <section class="sptb" id="invest">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Cara Mudah Investasi Properti melalui Online</h2>
@@ -172,7 +172,7 @@
     <!--/Section-->
 
     <!--Section-->
-    <section class="sptb bg-white">
+    <section class="sptb bg-white" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -197,7 +197,7 @@
     <!--/Section-->
 
     <!--Section-->
-    <section class="sptb bg-patterns">
+    <section class="sptb bg-patterns" id="special">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Penawaran Spesial</h2>
@@ -250,7 +250,7 @@
     <!--/Section-->
 
     <!--Section-->
-    <section class="sptb bg-white">
+    <section class="sptb bg-white" id="product">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Produk Lainnya</h2>
