@@ -22,8 +22,8 @@
             <div class="header-text mb-0">
                 <div class="container">
                     <div class="text-center text-white mb-7 mt-5">
-                        <h1 class="mb-5">TEMUKAN INVESTASI PROPERTI HUNIAN SYARIAH <br> DI TENGAH WABAH</h1>
-                        <p>Kini anda mempunyai kesempatan untuk tetap bisa berinvestasi di Properti Syariah dengan Aman, Halal dan Terpercaya di masa resesi akibat Wabah Covid – 19
+                        <h1 class="mb-5">CUMA DISINI BELI RUMAH KOST DI MALANG  BISA PATUNGAN MULAI 150 JUTA </h1>
+                        <p>Solusi terbaik bagi anda yang ingin investasi rumah kost dengan harga terjangkau di kota malang. Myrra residence menawarkan rumah kost eksklusif yang bisa dibeli dengan cara patungan mulai 150 juta per kamar kost
                         </p>
                     </div>
                 </div>
