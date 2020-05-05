@@ -143,10 +143,6 @@
 <script src="{{url('/assets/plugins/select2/select2.full.min.js')}}" defer></script>
 <script src="{{url('/assets/js/select2.js')}}" defer></script>
 
-<!-- Cookie js -->
-<script src="{{url('/assets/plugins/cookie/jquery.ihavecookies.js')}}" defer></script>
-<script src="{{url('/assets/plugins/cookie/cookie.js')}}" defer></script>
-
 <!-- Custom scroll bar Js-->
 <script src="{{url('/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js')}}" defer></script>
 

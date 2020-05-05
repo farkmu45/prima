@@ -17,10 +17,7 @@
 
                   @auth    
                   <li aria-haspopup="true">
-                      <form action="/logout" method="post">
-                        @csrf
-                        <button class="btn btn-danger" type="submit">Logout</button>
-                    </form>
+                      <span><a class="btn btn-secondary " href="/member/dashboard">Dashboard</a></span>
                   </li>
                   @endauth
 

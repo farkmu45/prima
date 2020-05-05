@@ -24,9 +24,20 @@
             <a href="/member/profile" class="d-flex border-bottom">
                 <span class="icon1 mr-3"><i class="icon icon-user"></i></span> Edit Profile
             </a>
-            <a href="#" class="d-flex">
+            <a href="" class="d-flex" onclick="logout()">
                 <span class="icon1 mr-3"><i class="icon icon-power"></i></span> Logout
             </a>
         </div>
     </div>
 </div>
+
+<form id="logout" action="/logout" method="post">
+    @csrf
+</form>
+
+<script>
+    function logout() {  
+    var form = document.getElementById('logout')
+    form.submit()
+    }
+</script>
