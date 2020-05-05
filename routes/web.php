@@ -90,6 +90,56 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
         Route::get('/products', function () {
             return view('admin.product-list');
         });
+
+        Route::get('/products/{product}/edit', function (\App\Product $product) {
+            return view('admin.product-edit')->withProduct($product);
+        });
+
+        Route::patch('/products/{product}', function (\App\Product $product) {
+            $data = request()->validate([
+                'name' => ['string', 'required'],
+                'unit' => ['string', 'required'],
+                'price' => ['numeric', 'required'],
+                'type' => ['string', 'required'],
+                'address' => ['string', 'required'],
+                'ac' => ['string', 'required', 'max:10'],
+                'bedroom' => ['string', 'required', 'max:10'],
+                'bathroom' => ['string', 'required', 'max:10'],
+                'room_video' => ['active_url', 'string', 'required'],
+                'survey_video' => ['active_url', 'string', 'required'],
+                'survey_video' => ['active_url', 'string', 'required'],
+                'photo' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
+                'front_view' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
+                'first_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
+                'second_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
+                'description' => ['string', 'required'],
+            ]);
+
+            if (request()->photo) {
+                Storage::delete($product->photo);
+                $data['photo'] = request()->file('photo')->store('productImages');
+            } 
+
+            if (request()->front_view) {
+                Storage::delete($product->front_view);
+                $data['front_view'] = request()->file('front_view')->store('productImages');
+            } 
+
+            if (request()->first_floor) {
+                Storage::delete($product->first_floor);
+                $data['first_floor'] = request()->file('first_floor')->store('productImages');
+            } 
+
+            if (request()->second_floor) {
+                Storage::delete($product->second_floor);
+                $data['second_floor'] = request()->file('second_floor')->store('productImages');
+            }
+
+        $product->update($data);            
+        return redirect('/products');
+            // return view('admin.product-edit')->withProduct($product);
+        });
+
         Route::get('/products/add', function () {
             return view('admin.add-product');
         });

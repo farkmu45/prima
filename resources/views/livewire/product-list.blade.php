@@ -64,7 +64,7 @@
 													<td>{{url($product->survey_video)}}</td>
 													<td>{{$product->description}}</td>
 													<td>{{$product->show_status == 0 ? "False" : "True"}}</td>
-													<td><a href="" class="btn btn-warning">Edit</a> <button class="btn btn-danger" wire:submit.prevent="delete($id}})">Delete</button></td>
+												<td><a href="/admin/products/{{$product->id}}/edit" class="btn btn-warning">Edit</a> <button class="btn btn-danger" wire:submit.prevent="delete($id}})">Delete</button></td>
 												</tr>
 												@endforeach
 											</tbody>
