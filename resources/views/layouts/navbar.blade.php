@@ -8,7 +8,7 @@
           </div>
           <nav class="horizontalMenu clearfix d-md-flex">
               <ul class="horizontalMenu-list">
-                  <li aria-haspopup="true"><a href="/">Beranda</a></li>
+                  <li aria-haspopup="true"><a href="#home">Beranda</a></li>
                   <li aria-haspopup="true"><a href="#why">Kenapa Investasi</a></li>
                   <li aria-haspopup="true"><a href="#invest">Investasi Online</a></li>
                   <li aria-haspopup="true"><a href="#about">Profil</a></li>
