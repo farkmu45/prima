@@ -136,6 +136,9 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
         Route::get('/products/{product}/payments/add', function (\App\Product $product) {
             return view('admin.payment-add', ['product' => $product]);
         });
+        Route::get('/referals', function () {
+            return view('admin.referal-list');
+        });
     });
 });
 

@@ -55,5 +55,13 @@
 							<li><a class="slide-item" href="/admin/payments/add">Add Payment</a></li>
 						</ul>
 					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i
+								class="side-menu__icon fa fa-users"></i><span class="side-menu__label">Referal</span><i
+								class="angle fa fa-angle-right"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="/admin/referals">Referal List</a></li>
+						</ul>
+					</li>
 				</ul>
 			</aside>
