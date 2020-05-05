@@ -51,11 +51,11 @@
 													<td>{{$agent->email}}</td>
 													<td>{{$agent->phone_number}}</td>
 													<td>{{$agent->role->name}}</td>
-													<td>{{$agent->referral_code == null ? 'Empty' : 3}}</td>
+													<td>{{$agent->referral_code == null ? 'Empty' : $agent->referral_code }}</td>
 													<td>{{$agent->role->commission}}%</td>
 													<td>
 														<a href="" class="btn btn-warning">Edit</a> 
-														<button class="btn btn-danger" wire:click="delete({{$agent->id}})">Delete</button>
+														<button class="btn btn-danger">Delete</button>
 													</td>
 												</tr>
 												@endforeach

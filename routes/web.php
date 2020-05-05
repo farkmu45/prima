@@ -6,20 +6,8 @@ use App\UserOrder;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
-    // $rand = substr(uniqid('', true), -7);
-    // return $rand;
     return view('index');
 });
 
@@ -173,6 +161,7 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
         });
     });
 });
+
 
 Route::get('/r/{user:referral_code}', function (\App\User $user)
 {

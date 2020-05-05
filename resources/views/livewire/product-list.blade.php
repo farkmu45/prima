@@ -54,7 +54,7 @@
 													<td>{{$key + 1}}</td>
 												<td><a style="color: #ed5151 !important" href="/admin/products/{{$product->id}}/payments/add">{{$product->name}}</a></td>
 													<td>{{$product->type}}</td>
-													<td>{{$product->price}}</td>
+													<td>Rp. {{number_format($product->price,0,',','.')}}</td>
 													<td>{{$product->bedroom}}</td>
 													<td>{{$product->bathroom}}</td>
 													<td> <img src="{{url($product->photo)}}" class="img-fluid" width="100px" alt="" srcset=""></td>

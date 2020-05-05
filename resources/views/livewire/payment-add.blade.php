@@ -1,48 +1,7 @@
-<div class="page">
+<div class="page app sidebar-mini">
     <div class="page-main">
         <!--App-Header-->
-        <div class="app-header1 header py-1 d-flex">
-            <div class="container-fluid">
-                <div class="d-flex">
-                    <a class="header-brand" href="index.html">
-                        <img src="../assets/images/brand/logo.png" class="header-brand-img" alt="Reallist logo">
-                    </a>
-                    <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
-                    <div class="header-navicon">
-                        <a href="#" data-toggle="search" class="nav-link d-lg-none navsearch-icon">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-
-                    <div class="d-flex order-lg-2 ml-auto">
-                        <div class="dropdown d-none d-md-flex">
-                            <a class="nav-link icon full-screen-link">
-                                <i class="fe fe-maximize-2" id="fullscreen-button"></i>
-                            </a>
-                        </div>
-                        <div class="dropdown ">
-                            <a href="#" class="nav-link pr-0 leading-none user-img" data-toggle="dropdown">
-                                <img src="../assets/images/faces/male/25.jpg" alt="profile-img" class="avatar avatar-md brround">
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow ">
-                                <a class="dropdown-item" href="profile.html">
-                                    <i class="dropdown-icon icon icon-user"></i> My Profile
-                                </a>
-                                <a class="dropdown-item" href="emailservices.html">
-                                    <i class="dropdown-icon icon icon-speech"></i> Inbox
-                                </a>
-                                <a class="dropdown-item" href="editprofile.html">
-                                    <i class="dropdown-icon  icon icon-settings"></i> Account Settings
-                                </a>
-                                <a class="dropdown-item" href="login.html">
-                                    <i class="dropdown-icon icon icon-power"></i> Log out
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('layouts.header')
         <!--/App-Header-->
 
         @include('layouts.sidebar')
@@ -64,7 +23,7 @@
                     <div class="col-md-12">
                         <div class="card m-b-20">
                             <div class="card-header">
-                                <h3 class="card-title">Form Add Payment</h3>
+                                <h3 class="card-title">Form Payment</h3>
                             </div>
                             <div class="card-body">
                                 <form method="post" wire:submit.prevent="create">
@@ -72,7 +31,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                             <div class="form-group">
-                                                <label class="form-label" for="name">Name</label>
+                                                <label class="form-label" for="name">Nama</label>
                                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" wire:model="name">
                                                 @error('name')
                                                 <span class="invalid-feedback" role="alert">
@@ -94,7 +53,7 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                             <div class="form-group">
-                                                <label class="form-label" for="price">Angsuran</label>
+                                                <label class="form-label" for="price">Jumlah Angsuran</label>
                                                 <input type="number" class="form-control @error('installment_amount') is-invalid @enderror" wire:model="installment_amount">
                                                 @error('installment_amount')
                                                 <span class="invalid-feedback" role="alert">
@@ -104,7 +63,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label for="inputEmail4" class="col-form-label">Uang Muka</label>
+                                            <label for="inputEmail4" class="form-label">Uang Muka</label>
                                             <input type="text" class="form-control @error('down_payment') is-invalid @enderror" wire:model="down_payment">
                                             @error('down_payment')
                                             <span class="invalid-feedback" role="alert">
@@ -113,7 +72,7 @@
                                             @enderror
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label for="inputPassword4" class="col-form-label">Harga</label>
+                                            <label for="inputPassword4" class="form-label">Harga</label>
                                             <input type="number" class="form-control @error('price') is-invalid @enderror" wire:model="price">
                                             @error('price')
                                             <span class="invalid-feedback" role="alert">
@@ -122,7 +81,7 @@
                                             @enderror
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label for="inputPassword4" class="col-form-label">ITJ</label>
+                                            <label for="inputPassword4" class="form-label">ITJ</label>
                                             <input type="number" class="form-control @error('itj') is-invalid @enderror" wire:model="itj">
                                             @error('itj')
                                             <span class="invalid-feedback" role="alert">
@@ -131,7 +90,7 @@
                                             @enderror
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label for="inputPassword4" class="col-form-label">Pelunasan</label>
+                                            <label for="inputPassword4" class="form-label">Pelunasan</label>
                                             <input type="number" class="form-control @error('repayment') is-invalid @enderror" wire:model="repayment">
                                             @error('repayment')
                                             <span class="invalid-feedback" role="alert">
@@ -148,20 +107,20 @@
             </div>
         </div>
         <!--Footer-->
-        <footer class="footer">
-            <div class="container">
-                <div class="row align-items-center flex-row-reverse">
-                    <div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
-                        Copyright © 2019 <a href="#">Reallist</a>. Designed by <a href="#">Spruko</a> All
-                        rights
-                        reserved.
-                    </div>
+        
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
+                    Copyright © 2019 <a href="#">Reallist</a>. Designed by <a href="#">Spruko</a> All
+                    rights
+                    reserved.
                 </div>
             </div>
-        </footer>
-        <!-- / Footer-->
-
-    </div>
+        </div>
+    </footer>
+    <!-- / Footer-->
 </div>
 
 <!-- Back to top -->
