@@ -32,15 +32,15 @@
     </section>
     <!--/Section-->
 
-    <section class="sptb bg-white" id="why">
+    <section class="sptb bg-putih" id="why">
         <div class="container">
             <div class="section-title center-block text-center">
-                <h2>MENGAPA INVESTASI PROPERTI SYARIAH ???</h2>
+                <h2>MENGAPA INVESTASI PROPERTI SYARIAH?</h2>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="">
-                        <div class="mb-lg-0 mb-4">
+                        <div class="mb-lg-0 mb-4">  
                             <div class="service-card text-center">
                                 <div class="bg-white icon-bg box-shadow icon-service  about">
                                     <img src="{{url('/assets/images/products/about/halal.png')}}" alt="img">
@@ -172,7 +172,7 @@
     <!--/Section-->
 
     <!--Section-->
-    <section class="sptb bg-white" id="about">
+    <section class="sptb bg-putih" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -250,7 +250,7 @@
     <!--/Section-->
 
     <!--Section-->
-    <section class="sptb bg-white" id="product">
+    <section class="sptb bg-putih" id="product">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Produk Lainnya</h2>

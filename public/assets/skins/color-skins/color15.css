@@ -1,4 +1,7 @@
- .bg-background2:before {
+.bg-putih {
+	background-color: #ffffff !important;
+}
+.bg-background2:before {
     background:linear-gradient(-225deg, rgba(74, 61, 184, 0.8) 48%, rgba(50, 228, 179, 0.8) 100%);
 }
  .pattern:before{
