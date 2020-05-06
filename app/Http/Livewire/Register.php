@@ -27,6 +27,7 @@ class Register extends Component
 
     public function mount($user)
     {
+
             $this->user = $user;
     }
 

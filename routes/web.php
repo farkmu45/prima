@@ -41,41 +41,38 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
 
     Route::put('/member/profile', function () {
 
-        // request()->validate([
-        //     'name' => 'string|required|max:60',
-        //     'id_number' => 'numeric|min:16|max:16',
-        //     'place_of_birth' => 'max:60|alpha',
-        //     'date_of_birth' => 'date',
-        //     'phone_number' => 'numeric|required',
-        //     'gender' => 'in:L,P',
-        //     'address' => 'string|max:100',
-        //     'village' => 'string|max:100',
-        //     'sub_district' => 'string|max:100',
-        //     'city' => 'string|max:100',
-        //     'province' => 'string|max:100',
-        //     'bank_name' => 'alpha|max:100',
-        //     'account_number' => 'numeric|max:120',
-        //     'account_name' => 'string',
-        //     'photo' => ''
-        // ]);
+        $data = request()->validate([
+            'name' => 'string|required|max:60',
+            'id_number' => 'numeric|min:16|max:16',
+            'place_of_birth' => 'max:60|alpha',
+            'date_of_birth' => 'date',
+            'phone_number' => 'numeric|required',
+            'gender' => 'in:L,P',
+            'address' => 'string|max:100',
+            'village' => 'string|max:100',
+            'sub_district' => 'string|max:100',
+            'city' => 'string|max:100',
+            'province' => 'string|max:100',
+            'bank_name' => 'alpha|max:100',
+            'account_number' => 'numeric|max:120',
+            'account_name' => 'string',
+            'photo' => 'between:0,2048|mimes:jpeg,jpg,png',
+            'id_photo' => 'between:0,2048|mimes:jpeg,jpg,png'
+        ]);
 
         $user = User::find(auth()->user()->id);
 
-        $photo = $user->photo;
-        $id_photo = $user->id_photo;
+        $data['photo'] = $user->photo;
+        $data['id_photo'] = $user->id_photo;
         if (request()->photo) {
             Storage::delete($user->photo);
-            $photo = request()->file('photo')->store('userImages');
+            $data['photo'] = request()->file('photo')->store('userImages');
         } else if (request()->id_photo) {
             Storage::delete($user->id_photo);
-            $id_photo = request()->file('id_photo')->store('userImages');
+            $data['id_photo'] = request()->file('id_photo')->store('userImages');
         }
-
-        $user->update(request()->all());
-
-        $user->update(['id_photo' => $id_photo, 'photo' => $photo]);
-
-
+        // $user->update(['id_photo' => $id_photo, 'photo' => $photo]);
+        $user->update($data);
 
         return redirect('/member/profile');
     });

@@ -144,7 +144,7 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6">
                                     <div class="col-lg-4 col-sm-12">
-                                    <input type="file" class="dropify" data-height="180" name="id_photo" value="{{auth()->user()->id_photo}}" />
+                                    <input type="file" class="dropify" name="id_photo" value="{{auth()->user()->id_photo}}" />
                                     </div>
                                 </div>
                             </div>

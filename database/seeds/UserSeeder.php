@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             'role_id' => 1,
             'email' => 'admin@mail.com',
             'email_verified_at' => now(),
-            'phone_number' => '082230634412',
+            'phone_number' => '082230634411',
             'password' => Hash::make('konek.space')
         ]);
 
@@ -34,28 +34,28 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Agent Level 1',
             'role_id' => 3,
-            'email' => 'agent1@mail.com',
+            'email' => 'agent@mail.com',
             'email_verified_at' => now(),
-            'phone_number' => '082230634412',
+            'phone_number' => '082230634413',
             'password' => Hash::make('konek.space')
         ]);
 
-        User::create([
-            'name' => 'Admin Level 2',
-            'role_id' => 4,
-            'email' => 'agent2@mail.com',
-            'email_verified_at' => now(),
-            'phone_number' => '082230634412',
-            'password' => Hash::make('konek.space')
-        ]);
+        // User::create([
+        //     'name' => 'Admin Level 2',
+        //     'role_id' => 4,
+        //     'email' => 'agent2@mail.com',
+        //     'email_verified_at' => now(),
+        //     'phone_number' => '082230634412',
+        //     'password' => Hash::make('konek.space')
+        // ]);
 
-        User::create([
-            'name' => 'Admin Level 3',
-            'role_id' => 5,
-            'email' => 'agent3@mail.com',
-            'email_verified_at' => now(),
-            'phone_number' => '082230634412',
-            'password' => Hash::make('konek.space')
-        ]);
+        // User::create([
+        //     'name' => 'Admin Level 3',
+        //     'role_id' => 5,
+        //     'email' => 'agent3@mail.com',
+        //     'email_verified_at' => now(),
+        //     'phone_number' => '082230634412',
+        //     'password' => Hash::make('konek.space')
+        // ]);
     }
 }
