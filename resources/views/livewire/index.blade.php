@@ -32,21 +32,21 @@
     </section>
     <!--/Section-->
 
-    <section class="sptb bg-white" id="why">
+    <section class="sptb bg-putih" id="why">
         <div class="container">
             <div class="section-title center-block text-center">
-                <h2>MENGAPA INVESTASI PROPERTI SYARIAH ???</h2>
+                <h2>MENGAPA INVESTASI PROPERTI SYARIAH?</h2>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="">
-                        <div class="mb-lg-0 mb-4">
+                        <div class="mb-lg-0 mb-4">  
                             <div class="service-card text-center">
                                 <div class="bg-white icon-bg box-shadow icon-service  about">
                                     <img src="{{url('/assets/images/products/about/halal.png')}}" alt="img">
                                 </div>
                                 <div class="servic-data mt-3">
-                                    <h4 class="font-weight-semibold mb-2">Halal</h4>
+                                    <h4 class="font-weight-semibold mb-2 text-primary">Halal</h4>
                                     <p class="text-muted mb-0">Investasi yang halal dan sesuai Akad Syariah</p>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                     <img src="{{url('/assets/images/products/about/invest.png')}}" alt="img">
                                 </div>
                                 <div class="servic-data mt-3">
-                                    <h4 class="font-weight-semibold mb-2">Kendali Investor</h4>
+                                    <h4 class="font-weight-semibold mb-2 text-primary">Kendali Investor</h4>
                                     <p class="text-muted mb-0">Kendali Investasi mutlak di tangan Investor</p>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                                     <img src="{{url('/assets/images/products/about/inflasi.png')}}" alt="img">
                                 </div>
                                 <div class="servic-data mt-3">
-                                    <h4 class="font-weight-semibold mb-2">Penangkal Inflasi</h4>
+                                    <h4 class="font-weight-semibold mb-2 text-primary">Penangkal Inflasi</h4>
                                     <p class="text-muted mb-0">Investasi Properti sebagai penangkal terjadinya Inflasi</p>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                     <img src="{{url('/assets/images/products/about/aman.png')}}" alt="img">
                                 </div>
                                 <div class="servic-data mt-3">
-                                    <h4 class="font-weight-semibold mb-2">Aman</h4>
+                                    <h4 class="font-weight-semibold mb-2 text-primary">Aman</h4>
                                     <p class="text-muted mb-0">Aman, karena berupa aset yang bersifat tidak bergerak</p>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                                     <img src="{{url('/assets/images/products/about/profit.png')}}" alt="img">
                                 </div>
                                 <div class="servic-data mt-3">
-                                    <h4 class="font-weight-semibold mb-2">Menguntungkan</h4>
+                                    <h4 class="font-weight-semibold mb-2 text-primary">Menguntungkan</h4>
                                     <p class="text-muted mb-0">Mendapatkan keuntungan Capital Gain yang pasti naik setiap tahunnya</p>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@
                                     <img src="{{url('/assets/images/products/about/hasil.png')}}" alt="img">
                                 </div>
                                 <div class="servic-data mt-3">
-                                    <h4 class="font-weight-semibold mb-2">Penghasilan</h4>
+                                    <h4 class="font-weight-semibold mb-2 text-primary">Penghasilan</h4>
                                     <p class="text-muted mb-0">Properti produktif juga menghasilkan Passive Income</p>
                                 </div>
                             </div>
@@ -172,7 +172,7 @@
     <!--/Section-->
 
     <!--Section-->
-    <section class="sptb bg-white" id="about">
+    <section class="sptb bg-putih" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -250,7 +250,7 @@
     <!--/Section-->
 
     <!--Section-->
-    <section class="sptb bg-white" id="product">
+    <section class="sptb bg-putih" id="product">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Produk Lainnya</h2>
@@ -310,7 +310,7 @@
                 <div class="container">
                     <div class="row d-flex">
                         <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center ">
-                            Copyright © 2020 <a href="#" class="fs-14 text-primary">Investasi Prima</a> All rights reserved.
+                            Copyright © 2020 Investasi Prima All rights reserved.
                         </div>
                     </div>
                 </div>
