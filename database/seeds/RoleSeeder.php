@@ -20,17 +20,10 @@ class RoleSeeder extends Seeder
             'name' => 'Member',
             'commission' => 0
         ]);
+        
         Role::create([
-            'name' => 'Agent 1',
-            'commission' => 1
-        ]);
-        Role::create([
-            'name' => 'Agent 2',
-            'commission' => 1.5
-        ]);
-        Role::create([
-            'name' => 'Agent 3',
-            'commission' => 2
+            'name' => 'Agent',
+            'commission' => 0.5
         ]);
     }
 }
