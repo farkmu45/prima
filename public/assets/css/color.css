@@ -1234,7 +1234,7 @@ a:hover {
 }
 @media (min-width:992px) {
 	.sticky-wrapper.is-sticky .horizontal-main:after {
-		background: #ed5151;
+		background: #ffffff;
 	}
 	.sticky-wrapper.is-sticky .horizontalMenu>.horizontalMenu-list>li>a.active {
 		background-color: #ed5151;
