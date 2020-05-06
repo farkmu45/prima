@@ -24,20 +24,41 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
 
     Route::get('/invoice/{invoice:code}', function (\App\UserOrder $invoice) {
         return view('invoice', ['invoice' => $invoice]);
-    });
+    })->middleware('password.confirm');
 
 
     Route::get('/member/dashboard', function () {
         return view('member-area');
-    });
+    })->middleware('password.confirm');
+
     Route::get('/member/order', function () {
         return view('order');
-    });
+    })->middleware('password.confirm');
+
     Route::get('/member/profile', function () {
         return view('profile');
-    });
+    })->middleware('password.confirm');
 
     Route::put('/member/profile', function () {
+
+        // request()->validate([
+        //     'name' => 'string|required|max:60',
+        //     'id_number' => 'numeric|min:16|max:16',
+        //     'place_of_birth' => 'max:60|alpha',
+        //     'date_of_birth' => 'date',
+        //     'phone_number' => 'numeric|required',
+        //     'gender' => 'in:L,P',
+        //     'address' => 'string|max:100',
+        //     'village' => 'string|max:100',
+        //     'sub_district' => 'string|max:100',
+        //     'city' => 'string|max:100',
+        //     'province' => 'string|max:100',
+        //     'bank_name' => 'alpha|max:100',
+        //     'account_number' => 'numeric|max:120',
+        //     'account_name' => 'string',
+        //     'photo' => ''
+        // ]);
+
         $user = User::find(auth()->user()->id);
 
         $photo = $user->photo;
@@ -49,7 +70,9 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
             Storage::delete($user->id_photo);
             $id_photo = request()->file('id_photo')->store('userImages');
         }
+
         $user->update(request()->all());
+
         $user->update(['id_photo' => $id_photo, 'photo' => $photo]);
 
 

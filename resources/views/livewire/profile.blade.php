@@ -35,8 +35,8 @@
                             <div class="row">
                                 <div class="col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label">Nama Lenkap</label>
-                                    <input type="text" class="form-control" name="name" value="{{auth()->user()->name}}">
+                                        <label class="form-label">Nama Lengkap</label>
+                                        <input type="text" class="form-control" name="name" value="{{auth()->user()->name}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-6">

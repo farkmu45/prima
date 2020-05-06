@@ -174,7 +174,7 @@
                                                 <label class="form-label" for="exampleInputEmail1">Second Floor</label>
                                                 <input type="file" name="second_floor"/>
                                                 @error('second_floor')
-                                            <p style="color: red">{{$message}}</p>
+                                                    <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>

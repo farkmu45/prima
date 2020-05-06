@@ -132,44 +132,36 @@
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="exampleInputEmail1">Photo</label>
-                                                <input type="file" class="dropify @error('photo') is-invalid @enderror" name="photo" data-height="180" />
+                                                <input type="file" name="photo" />
                                                 @error('photo')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                                    <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="exampleInputEmail1">Front View</label>
-                                                <input type="file" class="dropify @error('front_view') is-invalid @enderror" name="front_view" data-height="180" />
+                                                <input type="file" name="front_view" />
                                                 @error('front_view')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                                    <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="exampleInputEmail1">First Floor</label>
-                                                <input type="file" class="dropify @error('first_floor') is-invalid @enderror" name="first_floor" data-height="180" />
+                                                <input type="file" name="first_floor" />
                                                 @error('first_floor')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                                    <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="exampleInputEmail1">Second Floor</label>
-                                                <input type="file" class="dropify @error('second_floor') is-invalid @enderror" name="second_floor" data-height="180" />
+                                                <input type="file" name="second_floor"/>
                                                 @error('second_floor')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                                    <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
