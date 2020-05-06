@@ -68,8 +68,10 @@
                                         </label>
                                     </div>
                                     <div class="form-footer mt-2">
-                                        <!-- <a href="index.html" class="btn btn-primary btn-block">Login</a> -->
                                         <button class="btn btn-primary btn-block">Login</a>
+                                    </div>
+                                    <div class="text-center mt-3 text-dark">
+                                        Don't have account? <a href="/register">Register</a>
                                     </div>
                                 </form>
                             </div>
