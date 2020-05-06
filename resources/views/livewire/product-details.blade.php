@@ -135,7 +135,7 @@
                         </div>
                         <div class="card-footer bg-white details-tab">
                             <div class="icons">
-                            <a href="/product/{{$product->id}}/pricing" class="btn btn-secondary icons"><i class="fas fa-money-check-alt"></i> Book Now</a>
+                            <a href="/product/{{$product->id}}/pricing" class="btn btn-info icons"><i class="fas fa-money-check-alt"></i> Book Now</a>
                             </div>
                         </div>
                     </div>
