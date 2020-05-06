@@ -33,15 +33,17 @@
 											<thead>
 												<tr>
 													<th>No.</th>
-													<th>Name</th>
+													<th>Nama</th>
 													<th>ITJ</th>
-													<th>Installment</th>
-													<th>Installment Amount</th>
-													<th>Down Payment</th>
-													<th>Repayment</th>
-													<th>Product Name</th>
+													<th>Cicilan</th>
+													<th>Jumlah Angsuran</th>
+													<th>Uang Muka</th>
+													<th>Pelunasan</th>
+													<th>Harga</th>
+													<th>Nama Produk</th>
 													<th>Unit</th>
-													<th>Type</th>
+													<th>Tipe</th>
+													<th>Aksi</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -54,9 +56,14 @@
 													<td>{{$payment->installment_amount ? $payment->installment_amount : 0}}</td>
 													<td>{{'Rp. '.number_format($payment->down_payment,0,',','.')}}</td>
                                                     <td>{{$payment->repayment ? 'Rp. '.number_format($payment->repayment,0,',','.') : 0}}</td>
+                                                    <td>{{'Rp. '.number_format($payment->price,0,',','.')}}</td>
                                                     <td>{{$payment->products->name}}</td>
                                                     <td>{{$payment->products->unit}}</td>
                                                     <td>{{$payment->products->type}}</td>
+                                                    <td>
+													<a class="btn btn-warning" href="/admin/payments/{{$payment->id}}/edit">Edit</a>
+														<button class="btn btn-danger" wire:click="delete({{$payment->id}})">Delete</button>
+													</td>
 												</tr>
 												@endforeach
 											</tbody>
@@ -73,9 +80,7 @@
 				<div class="container">
 					<div class="row align-items-center flex-row-reverse">
 						<div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
-							Copyright © 2019 <a href="#">Reallist</a>. Designed by <a href="#">Spruko</a> All
-							rights
-							reserved.
+							Copyright © 2020 <a href="#" class="fs-14 text-primary">Investasi Prima</a>. Support by <a href="#" class="fs-14 text-primary">PrimaITech</a> All rights reserved.
 						</div>
 					</div>
 				</div>

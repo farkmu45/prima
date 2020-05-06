@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<!-- Title -->
-		<title>Invoice</title>
+		<title>Investasi Prima - Invoice</title>
 
 		<!-- Bootstrap Css -->
 		<link href="{{url('/assets/plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css')}}" rel="stylesheet" />

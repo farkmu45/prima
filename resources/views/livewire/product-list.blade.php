@@ -82,9 +82,7 @@
 				<div class="container">
 					<div class="row align-items-center flex-row-reverse">
 						<div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
-							Copyright © 2019 <a href="#">Reallist</a>. Designed by <a href="#">Spruko</a> All
-							rights
-							reserved.
+							Copyright © 2020 <a href="#" class="fs-14 text-primary">Investasi Prima</a>. Support by <a href="#" class="fs-14 text-primary">PrimaITech</a> All rights reserved.
 						</div>
 					</div>
 				</div>

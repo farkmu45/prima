@@ -26,9 +26,23 @@ class MemberList extends Component
         return redirect()->to('/admin/members');
     }
 
+    public function activate($id)
+    {
+        $user = User::where('id', $id)->where('role_id', 2);
+        $user->restore();
+        return redirect('/admin/members');
+    }
+
+    public function delete($id)
+    {
+        $user = User::where('id', $id)->where('role_id',2);
+        $user->delete();
+        return redirect('/admin/members');
+    }
+
     public function render()
     {
 
-        return view('livewire.member-list', ['members' => User::where('role_id', 2)->get(), 'roles' => Role::all()]);
+        return view('livewire.member-list', ['members' => User::where('role_id', 2)->withTrashed()->get(), 'roles' => Role::all()]);
     }
 }

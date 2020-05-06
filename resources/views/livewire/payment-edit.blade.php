@@ -26,7 +26,7 @@
                                 <h3 class="card-title">Form Payment</h3>
                             </div>
                             <div class="card-body">
-                                <form method="post" wire:submit.prevent="create">
+                                <form method="post" wire:submit.prevent="edit">
                                     @csrf
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
@@ -98,7 +98,7 @@
                                             </span>
                                             @enderror
                                         </div>
-                                    <button type="submit" class="btn btn-primary ">Add Product</button>
+                                    <button type="submit" class="btn btn-primary ">Update</button>
                                 </form>
                             </div>
                         </div>
@@ -130,19 +130,18 @@
 <script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
 <script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
 
-<!--JQuery Sparkline Js-->
-<script src="{{url('/assets/js/vendors/jquery.sparkline.min.js')}}" defer></script>
 
-<!-- Circle Progress Js-->
-<script src="{{url('/assets/js/vendors/circle-progress.min.js')}}" defer></script>
 
 <script src="{{url('/assets/plugins/datatable/jquery.dataTables.min.js')}}" defer></script>
 <script src="{{url('/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}" defer></script>
 <script src="{{url('/assets/js/datatable.js')}}" defer></script>
 
+<!--Counters -->
+<script src="{{url('/assets/plugins/counters/counterup.min.js')}}" defer></script>
+<script src="{{url('/assets/plugins/counters/waypoints.min.js')}}" defer></script>
+
 <!-- Fullside-menu Js-->
 <script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
-
 
 <!-- Custom scroll bar Js-->
 <script src="{{url('/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js')}}" defer></script>

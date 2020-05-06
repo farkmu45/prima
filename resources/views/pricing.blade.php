@@ -14,7 +14,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
 <!-- Title -->
-<title>Reallist- Bootstrap Responsive Real estate Classifieds, Dealer, Rentel, Builder and Agent Multipurpose HTML Template</title>
+<title>Investasi Prima - Pricing</title>
 
 <!-- Bootstrap Css -->
 <link href="{{url('/assets/plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css')}}" rel="stylesheet" />

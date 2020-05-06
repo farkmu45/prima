@@ -2,27 +2,36 @@
 
 namespace App\Http\Livewire;
 
-use App\Product;
+use App\Payment;
 use Livewire\Component;
 
-class PaymentAdd extends Component
+class PaymentEdit extends Component
 {
 
-    public $product;
-    public $name;
-    public $installment;
-    public $itj;
-    public $installment_amount;
-    public $down_payment;
-    public $price;
-    public $repayment;
+    public $payment_id = null;
+    public $product = null;
+    public $name = null;
+    public $installment = null;
+    public $itj = null;
+    public $installment_amount = null;
+    public $down_payment = null;
+    public $price = null;
+    public $repayment = null;
 
-    public function mount(Product $product)
+    public function mount(Payment $payment)
     {
-        $this->product = $product;
+        $this->payment_id = $payment->id;
+        $this->product = $payment->product;
+        $this->name = $payment->name;
+        $this->installment = $payment->installment;
+        $this->itj = $payment->itj;
+        $this->installment_amount = $payment->installment_amount;
+        $this->down_payment = $payment->down_payment;
+        $this->price = $payment->price;
+        $this->repayment = $payment->repayment;
     }
 
-    public function create()
+    public function edit()
     {
         $data = $this->validate([
             'name' => 'string|required',
@@ -52,15 +61,17 @@ class PaymentAdd extends Component
         if ($data['repayment'] == '') {
             $data['repayment'] = null;
         }
-        
-        $this->product->addPayment($data);
 
-        return redirect()->to('/admin/products/'.$this->product->id.'/payments');
+        $payment = Payment::where('id', $this->payment_id);
+        $payment->update($data);
+
+        return redirect()->to('/admin/payments');
     }
+
 
 
     public function render()
     {
-        return view('livewire.payment-add');
+        return view('livewire.payment-edit');
     }
 }

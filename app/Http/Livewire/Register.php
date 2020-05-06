@@ -20,7 +20,7 @@ class Register extends Component
         $this->validateOnly($field, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone_number' => ['required'],
+            'phone_number' => ['required', 'unique:users', 'numeric'],
             'password' => ['required', 'string', 'min:8'],
         ]);
     }

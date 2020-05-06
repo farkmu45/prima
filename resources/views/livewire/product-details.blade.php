@@ -7,20 +7,6 @@
         </div>
     </div>
     <!-- /Horizontal-menu -->
-
-    <!--BreadCrumb-->
-    <div class="bg-white border-bottom">
-        <div class="container">
-            <div class="page-header">
-                <h4 class="page-title">RealEstate</h4>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Categories</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">RealEstate</li>
-                </ol>
-            </div>
-        </div>
-    </div>
     <!--/BreadCrumb-->
 
     <!--Section-->
@@ -31,7 +17,7 @@
 
                     <!--Classified Description-->
                     <div class="card overflow-hidden">
-                        <div class="ribbon ribbon-top-right text-danger"><span class="bg-danger">Offer</span></div>
+                        <div class="ribbon ribbon-top-right text-danger"><span class="bg-danger">Promo</span></div>
                         <div class="card-body">
                             <div class="product-slider">
                                 <div id="carousel" class="carousel slide" data-ride="carousel">
@@ -99,32 +85,32 @@
                                 </div>
                             </div>
                             <div class="tab-pane" id="tab-4">
-                                <iframe width="100%" height="450px" src="https://www.youtube.com/embed/b1eU1FBdGTc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="100%" height="450px" src="{{$product->room_video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div class="tab-pane" id="tab-5">
-                                <iframe width="100%" height="450px" src="https://www.youtube.com/embed/b1eU1FBdGTc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="100%" height="450px" src="{{$product->room_video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div class="tab-pane" id="tab-6">
                                 <h3 class="card-title mb-3 font-weight-semibold">Description</h3>
                                 <div class="mb-4">
                                 <p>{{$product->description}}</p>
                                 </div>
-                                <h4 class="mb-4">Specifications</h4>
+                                <h4 class="mb-4">Spesifikasi</h4>
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12">
                                         <div class="table-responsive">
                                             <table class="table table-bordered border-top mb-0">
                                                 <tbody>
                                                     <tr>
-                                                        <td>Type</td>
+                                                        <td>Tipe</td>
                                                     <td><span class="font-weight-bold">{{$product->type}}</span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Bedrooms </td>
+                                                        <td>Kamar Tidur</td>
                                                     <td><span class="font-weight-bold">{{$product->bedroom}}</span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Bathroom</td>
+                                                        <td>Kamar Mandi</td>
                                                         <td><span class="font-weight-bold">{{$product->bathroom}}</span></td>
                                                     </tr>
                                                     <tr>
@@ -141,9 +127,6 @@
                         <div class="pt-4 pb-4 pl-5 pr-5 border-top bg-white">
                             <div class="list-id">
                                 <div class="row">
-                                    <div class="col">
-                                        <a class="mb-0">Classified ID : #8256358</a>
-                                    </div>
                                     <div class="col col-auto">
                                          {{$product->created_at}}
                                     </div>
@@ -170,7 +153,7 @@
                 <div class="container">
                     <div class="row d-flex">
                         <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center ">
-                            Copyright © 2019 <a href="#" class="fs-14 text-primary">Reallist</a>. Designed by <a href="#" class="fs-14 text-primary">Spruko</a> All rights reserved.
+                            Copyright © 2020 <a href="#" class="fs-14 text-primary">Investasi Prima</a>. Support by <a href="#" class="fs-14 text-primary">PrimaITech</a> All rights reserved.
                         </div>
                     </div>
                 </div>

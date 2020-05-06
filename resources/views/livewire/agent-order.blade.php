@@ -78,7 +78,7 @@
 														<form action="/admin/agents/orders/{{$order->id}}" method="post">
 															@csrf
 															@method('PATCH')
-															<select class="form-control" name="orderId" onchange="this.form.submit">
+															<select class="form-control" name="orderId" onchange="this.form.submit()">
 																@if ($order->status == "1")
 																		<option value="1" selected>Pending</option>
 																		<option value="2" >Processing</option>

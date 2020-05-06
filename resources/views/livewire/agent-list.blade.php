@@ -39,6 +39,7 @@
 													<th>Position</th>
 													<th>Referral Code</th>
 													<th>Commission</th>
+													<th>Status</th>
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -53,10 +54,21 @@
 													<td>{{$agent->role->name}}</td>
 													<td>{{$agent->referral_code == null ? 'Empty' : $agent->referral_code }}</td>
 													<td>{{$agent->role->commission}}%</td>
+													@if (!$agent->deleted_at)
+														<td><p class="badge badge-success">Active</p></td>
+													@else
+														<td><p class="badge badge-danger">Deleted</p></td>
+													@endif
+													@if (!$agent->deleted_at)
 													<td>
-														<a href="" class="btn btn-warning">Edit</a> 
-														<button class="btn btn-danger">Delete</button>
+														<button class="btn btn-danger" wire:click="delete({{$agent->id}})">Deactivate</button>
 													</td>
+													@else
+														<td>
+														<button class="btn btn-success" wire:click="activate({{$agent->id}})">Activate</button>
+													</td>
+													@endif
+													
 												</tr>
 												@endforeach
 											</tbody>

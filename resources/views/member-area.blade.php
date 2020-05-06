@@ -8,7 +8,7 @@
 
 
 		<!-- Title -->
-		<title>Dashboard</title>
+		<title>Investasi Prima - Dashboard</title>
 
 		<!-- Bootstrap Css -->
 		<link href="{{url('/assets/plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css')}}" rel="stylesheet" />

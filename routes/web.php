@@ -17,8 +17,7 @@ Route::get('/product/{product}', function (\App\Product $product) {
 });
 
 
-Route::group(['middleware' => ['verified', 'isNotAdmin']], function ()
-{
+Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
     Route::get('/product/{product}/pricing', function (\App\Product $product) {
         return view('pricing', ['product' => $product]);
     });
@@ -38,23 +37,22 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function ()
         return view('profile');
     });
 
-    Route::put('/member/profile', function ()
-    {
+    Route::put('/member/profile', function () {
         $user = User::find(auth()->user()->id);
-        
+
         $photo = $user->photo;
         $id_photo = $user->id_photo;
         if (request()->photo) {
             Storage::delete($user->photo);
             $photo = request()->file('photo')->store('userImages');
-        } else if(request()->id_photo) {
+        } else if (request()->id_photo) {
             Storage::delete($user->id_photo);
             $id_photo = request()->file('id_photo')->store('userImages');
         }
         $user->update(request()->all());
         $user->update(['id_photo' => $id_photo, 'photo' => $photo]);
 
-        
+
 
         return redirect('/member/profile');
     });
@@ -116,28 +114,30 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
                 'show_status' => ['in:0,1']
             ]);
 
+
+            Product::where('show_status', '1')->update(['show_status' => '0']);
             if (request()->photo) {
                 Storage::delete($product->photo);
                 $data['photo'] = request()->file('photo')->store('productImages');
-            } 
+            }
 
             if (request()->front_view) {
                 Storage::delete($product->front_view);
                 $data['front_view'] = request()->file('front_view')->store('productImages');
-            } 
+            }
 
             if (request()->first_floor) {
                 Storage::delete($product->first_floor);
                 $data['first_floor'] = request()->file('first_floor')->store('productImages');
-            } 
+            }
 
             if (request()->second_floor) {
                 Storage::delete($product->second_floor);
                 $data['second_floor'] = request()->file('second_floor')->store('productImages');
             }
 
-        $product->update($data);            
-        return redirect('/admin/products');
+            $product->update($data);
+            return redirect('/admin/products');
         });
 
         Route::get('/products/add', function () {
@@ -190,8 +190,7 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             return view('admin.member-order');
         });
 
-        Route::patch('/members/orders/{order}', function (UserOrder $order)
-        {
+        Route::patch('/members/orders/{order}', function (UserOrder $order) {
             $order->update([
                 'status' => strval(request()->orderId)
             ]);
@@ -202,6 +201,12 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
         Route::get('/payments', function () {
             return view('admin.payment-list');
         });
+
+        Route::get('/payments/{payment}/edit', function (\App\Payment $payment) {
+            return view('admin.payment-edit', ['payment' => $payment]);
+        });
+
+
         Route::get('/products/{product}/payments/add', function (\App\Product $product) {
             return view('admin.payment-add', ['product' => $product]);
         });
@@ -213,8 +218,7 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
 });
 
 
-Route::get('/r/{user:referral_code}', function (\App\User $user)
-{
+Route::get('/r/{user:referral_code}', function (\App\User $user) {
     abort_if($user->role_id <= 2, 404);
     return view('auth.register')->withUser($user);
 })->middleware('guest');

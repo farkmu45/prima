@@ -191,8 +191,14 @@
                                     <div class="form-group">
                                         <label class="col-form-label">Show Status</label>
                                         <select wire:model="show_status" class="form-control" name="show_status" id="">
-                                            <option value="0" {{$show_status == "0" ? 'selected' : ''}}>False</option>
-                                            <option value="1" {{$show_status == "1" ? 'selected' : ''}}>True</option>
+
+                                            @if ($show_status == "0")     
+                                            <option value="0" selected>False</option>
+                                            <option value="1" >True</option>
+                                            @else
+                                            <option value="0" >False</option>
+                                            <option value="1" selected>True</option>
+                                            @endif
                                         </select>
 
                                         {{-- <textarea class="form-control @error('description') is-invalid @enderror" wire:model="description" name="description" rows="4" placeholder="Product Description"></textarea> --}}

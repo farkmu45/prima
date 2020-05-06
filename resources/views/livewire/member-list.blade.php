@@ -39,6 +39,7 @@
 													<th>Position</th>
 													<th>Referral Code</th>
 													<th>Commission</th>
+													<th>Status</th>
 													<th>Edit Position</th>
 													<th>Action</th>
 												</tr>
@@ -54,6 +55,11 @@
 													<td>{{$member->role->name}}</td>
 													<td>{{$member->referral_code == null ? '' : $member->referral_code }}</td>
 													<td>{{$member->role->commission}}%</td>
+													@if (!$member->deleted_at)
+													<td><p class="badge badge-success">Active</p></td>
+													@else
+													<td><p class="badge badge-danger">Deactivated</p></td>
+													@endif
 													<td>
 													<form action="/admin/members/{{$member->id}}" method="post">
 														@csrf
@@ -66,9 +72,11 @@
 														</select>
 													</form>
 													</td>
-													<td>
-														<button class="btn btn-danger">Delete</button>
-													</td>
+													@if ($member->deleted_at)
+														<td><button class="btn btn-success" wire:click="activate({{$member->id}})">Activate</button></td>
+													@else
+														<td><button class="btn btn-danger" wire:click="delete({{$member->id}})">Deactivate</button></td>
+													@endif
 												</tr>
 												@endforeach
 											</tbody>
