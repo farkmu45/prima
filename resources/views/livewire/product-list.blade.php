@@ -62,10 +62,12 @@
 													<td> <img src="{{url($product->second_floor)}}" class="img-fluid" width="100px" alt="" srcset=""></td>
 													<td>{{url($product->room_video)}}</td>
 													<td>{{url($product->survey_video)}}</td>
-													<td>{{$product->description}}</td>
+													<td>{{ substr($product->description,0,20)}}..</td>
 													<td>{{$product->show_status == 0 ? "False" : "True"}}</td>
-												<td><a href="/admin/products/{{$product->id}}/edit" class="btn btn-warning">Edit</a>
-												</td>
+													<td class="d-flex">
+														<a href="/admin/products/{{$product->id}}/edit" class="btn btn-warning">Edit</a>
+														<button class="btn btn-danger ml-2" wire:click="delete({{$product->id}})">Delete</button>
+													</td>
 												</tr>
 												@endforeach
 											</tbody>
