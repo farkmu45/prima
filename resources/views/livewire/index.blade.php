@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="servic-data mt-3">
                                     <h4 class="font-weight-semibold mb-2 text-primary">Aman</h4>
-                                    <p class="text-muted mb-0">Aman, karena transaksi jual-beli putus, SHM atas nama pembeli</p>
+                                    <p class="text-muted mb-0">Transaksi Jual-Beli, Legalitas Aman & Sertifikat Hak Milik atas nama pembeli </p>
                                 </div>
                             </div>
                         </div>
