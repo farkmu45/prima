@@ -28,58 +28,58 @@
 }
  .btn-primary {
 	color: #fff;
-	background-color: #ed5151  ;
-	border-color: #ed5151  ;
+	background-color: #429039  ;
+	border-color: #429039  ;
 }
  .btn-primary:hover {
 	color: #fff;
-	background-color: #eb4848;
-	border-color: #eb4848;
+	background-color: #429039;
+	border-color: #429039;
 }
  .btn-primary:focus,   .btn-primary.focus {
-	box-shadow: 0 0 0 2px rgb(249, 100, 121,0.5);
+	box-shadow: 0 0 0 2px rgba(100, 249, 125, 0.5);
 }
  .btn-primary.disabled,  .btn-primary:disabled {
 	color: #fff;
-	background-color: #ed5151;
-	border-color: #ed5151;
+	background-color: #429039;
+	border-color: #429039;
 }
  .btn-primary:not(:disabled):not(.disabled):active,   .btn-primary:not(:disabled):not(.disabled).active,  .show>.btn-primary.dropdown-toggle {
 	color: #fff;
-	background-color: #ed5151;
-	border-color: #ed5151;
+	background-color: #429039;
+	border-color: #429039;
 }
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show>.btn-primary.dropdown-toggle:focus {
 	box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.1);
 }
  .btn-outline-primary {
-	color: #ed5151   ;
+	color: #429039   ;
 	background-color: transparent;
 	background-image: none;
-	border-color: #ed5151 !important;
+	border-color: #429039 !important;
 }
  .btn-outline-primary:hover {
 	color: #fff;
-	background-color: #ed5151   ;
-	border-color: #ed5151 !important;
+	background-color: #429039   ;
+	border-color: #429039 !important;
 }
  .btn-outline-primary:focus,   .btn-outline-primary.focus {
 	box-shadow: 0 0 0 2px rgba(5, 117, 230, 0.1);
 }
  .btn-outline-primary.disabled,  .btn-outline-primary:disabled {
-	color: #ed5151   ;
+	color: #429039   ;
 	background-color: transparent;
 }
  .btn-outline-primary:not(:disabled):not(.disabled):active,   .btn-outline-primary:not(:disabled):not(.disabled).active, .show>.btn-outline-primary.dropdown-toggle {
 	color: #fff;
-	background-color: #ed5151 ;
-	border-color: #ed5151   ;
+	background-color: #429039 ;
+	border-color: #429039   ;
 }
  .btn-outline-primary:not(:disabled):not(.disabled):active:focus,   .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .show>.btn-outline-primary.dropdown-toggle:focus {
 	box-shadow: 0 0 0 2px rgba(5, 117, 230, 0.1);
 }
  .btn-link {
-	color: #ed5151;
+	color: #429039;
 }
  .alert-primary {
 	color: #fcfdff;

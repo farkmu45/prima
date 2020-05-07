@@ -18657,7 +18657,7 @@ footer .border-top {
 	z-index: 1;
 	left: 0;
 	right: 0;
-	background: linear-gradient(-225deg, rgb(74, 61, 184, 0.8) 48%, rgba(50, 228, 179, 0.8) 100%);
+	background:linear-gradient(-225deg, rgb(141, 179, 82) 48%, rgba(50, 228, 179, 0.8) 100%) !important;
 }
 .error-image {
 	background: url(../images/photos/error.jpg);
@@ -18674,7 +18674,7 @@ footer .border-top {
 	z-index: 1;
 	left: 0;
 	right: 0;
-	background: linear-gradient(-225deg, rgb(74, 61, 184, 0.8) 48%, rgba(50, 228, 179, 0.8) 100%);
+	background:linear-gradient(-225deg, rgb(141, 179, 82) 48%, rgba(50, 228, 179, 0.8) 100%) !important;
 }
 .construction {
 	z-index: 1;
@@ -39075,7 +39075,7 @@ footer .border-top {
 	z-index: 1;
 	left: 0;
 	right: 0;
-	background: linear-gradient(-225deg, rgb(74, 61, 184, 0.8) 48%, rgba(50, 228, 179, 0.8) 100%);
+	background:linear-gradient(-225deg, rgb(141, 179, 82) 48%, rgba(50, 228, 179, 0.8) 100%) !important;
 }
 .error-image {
 	background: url(../images/photos/error.jpg);
@@ -39092,7 +39092,7 @@ footer .border-top {
 	z-index: 1;
 	left: 0;
 	right: 0;
-	background: linear-gradient(-225deg, rgb(74, 61, 184, 0.8) 48%, rgba(50, 228, 179, 0.8) 100%);
+	background:linear-gradient(-225deg, rgb(141, 179, 82) 48%, rgba(50, 228, 179, 0.8) 100%) !important;
 }
 .construction {
 	z-index: 1;

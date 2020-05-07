@@ -29,7 +29,7 @@
 @endsection
 
 @section('content')
-    <div class="page construction-image"">
+    <div class="page construction-image">
         <div class="page-content z-index-10">
             <div class="container">
                 <div class="row">
