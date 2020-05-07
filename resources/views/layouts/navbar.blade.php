@@ -15,10 +15,16 @@
                   <li aria-haspopup="true"><a href="#special">Penawaran Spesial</a></li>
                   <li aria-haspopup="true"><a href="#product">Produk</a></li>
 
-                  @auth    
+                  @auth
+                  @if (auth()->user()->role_id == 1)    
+                  <li aria-haspopup="true">
+                      <span><a class="btn btn-secondary " href="/admin/dashboard">Dashboard</a></span>
+                  </li>
+                  @else    
                   <li aria-haspopup="true">
                       <span><a class="btn btn-secondary " href="/member/dashboard">Dashboard</a></span>
                   </li>
+                  @endif    
                   @endauth
 
                   @guest    

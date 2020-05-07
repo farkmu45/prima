@@ -41,9 +41,11 @@
                             <h5 class=" mb-1 font-weight-reguler">Disclaimer :</h5>
                             <h5 class=" mb-0 font-weight-light">Portal ini merupakan alat bantu / tools pemasaran / penjualan obyek real estate / perumahan untuk mempermudah para marketing untuk melakukan pemasaran property via online . Dan bukan portal penggalangan dana.</h5>
                         </div>
+                        @guest     
                         <div class="col-lg-2 col-md-6 col-sm-12 ">
-                            <a href="#" class="btn btn-primary btn-lg mb-sm-0">Join Now</a>
+                            <a href="register" class="btn btn-primary btn-lg mb-sm-0">Join Now</a>
                         </div>
+                        @endguest
                     </div>
                 </div>
             </div>

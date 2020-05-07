@@ -86,7 +86,7 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
 Auth::routes(['verify' => true]);
 
 
-Route::group(['middleware' => ['verified', 'isAdmin']], function () {
+Route::group(['middleware' => ['isAdmin', 'verified']], function () {
     Route::group(['prefix' => '/admin'], function () {
 
         Route::get('/dashboard', function () {
