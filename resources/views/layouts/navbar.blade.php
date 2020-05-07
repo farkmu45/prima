@@ -20,9 +20,16 @@
                   <li aria-haspopup="true">
                       <span><a class="btn btn-secondary " href="/admin/dashboard">Dashboard</a></span>
                   </li>
+
+                  <li aria-haspopup="true">
+                      <span><button class="btn btn-danger ml-2">Logout</button></span>
+                  </li>
                   @else    
                   <li aria-haspopup="true">
                       <span><a class="btn btn-secondary " href="/member/dashboard">Dashboard</a></span>
+                  </li>
+                  <li aria-haspopup="true">
+                      <span><button class="btn btn-danger ml-2" onclick="document.getElementById('logoutform').submit()">Logout</button></span>
                   </li>
                   @endif    
                   @endauth
@@ -37,3 +44,7 @@
           <!--Nav-->
       </div>
   </div>
+
+  <form id="logoutform" hidden action="/logout" method="post">
+    @csrf
+ </form>
