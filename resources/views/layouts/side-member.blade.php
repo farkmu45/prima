@@ -20,7 +20,7 @@
             <a href="/member/order" class="d-flex  border-bottom">
                 <span class="icon1 mr-3"><i class="icon icon-basket"></i></span> Orders
             </a>
-            <a href="/member/order" class="d-flex  border-bottom">
+            <a href="/member/referral" class="d-flex  border-bottom">
                 <span class="icon1 mr-3"><i class="icon icon-basket"></i></span> Referrals
             </a>
             <a href="/member/profile" class="d-flex border-bottom">

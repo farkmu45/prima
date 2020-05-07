@@ -8,7 +8,7 @@ class AgentRequest extends Model
 {
     protected $table = 'agent_requests';
 
-protected $guarded = ['id'];
+    protected $guarded = ['id'];
 
     public function user()
     {

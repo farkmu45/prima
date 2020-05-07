@@ -43,8 +43,11 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
         return view('profile');
     })->middleware('password.confirm');
 
-    Route::put('/member/profile', function () {
+    Route::get('/member/referral', function () {
+        return view('agent-referral');
+    })->middleware('password.confirm');
 
+    Route::put('/member/profile', function () {
         $data = request()->validate([
             'name' => 'string|required|max:60',
             'id_number' => 'numeric|min:16|max:16',
@@ -86,7 +89,7 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
 Auth::routes(['verify' => true]);
 
 
-Route::group(['middleware' => ['isAdmin', 'verified']], function () {
+Route::group(['middleware' => ['verified', 'isAdmin']], function () {
     Route::group(['prefix' => '/admin'], function () {
 
         Route::get('/dashboard', function () {
@@ -238,12 +241,17 @@ Route::group(['middleware' => ['isAdmin', 'verified']], function () {
         Route::get('/referrals', function () {
             return view('admin.referral-list');
         });
+
+        Route::get('/requests', function ()
+        {
+            return view('admin.agent-request');
+        });
     });
 });
 
 
 Route::get('/r/{user:referral_code}', function (\App\User $user) {
     abort_if($user->role_id <= 2, 404);
-    Cookie::queue('referral',$user, 1440);
+    Cookie::queue('referral', $user, 1440);
     return redirect('/');
 })->middleware('guest');
