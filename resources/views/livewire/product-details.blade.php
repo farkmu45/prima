@@ -93,7 +93,7 @@
                             <div class="tab-pane" id="tab-6">
                                 <h3 class="card-title mb-3 font-weight-semibold">Description</h3>
                                 <div class="mb-4">
-                                <p>{{$product->description}}</p>
+                                    <p>{{$product->description}}</p>
                                 </div>
                                 <h4 class="mb-4">Spesifikasi</h4>
                                 <div class="row">
@@ -103,11 +103,11 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>Tipe</td>
-                                                    <td><span class="font-weight-bold">{{$product->type}}</span></td>
+                                                        <td><span class="font-weight-bold">{{$product->type}}</span></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Kamar Tidur</td>
-                                                    <td><span class="font-weight-bold">{{$product->bedroom}}</span></td>
+                                                        <td><span class="font-weight-bold">{{$product->bedroom}}</span></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Kamar Mandi</td>
@@ -128,14 +128,14 @@
                             <div class="list-id">
                                 <div class="row">
                                     <div class="col col-auto">
-                                         {{$product->created_at}}
+                                        {{$product->created_at}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer bg-white details-tab">
                             <div class="icons">
-                            <a href="/product/{{$product->id}}/pricing" class="btn btn-info icons"><i class="fas fa-money-check-alt"></i> Book Now</a>
+                                <a href="/product/{{$product->id}}/pricing" class="btn btn-info icons"><i class="fas fa-money-check-alt"></i> Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -149,11 +149,22 @@
     <!--Footer Section-->
     <section>
         <footer class="bg-dark-purple text-white">
+            <div class="footer-main">
+                <div class="container">
+                    <div class="row text-center justify-content-center">
+                        <div class="col-lg-8 col-md-12">
+                            <h5>Disclaimer</h5>
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                            <p>Portal ini merupakan alat bantu / tools pemasaran / penjualan obyek real estate / perumahan untuk mempermudah para marketing untuk melakukan pemasaran property via online . Dan bukan portal penggalangan dana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="bg-dark-purple text-white p-0">
                 <div class="container">
                     <div class="row d-flex">
                         <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center ">
-                        Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
+                            Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
                         </div>
                     </div>
                 </div>

@@ -29,7 +29,7 @@
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
-									<table id="example2" class="hover table-bordered border-top-0 border-bottom-0">
+									<table id="example2" class="table table-bordered table-hover text-nowrap">
 										<thead>
 											<tr>
 												<th>No.</th>

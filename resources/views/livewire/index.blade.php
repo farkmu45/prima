@@ -29,10 +29,10 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-10 col-md-6 col-sm-12 d-catmb mb-4 mb-lg-0">
-                            <h5 class=" mb-1 font-weight-reguler">Disclaimer :</h5>
-                            <h5 class=" mb-0 font-weight-light">Portal ini merupakan alat bantu / tools pemasaran / penjualan obyek real estate / perumahan untuk mempermudah para marketing untuk melakukan pemasaran property via online . Dan bukan portal penggalangan dana.</h5>
+                            <h5 class=" mb-1 font-weight-reguler">Ingin mendapat penghasilan?</h5>
+                            <h5 class=" mb-0 font-weight-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quaerat praesentium eveniet consequatur possimus suscipit minus nostrum. Aliquam corrupti tempore velit quo veritatis sint alias veniam magnam, officia eligendi maxime!</h5>
                         </div>
-                        @guest     
+                        @guest
                         <div class="col-lg-2 col-md-6 col-sm-12 ">
                             <a href="register" class="btn btn-primary btn-lg mb-sm-0">Join Now</a>
                         </div>
@@ -262,7 +262,7 @@
     <!--/Section-->
 
     <!--Section-->
-    <section class="sptb bg-putih" id="product">
+    <!-- <section class="sptb bg-putih" id="product">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Produk Lainnya</h2>
@@ -312,12 +312,23 @@
 
             </div>
         </div>
-    </section>
+    </section> -->
     <!--/Section-->
 
     <!--Footer Section-->
     <section>
         <footer class="bg-dark-purple text-white">
+            <div class="footer-main">
+                <div class="container">
+                    <div class="row text-center justify-content-center">
+                        <div class="col-lg-8 col-md-12">
+                            <h5>Disclaimer</h5>
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                            <p>Portal ini merupakan alat bantu / tools  pemasaran / penjualan obyek real estate / perumahan untuk mempermudah para marketing untuk melakukan pemasaran property via online . Dan  bukan portal penggalangan dana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="bg-dark-purple text-white p-0">
                 <div class="container">
                     <div class="row d-flex">

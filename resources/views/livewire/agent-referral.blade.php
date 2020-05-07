@@ -39,8 +39,9 @@
                                     <form action="" method="post">
                                         <button class="btn btn-primary" type="submit">Kirim Permintaan</button>
                                     </form>
-                                    <div class="table-responsive">
-                                        <table id="example2" class="hover table-bordered border-top-0 border-bottom-0">
+                                    <p class="mt-5"><b>Link referral anda :</b> google.com</p>
+                                    <div class="table-responsive border-top mt-5">
+                                        <table class="table table-bordered table-hover text-nowrap">
                                             <thead>
                                                 <tr>
                                                     <th>No.</th>

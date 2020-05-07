@@ -994,7 +994,7 @@
 	background:#3C5A99;
 }
  .accent-2 {
-    border-top: 2px solid #ed5151;
+    border-top: 2px solid #000000 !important;
 }
  .header-main i {
     color: #ed5151;
