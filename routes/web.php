@@ -3,11 +3,15 @@
 use App\Product;
 use App\User;
 use App\UserOrder;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
 
 Route::get('/', function () {
+    if (Cookie::get('referral')) {
+        return view('index');
+    }
     return view('index');
 });
 
@@ -240,5 +244,6 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
 
 Route::get('/r/{user:referral_code}', function (\App\User $user) {
     abort_if($user->role_id <= 2, 404);
-    return view('auth.register')->withUser($user);
+    Cookie::queue('referral',$user, 1440);
+    return redirect('/');
 })->middleware('guest');

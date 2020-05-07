@@ -7,7 +7,7 @@ use App\Providers\RouteServiceProvider;
 use App\Referral;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Facades\Validator;
@@ -72,7 +72,7 @@ class RegisterController extends Controller
 
         $code = strstr($data['email'], '@', true);
 
-        if (request()->referrer_id) {
+        if (Cookie::get('referral')) {
             $user = User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
@@ -83,7 +83,7 @@ class RegisterController extends Controller
             ]);
 
             Referral::create([
-                'referrer_id' => request()->referrer_id,
+                'referrer_id' => json_decode(Cookie::get('referral'))->id,
                 'user_id' => $user->id
             ]);
 
