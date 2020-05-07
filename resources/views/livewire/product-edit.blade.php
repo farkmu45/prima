@@ -26,7 +26,7 @@
                                 <h3 class="card-title">Form Add Product</h3>
                             </div>
                             <div class="card-body">
-                            <form method="post" enctype="multipart/form-data" action="/admin/products/{{$id}}">
+                                <form method="post" enctype="multipart/form-data" action="/admin/products/{{$id}}">
                                     @csrf
                                     @method('patch')
                                     <div class="form-row">
@@ -138,7 +138,7 @@
                                                 <label class="form-label" for="exampleInputEmail1">Photo</label>
                                                 <input type="file" name="photo" />
                                                 @error('photo')
-                                            <p style="color: red">{{$message}}</p>
+                                                <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
@@ -150,19 +150,19 @@
                                                 <label class="form-label" for="exampleInputEmail1">Front View</label>
                                                 <input type="file" name="front_view" />
                                                 @error('front_view')
-                                                    <p style="color: red">{{$message}}</p>
+                                                <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <div style="width: 60px; height: 60px">
-                                                <img src="{{url($firstFloor)}}" alt="" srcset="" style="width: 100%; height: 100%; object-fit: cover">
-                                            </div>
+                                                    <img src="{{url($firstFloor)}}" alt="" srcset="" style="width: 100%; height: 100%; object-fit: cover">
+                                                </div>
                                                 <label class="form-label" for="exampleInputEmail1">First Floor</label>
                                                 <input type="file" name="first_floor" />
                                                 @error('first_floor')
-                                                    <p style="color: red">{{$message}}</p>
+                                                <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
@@ -172,9 +172,9 @@
                                                     <img src="{{url($secondFloor)}}" alt="" srcset="" style="width: 100%; height: 100%; object-fit: cover">
                                                 </div>
                                                 <label class="form-label" for="exampleInputEmail1">Second Floor</label>
-                                                <input type="file" name="second_floor"/>
+                                                <input type="file" name="second_floor" />
                                                 @error('second_floor')
-                                                    <p style="color: red">{{$message}}</p>
+                                                <p style="color: red">{{$message}}</p>
                                                 @enderror
                                             </div>
                                         </div>
@@ -192,11 +192,11 @@
                                         <label class="col-form-label">Show Status</label>
                                         <select wire:model="show_status" class="form-control" name="show_status" id="">
 
-                                            @if ($show_status == "0")     
+                                            @if ($show_status == "0")
                                             <option value="0" selected>False</option>
-                                            <option value="1" >True</option>
+                                            <option value="1">True</option>
                                             @else
-                                            <option value="0" >False</option>
+                                            <option value="0">False</option>
                                             <option value="1" selected>True</option>
                                             @endif
                                         </select>
@@ -221,9 +221,7 @@
             <div class="container">
                 <div class="row align-items-center flex-row-reverse">
                     <div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
-                        Copyright © 2019 <a href="#">Reallist</a>. Designed by <a href="#">Spruko</a> All
-                        rights
-                        reserved.
+                        Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
                     </div>
                 </div>
             </div>
@@ -233,20 +231,20 @@
     </div>
 </div>
 
-        <script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
-        <script src="{{url('/assets/plugins/fileuploads/js/dropify.js')}}" defer></script>
-        {{-- /home/fark/prima/public --}}
-		<!-- Bootstrap js -->
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
+<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
+<script src="{{url('/assets/plugins/fileuploads/js/dropify.js')}}" defer></script>
+{{-- /home/fark/prima/public --}}
+<!-- Bootstrap js -->
+<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
+<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
 
-		<!-- Fullside-menu Js-->
-		<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
+<!-- Fullside-menu Js-->
+<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
 
-		<!-- Data tables -->
-		<script src="{{url('/assets/plugins/datatable/jquery.dataTables.min.js')}}" defer></script>
-		<script src="{{url('/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}" defer></script>
-		<script src="{{url('/assets/js/datatable.js')}}" defer></script>
+<!-- Data tables -->
+<script src="{{url('/assets/plugins/datatable/jquery.dataTables.min.js')}}" defer></script>
+<script src="{{url('/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}" defer></script>
+<script src="{{url('/assets/js/datatable.js')}}" defer></script>
 
-		<!-- Custom Js-->
-		<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>
+<!-- Custom Js-->
+<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>

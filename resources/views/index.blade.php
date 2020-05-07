@@ -5,6 +5,10 @@
 		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+		<!-- Favicon -->
+		<link rel="icon" href="{{url('/assets/images/brand/favicon.png')}}" type="image/x-icon"/>
+		<link rel="shortcut icon" type="image/x-icon" href="{{url('/assets/images/brand/favicon.png')}}" />
+
 		<!-- Title -->
 		<title>Investasi Prima</title>
 

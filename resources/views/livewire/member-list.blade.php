@@ -56,26 +56,30 @@
 													<td>{{$member->referral_code == null ? '' : $member->referral_code }}</td>
 													<td>{{$member->role->commission}}%</td>
 													@if (!$member->deleted_at)
-													<td><p class="badge badge-success">Active</p></td>
+													<td>
+														<p class="badge badge-success">Active</p>
+													</td>
 													@else
-													<td><p class="badge badge-danger">Deactivated</p></td>
+													<td>
+														<p class="badge badge-danger">Deactivated</p>
+													</td>
 													@endif
 													<td>
-													<form action="/admin/members/{{$member->id}}" method="post">
-														@csrf
-														@method('patch')
-														<select class="form-control" name="role_id" onchange="this.form.submit()">
-															<option value="2" {{$member->role->id == 2 ? 'selected' : ''}}>Member</option>
-															<option value="3" {{$member->role->id == 3 ? 'selected' : ''}}>Agent 1</option>
-															<option value="4" {{$member->role->id == 4 ? 'selected' : ''}}>Agent 2</option>
-															<option value="5" {{$member->role->id == 5 ? 'selected' : ''}}>Agent 3</option>
-														</select>
-													</form>
+														<form action="/admin/members/{{$member->id}}" method="post">
+															@csrf
+															@method('patch')
+															<select class="form-control" name="role_id" onchange="this.form.submit()">
+																<option value="2" {{$member->role->id == 2 ? 'selected' : ''}}>Member</option>
+																<option value="3" {{$member->role->id == 3 ? 'selected' : ''}}>Agent 1</option>
+																<option value="4" {{$member->role->id == 4 ? 'selected' : ''}}>Agent 2</option>
+																<option value="5" {{$member->role->id == 5 ? 'selected' : ''}}>Agent 3</option>
+															</select>
+														</form>
 													</td>
 													@if ($member->deleted_at)
-														<td><button class="btn btn-success" wire:click="activate({{$member->id}})">Activate</button></td>
+													<td><button class="btn btn-success" wire:click="activate({{$member->id}})">Activate</button></td>
 													@else
-														<td><button class="btn btn-danger" wire:click="delete({{$member->id}})">Deactivate</button></td>
+													<td><button class="btn btn-danger" wire:click="delete({{$member->id}})">Deactivate</button></td>
 													@endif
 												</tr>
 												@endforeach
@@ -93,9 +97,7 @@
 				<div class="container">
 					<div class="row align-items-center flex-row-reverse">
 						<div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
-							Copyright © 2019 <a href="#">Reallist</a>. Designed by <a href="#">Spruko</a> All
-							rights
-							reserved.
+							Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
 						</div>
 					</div>
 				</div>
@@ -122,7 +124,7 @@
 							<select class="form-control" name="role">
 								<option selected>Select Role Member</option>
 								@foreach ($roles as $role)
-									<option value="{{$role->id}}">{{$role->name}}</option>
+								<option value="{{$role->id}}">{{$role->name}}</option>
 								@endforeach
 							</select>
 						</div>
@@ -134,20 +136,20 @@
 			</div>
 		</div>
 	</div>
-                
-		<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
 
-		<!-- Bootstrap js -->
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
+	<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
 
-		<!-- Fullside-menu Js-->
-		<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
+	<!-- Bootstrap js -->
+	<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
+	<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
 
-		<!-- Data tables -->
-		<script src="{{url('/assets/plugins/datatable/jquery.dataTables.min.js')}}" defer></script>
-		<script src="{{url('/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}" defer></script>
-		<script src="{{url('/assets/js/datatable.js')}}" defer></script>
+	<!-- Fullside-menu Js-->
+	<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
 
-		<!-- Custom Js-->
-		<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>
+	<!-- Data tables -->
+	<script src="{{url('/assets/plugins/datatable/jquery.dataTables.min.js')}}" defer></script>
+	<script src="{{url('/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}" defer></script>
+	<script src="{{url('/assets/js/datatable.js')}}" defer></script>
+
+	<!-- Custom Js-->
+	<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>

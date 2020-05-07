@@ -55,13 +55,13 @@
 													<td>{{$payment->installment ? 'Rp. '.number_format($payment->installment,0,',','.') : 0}}</td>
 													<td>{{$payment->installment_amount ? $payment->installment_amount : 0}}</td>
 													<td>{{'Rp. '.number_format($payment->down_payment,0,',','.')}}</td>
-                                                    <td>{{$payment->repayment ? 'Rp. '.number_format($payment->repayment,0,',','.') : 0}}</td>
-                                                    <td>{{'Rp. '.number_format($payment->price,0,',','.')}}</td>
-                                                    <td>{{$payment->products->name}}</td>
-                                                    <td>{{$payment->products->unit}}</td>
-                                                    <td>{{$payment->products->type}}</td>
-                                                    <td>
-													<a class="btn btn-warning" href="/admin/payments/{{$payment->id}}/edit">Edit</a>
+													<td>{{$payment->repayment ? 'Rp. '.number_format($payment->repayment,0,',','.') : 0}}</td>
+													<td>{{'Rp. '.number_format($payment->price,0,',','.')}}</td>
+													<td>{{$payment->products->name}}</td>
+													<td>{{$payment->products->unit}}</td>
+													<td>{{$payment->products->type}}</td>
+													<td>
+														<a class="btn btn-warning" href="/admin/payments/{{$payment->id}}/edit">Edit</a>
 														<button class="btn btn-danger" wire:click="delete({{$payment->id}})">Delete</button>
 													</td>
 												</tr>
@@ -80,7 +80,7 @@
 				<div class="container">
 					<div class="row align-items-center flex-row-reverse">
 						<div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
-							Copyright © 2020 <a href="#" class="fs-14 text-primary">Investasi Prima</a>. Support by <a href="#" class="fs-14 text-primary">PrimaITech</a> All rights reserved.
+							Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
 						</div>
 					</div>
 				</div>
@@ -90,24 +90,24 @@
 		</div>
 	</div>
 
-	
+
 	<!-- Back to top -->
 	<a href="#top" id="back-to-top"><i class="fa fa-rocket"></i></a>
 
-		<!-- JQuery js-->
-<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
+	<!-- JQuery js-->
+	<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
 
-		<!-- Bootstrap js -->
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
+	<!-- Bootstrap js -->
+	<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
+	<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
 
-		<!-- Fullside-menu Js-->
-		<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
+	<!-- Fullside-menu Js-->
+	<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
 
-		<!-- Data tables -->
-		<script src="{{url('/assets/plugins/datatable/jquery.dataTables.min.js')}}" defer></script>
-		<script src="{{url('/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}" defer></script>
-		<script src="{{url('/assets/js/datatable.js')}}" defer></script>
+	<!-- Data tables -->
+	<script src="{{url('/assets/plugins/datatable/jquery.dataTables.min.js')}}" defer></script>
+	<script src="{{url('/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}" defer></script>
+	<script src="{{url('/assets/js/datatable.js')}}" defer></script>
 
-		<!-- Custom Js-->
-		<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>
+	<!-- Custom Js-->
+	<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>
