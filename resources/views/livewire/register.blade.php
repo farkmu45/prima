@@ -38,7 +38,7 @@
                                           </div>
                                           <div class="form-group">
                                               <label class="form-label text-dark" for="phone_number">Phone Number</label>
-                                              <input type="phone" wire:model="phone_number" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror"" placeholder=" Enter email" id="phone_number">
+                                              <input type="string" wire:model="phone_number" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror"" placeholder=" Enter email" id="phone_number">
                                               @error('phone_number')
                                               <span class="invalid-feedback" role="alert">
                                                   <strong>{{ $message }}</strong>
@@ -81,28 +81,4 @@
 		<!-- JQuery js-->
 		<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
 
-		<!-- Bootstrap js -->
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
 		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
-
-		<!--JQuery Sparkline Js-->
-		<script src="{{url('/assets/js/vendors/jquery.sparkline.min.js')}}" defer></script>
-
-		<!-- Circle Progress Js-->
-		<script src="{{url('/assets/js/vendors/circle-progress.min.js')}}" defer></script>
-
-		<!-- Star Rating Js-->
-		<script src="{{url('/assets/plugins/rating/jquery.rating-stars.js')}}" defer></script>
-
-		<!-- Custom scroll bar Js-->
-		<script src="{{url('/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js')}}" defer></script>
-
-		<!-- Fullside-menu Js-->
-		<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
-
-		<!--Counters -->
-		<script src="{{url('/assets/plugins/counters/counterup.min.js')}}" defer></script>
-		<script src="{{url('/assets/plugins/counters/waypoints.min.js')}}" defer></script>
-
-		<!-- Custom Js-->
-		<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>
