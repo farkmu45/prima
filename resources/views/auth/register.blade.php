@@ -17,5 +17,5 @@
 		<link href="{{url('/assets/css/style.css')}}" rel="stylesheet" />
 		<link href="{{url('/assets/css/admin-custom.css')}}" rel="stylesheet" />
 @section('content')
-			<livewire:register :user="$user">
+			<livewire:register>
 @endsection

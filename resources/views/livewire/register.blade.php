@@ -6,8 +6,8 @@
                               <div class="col-xl-4 col-md-12 col-md-12 d-block mx-auto">
                                   <div class="card mb-xl-0">
                                       <div class="card-header">
-                                          @if ($user !== 0)
-                                          <h3 class="card-title">{{$user->name}} Invited You!</h3>
+                                          @if (Cookie::get('referral'))
+                                          <h3 class="card-title">{{json_decode(Cookie::get('referral'))->name}} Invited You!</h3>
                                           @else
                                           <h3 class="card-title">Register</h3>
                                           @endif
@@ -23,10 +23,6 @@
                                               </span>
                                               @enderror
                                           </div>
-                                          @if ($user !== 0)
-                                          <input type="hidden" name="referrer_id" value="{{$user->id}}">
-                                          <input type="hidden" name="user_id" value="{{$user->id}}">
-                                          @endif
                                           <div class="form-group">
                                               <label class="form-label text-dark" for="email">Email address</label>
                                               <input type="email" wire:model="email" name="email" class="form-control @error('email') is-invalid @enderror"" placeholder=" Enter email" id="email">

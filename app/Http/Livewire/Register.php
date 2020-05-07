@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Livewire\Component;
 
 class Register extends Component
@@ -25,15 +26,8 @@ class Register extends Component
         ]);
     }
 
-    public function mount($user)
-    {
-
-            $this->user = $user;
-    }
-
-
     public function render()
     {
-        return view('livewire.register', ['user' => $this->user]);
+        return view('livewire.register');
     }
 }

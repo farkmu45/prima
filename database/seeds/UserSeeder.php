@@ -37,7 +37,8 @@ class UserSeeder extends Seeder
             'email' => 'agent@mail.com',
             'email_verified_at' => now(),
             'phone_number' => '082230634413',
-            'password' => Hash::make('konek.space')
+            'password' => Hash::make('konek.space'),
+            'referral_code' => 'agent'
         ]);
 
         // User::create([
