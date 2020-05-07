@@ -52,7 +52,7 @@
 												@foreach ($products as $key => $product)
 												<tr>
 													<td>{{$key + 1}}</td>
-												<td><a style="color: #ed5151 !important" href="/admin/products/{{$product->id}}/payments/add">{{$product->name}}</a></td>
+													<td><a style="color: #ed5151 !important" href="/admin/products/{{$product->id}}/payments/add">{{$product->name}}</a></td>
 													<td>{{$product->type}}</td>
 													<td>Rp. {{number_format($product->price,0,',','.')}}</td>
 													<td>{{$product->bedroom}}</td>
@@ -84,7 +84,7 @@
 				<div class="container">
 					<div class="row align-items-center flex-row-reverse">
 						<div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
-							Copyright © 2020 <a href="#" class="fs-14 text-primary">Investasi Prima</a>. Support by <a href="#" class="fs-14 text-primary">PrimaITech</a> All rights reserved.
+							Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
 						</div>
 					</div>
 				</div>
@@ -94,20 +94,20 @@
 		</div>
 	</div>
 
-		<!-- JQuery js-->
-<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
+	<!-- JQuery js-->
+	<script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
 
-		<!-- Bootstrap js -->
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
-		<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
+	<!-- Bootstrap js -->
+	<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
+	<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
 
-		<!-- Fullside-menu Js-->
-		<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
+	<!-- Fullside-menu Js-->
+	<script src="{{url('/assets/plugins/toggle-sidebar/sidemenu.js')}}" defer></script>
 
-		<!-- Data tables -->
-		<script src="{{url('/assets/plugins/datatable/jquery.dataTables.min.js')}}" defer></script>
-		<script src="{{url('/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}" defer></script>
-		<script src="{{url('/assets/js/datatable.js')}}" defer></script>
+	<!-- Data tables -->
+	<script src="{{url('/assets/plugins/datatable/jquery.dataTables.min.js')}}" defer></script>
+	<script src="{{url('/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}" defer></script>
+	<script src="{{url('/assets/js/datatable.js')}}" defer></script>
 
-		<!-- Custom Js-->
-		<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>
+	<!-- Custom Js-->
+	<script src="{{url('/assets/js/admin-custom.js')}}" defer></script>

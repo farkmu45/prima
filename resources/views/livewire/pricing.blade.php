@@ -39,14 +39,14 @@
     <div class="sptb">
         <div class="container">
             <div class="row">
-                @foreach ($product->payments as $key => $payment)    
+                @foreach ($product->payments as $key => $payment)
                 <div class="col-xl-4 col-md-6 col-sm-12 col-lg-4">
                     <div class="pricingTable2 pink mb-4 mb-xl-0">
                         <div class="pricingTable2-header">
                             <h3>{{$payment->name}}</h3>
                         </div>
                         <div class="pricing-plans">
-                        <span class="price-value1">Rp. {{number_format($payment->price,0,',','.')}}</span>
+                            <span class="price-value1">Rp. {{number_format($payment->price,0,',','.')}}</span>
                         </div>
                         <div class="pricingContent2">
                             <ul>
@@ -76,7 +76,7 @@
                 <div class="container">
                     <div class="row d-flex">
                         <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center ">
-                            Copyright © 2020 <a href="#" class="fs-14 text-primary">Investasi Prima</a>. Support by <a href="#" class="fs-14 text-primary">PrimaITech</a> All rights reserved.
+                            Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
                         </div>
                     </div>
                 </div>

@@ -49,7 +49,7 @@
                 <div class="container">
                     <div class="row d-flex">
                         <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center ">
-                            Copyright © 2019 <a href="#" class="fs-14 text-primary">Reallist</a>. Designed by <a href="#" class="fs-14 text-primary">Spruko</a> All rights reserved.
+                        Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
                         </div>
                     </div>
                 </div>

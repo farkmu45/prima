@@ -1,5 +1,6 @@
 <div>
-    <div class="header-main">       <!--/Topbar-->
+    <div class="header-main">
+        <!--/Topbar-->
 
         <!-- Header -->
         <div class="horizontal-header clearfix ">
@@ -13,7 +14,7 @@
 
         <!-- Horizontal-menu -->
         <div class="horizontal-main bg-dark-transparent clearfix">
-           @include('layouts.navbar')
+            @include('layouts.navbar')
         </div>
     </div>
     <!--/Horizontal-menu -->
@@ -37,7 +38,7 @@
         <div class="container">
             <div class="card mb-0">
                 <div class="card-header">
-                <h3 class="card-title">{{$invoice->code}}</h3>
+                    <h3 class="card-title">{{$invoice->code}}</h3>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive push">
@@ -96,7 +97,7 @@
                 <div class="container">
                     <div class="row d-flex">
                         <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center ">
-                            Copyright © 2019 <a href="#" class="fs-14 text-primary">Reallist</a>. Designed by <a href="#" class="fs-14 text-primary">Spruko</a> All rights reserved.
+                            Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
                         </div>
                     </div>
                 </div>

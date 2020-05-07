@@ -98,7 +98,7 @@
                                             </span>
                                             @enderror
                                         </div>
-                                    <button type="submit" class="btn btn-primary ">Add Product</button>
+                                        <button type="submit" class="btn btn-primary ">Add Product</button>
                                 </form>
                             </div>
                         </div>
@@ -107,13 +107,13 @@
             </div>
         </div>
         <!--Footer-->
-        
+
     </div>
     <footer class="footer">
         <div class="container">
             <div class="row align-items-center flex-row-reverse">
                 <div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
-                    Copyright © 2020 <a href="#" class="fs-14 text-primary">Investasi Prima</a>. Support by <a href="#" class="fs-14 text-primary">PrimaITech</a> All rights reserved.
+                    Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
                 </div>
             </div>
         </div>

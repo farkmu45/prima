@@ -21,12 +21,32 @@
             <div class="header-text mb-0">
                 <div class="container">
                     <div class="text-center text-white mb-7 mt-5">
-                        <h1 class="mb-5">CUMA DISINI BELI RUMAH KOST DI MALANG  BISA PATUNGAN MULAI 150 JUTA </h1>
+                        <h1 class="mb-5">CUMA DISINI BELI RUMAH KOST DI MALANG BISA PATUNGAN MULAI 150 JUTA </h1>
                         <p>Solusi terbaik bagi anda yang ingin investasi rumah kost dengan harga terjangkau di kota malang. Myrra residence menawarkan rumah kost eksklusif yang bisa dibeli dengan cara patungan mulai 150 juta per kamar kost
                         </p>
                     </div>
                 </div>
             </div><!-- /header-text -->
+        </div>
+    </section>
+    <!--/Section-->
+
+    <!--Section-->
+    <section class="categories">
+        <div class="container">
+            <div class="card mb-0 box-shadow-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-6 col-sm-12 d-catmb mb-4 mb-lg-0">
+                            <h5 class=" mb-1 font-weight-reguler">Disclaimer :</h5>
+                            <h5 class=" mb-0 font-weight-light">Portal ini merupakan alat bantu / tools pemasaran / penjualan obyek real estate / perumahan untuk mempermudah para marketing untuk melakukan pemasaran property via online . Dan bukan portal penggalangan dana.</h5>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-12 ">
+                            <a href="#" class="btn btn-primary btn-lg mb-sm-0">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!--/Section-->
@@ -39,7 +59,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="">
-                        <div class="mb-lg-0 mb-4">  
+                        <div class="mb-lg-0 mb-4">
                             <div class="service-card text-center">
                                 <div class="bg-white icon-bg box-shadow icon-service  about">
                                     <img src="{{url('/assets/images/products/about/halal.png')}}" alt="img">
@@ -206,12 +226,12 @@
                     <!-- Wrapper for carousel items -->
 
                     @foreach ($products as $product)
-                        @if ($product->show_status == '1')
-                            <div class="item">
+                    @if ($product->show_status == '1')
+                    <div class="item">
                         <div class="card mb-0">
                             <div class="item-card7-imgs">
                                 <a href="col-left.html"></a>
-                            <img src="{{url($product->photo)}}" alt="img" class="cover-image">
+                                <img src="{{url($product->photo)}}" alt="img" class="cover-image">
                             </div>
                             <div class="card-body">
                                 <div class="item-card7-desc">
@@ -232,14 +252,14 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex mb-0">
-                                <a href="/product/{{$product->id}}" class="btn btn-info">Tertarik?</a>
+                                    <a href="/product/{{$product->id}}" class="btn btn-info">Tertarik?</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                        @endif
+                    @endif
                     @endforeach
-                    
+
 
 
                 </div>
@@ -257,7 +277,7 @@
             <div id="myCarousel1" class="owl-carousel owl-carousel-icons2">
 
                 @foreach ($products as $product)
-                    <div class="item">
+                <div class="item">
                     <div class="card mb-0">
                         <div class="arrow-ribbon bg-purple">Di Jual</div>
                         <div class="item-card7-imgs">
@@ -274,7 +294,7 @@
                                     <a href="/product/{{$product->id}}" class="text-dark">
                                         <h4 class="">{{$product->name}}</h4>
                                     </a>
-                                <p class=""><i class="icon icon-location-pin text-muted mr-1"></i> {{$product->address}}</p>
+                                    <p class=""><i class="icon icon-location-pin text-muted mr-1"></i> {{$product->address}}</p>
                                 </div>
                                 <ul class="item-cards7-ic mb-0">
                                     <li><a href="#"><i class="fa fa-arrows-alt text-muted mr-1"></i> {{$product->type}} Luas</a></li>
@@ -296,7 +316,7 @@
                     </div>
                 </div>
                 @endforeach
-                
+
             </div>
         </div>
     </section>
@@ -309,7 +329,7 @@
                 <div class="container">
                     <div class="row d-flex">
                         <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center ">
-                            Copyright © 2020 Investasi Prima All rights reserved.
+                            Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
                         </div>
                     </div>
                 </div>
