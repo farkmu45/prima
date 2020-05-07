@@ -1,3 +1,11 @@
+  <div class="horizontal-header clearfix ">
+            <div class="container">
+                <a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
+                <span class="smllogo"><img src="{{url('/assets/images/brand/logo.png')}}" width="120" alt="" /></span>
+                <a href="tel:08113766666" class="callusbtn"><i class="fa fa-phone" aria-hidden="true"></i></a>
+            </div>
+        </div>
+  
   <div class="horizontal-main bg-dark-transparent clearfix">
       <div class="horizontal-mainwrapper container clearfix">
           <div class="desktoplogo">

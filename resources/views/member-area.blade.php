@@ -7,6 +7,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
+		<link rel="icon" href="{{url('/assets/images/brand/favicon.png')}}" type="image/x-icon"/>
+		<link rel="shortcut icon" type="image/x-icon" href="{{url('/assets/images/brand/favicon.png')}}" />
 		<!-- Title -->
 		<title>Investasi Prima - Dashboard</title>
 

@@ -1,6 +1,9 @@
 <div>
-    @include('layouts.navbar')
-    <!--Breadcrumb-->
+   <div class="header-main" id="home">
+
+        @include('layouts.navbar')
+        <!--Start Horizontal-main -->
+    </div>
     <section>
         <div class="bannerimg cover-image bg-background3" data-image-src="../assets/images/banners/banner2.jpg">
             <div class="header-text mb-0">

@@ -1,15 +1,6 @@
 <div>
     <div class="header-main" id="home">
 
-        <!-- Header -->
-        <div class="horizontal-header clearfix ">
-            <div class="container">
-                <a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
-                <span class="smllogo"><img src="{{url('/assets/images/brand/logo.png')}}" width="120" alt="" /></span>
-            </div>
-        </div>
-        <!--/Header -->
-
         @include('layouts.navbar')
         <!--Start Horizontal-main -->
     </div>
@@ -115,7 +106,7 @@
                                 </div>
                                 <div class="servic-data mt-3">
                                     <h4 class="font-weight-semibold mb-2 text-primary">Aman</h4>
-                                    <p class="text-muted mb-0">Aman, karena berupa aset yang bersifat tidak bergerak</p>
+                                    <p class="text-muted mb-0">Aman, karena transaksi jual-beli putus, SHM atas nama pembeli</p>
                                 </div>
                             </div>
                         </div>

@@ -9,9 +9,8 @@
                     <span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
                 <img src="{{url(auth()->user()->photo !== null ? auth()->user()->photo : '' )}}" class="brround" style="width: 100%; height: 100%; object-fit: cover">
                 </div>
-                <a href="#" class="text-dark">
                     <h4 class="mt-3 mb-0 font-weight-semibold">{{auth()->user()->name}}</h4>
-                </a>
+                    <p class="mt-2 mb-0 card-subtitle">{{auth()->user()->role->name}}</p>
             </div>
         </div>
         <div class="item1-links  mb-0">
@@ -20,6 +19,9 @@
             </a>
             <a href="/member/order" class="d-flex  border-bottom">
                 <span class="icon1 mr-3"><i class="icon icon-basket"></i></span> Orders
+            </a>
+            <a href="/member/order" class="d-flex  border-bottom">
+                <span class="icon1 mr-3"><i class="icon icon-basket"></i></span> Referrals
             </a>
             <a href="/member/profile" class="d-flex border-bottom">
                 <span class="icon1 mr-3"><i class="icon icon-user"></i></span> Edit Profile
