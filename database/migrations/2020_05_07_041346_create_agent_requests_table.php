@@ -17,8 +17,7 @@ class CreateAgentRequestsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('details')->nullable();
-            $table->boolean('accepted');
+            $table->boolean('accepted')->default(false);
             $table->timestamps();
         });
     }

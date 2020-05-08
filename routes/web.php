@@ -50,21 +50,21 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
     Route::put('/member/profile', function () {
         $data = request()->validate([
             'name' => 'string|required|max:60',
-            'id_number' => 'numeric|min:16|max:16',
-            'place_of_birth' => 'max:60|alpha',
-            'date_of_birth' => 'date',
+            'id_number' => 'nullable|numeric|min:16|max:16',
+            'place_of_birth' => 'nullable|max:60|alpha',
+            'date_of_birth' => 'nullable|date',
             'phone_number' => 'numeric|required',
             'gender' => 'in:L,P',
-            'address' => 'string|max:100',
-            'village' => 'string|max:100',
-            'sub_district' => 'string|max:100',
-            'city' => 'string|max:100',
-            'province' => 'string|max:100',
-            'bank_name' => 'alpha|max:100',
-            'account_number' => 'numeric|max:120',
-            'account_name' => 'string',
-            'photo' => 'between:0,2048|mimes:jpeg,jpg,png',
-            'id_photo' => 'between:0,2048|mimes:jpeg,jpg,png'
+            'address' => 'nullable|string|max:100',
+            'village' => 'nullable|alpha|max:100',
+            'sub_district' => 'nullable|alpha|max:100',
+            'city' => 'nullable|alpha|max:100',
+            'province' => 'nullable|alpha|max:100',
+            'bank_name' => 'nullable|alpha|max:100',
+            'account_number' => 'nullable|numeric|max:120',
+            'account_name' => 'nullable|string',
+            'photo' => 'nullable|file|between:0,2048|mimes:jpeg,jpg,png',
+            'id_photo' => 'nullable|file|between:0,2048|mimes:jpeg,jpg,png'
         ]);
 
         $user = User::find(auth()->user()->id);
@@ -74,7 +74,9 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
         if (request()->photo) {
             Storage::delete($user->photo);
             $data['photo'] = request()->file('photo')->store('userImages');
-        } else if (request()->id_photo) {
+        } 
+        
+        if (request()->id_photo) {
             Storage::delete($user->id_photo);
             $data['id_photo'] = request()->file('id_photo')->store('userImages');
         }

@@ -9,10 +9,10 @@
             <div class="header-text mb-0">
                 <div class="container">
                     <div class="text-center text-white">
-                        <h1 class="">My Dashboard</h1>
+                        <h1 class="">Dasbor Saya</h1>
                         <ol class="breadcrumb text-center">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active text-white" aria-current="page">My Dashboard</li>
+                            <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Dasbor Saya</li>
                         </ol>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                 <div class="col-xl-9 col-lg-12 col-md-12">
                     <div class="card mb-0">
                         <div class="card-header">
-                            <h3 class="card-title">Dashboard</h3>
+                            <h3 class="card-title">Dasbor</h3>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -67,46 +67,6 @@
     <!-- JQuery js-->
     <script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}" defer></script>
 
-    <!-- Bootstrap js -->
-    <script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}" defer></script>
-    <script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}" defer></script>
-
-    <!--JQuery Sparkline Js-->
-    <script src="{{url('/assets/js/vendors/jquery.sparkline.min.js')}}" defer></script>
-
-    <!-- Circle Progress Js-->
-    <script src="{{url('/assets/js/vendors/circle-progress.min.js')}}" defer></script>
-
-    <!-- Star Rating Js-->
-    <script src="{{url('/assets/plugins/rating/jquery.rating-stars.js')}}" defer></script>
-
-    <!--Owl Carousel js -->
-    <script src="{{url('/assets/plugins/owl-carousel/owl.carousel.js')}}" defer></script>
-
     <!--Horizontal Menu-->
     <script src="{{url('/assets/plugins/horizontal-menu/horizontal.js')}}" defer></script>
-
-    <!--JQuery TouchSwipe js-->
-    <script src="{{url('/assets/js/jquery.touchSwipe.min.js')}}" defer></script>
-
-    <!--Select2 js -->
-    <script src="{{url('/assets/plugins/select2/select2.full.min.js')}}" defer></script>
-    <script src="{{url('/assets/js/select2.js')}}" defer></script>
-
-    <script src="{{url('/assets/plugins/fileuploads/js/dropify.min.js')}}" defer></script>
-
-    <!-- Count Down-->
-    <script src="{{url('/assets/plugins/count-down/jquery.lwtCountdown-1.0.js')}}" defer></script>
-
-    <!-- Custom scroll bar Js-->
-    <script src="{{url('/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js')}}" defer></script>
-
-    <!-- sticky Js-->
-    <script src="{{url('/assets//js/sticky.js')}}" defer></script>
-
-    <!-- Scripts Js-->
-    <script src="{{url('/assets/js/owl-carousel.js')}}" defer></script>
-
-    <!-- Custom Js-->
-    <script src="{{url('/assets/js/custom.js')}}" defer></script>
 </div>

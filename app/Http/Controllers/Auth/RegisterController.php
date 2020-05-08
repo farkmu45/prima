@@ -70,7 +70,11 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        $code = strstr($data['email'], '@', true);
+        $email = strstr($data['email'], '@', true);
+        $number = substr($data['phone_number'], -3);
+        $code = $email.$number;
+
+        // dd($code);
 
         if (Cookie::get('referral')) {
             $user = User::create([

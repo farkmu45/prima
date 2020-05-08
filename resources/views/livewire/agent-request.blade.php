@@ -1,6 +1,3 @@
-<div>
-    {{-- Care about people's approval and you will be their prisoner. --}}
-</div>
 <div class="page app sidebar-mini">
     <div class="page-main">
         <!--App-Header-->
@@ -37,6 +34,7 @@
                                             <tr>
                                                 <th>No.</th>
                                                 <th>Name</th>
+                                                <th>Phone Number</th>
                                                 <th>Email</th>
                                                 <th>Date</th>
                                                 <th>Action</th>
@@ -47,11 +45,12 @@
                                             <tr>
                                                 <td>{{$key + 1}}</td>
                                                 <td>{{$request->user->name}}</td>
+                                                <td>{{$request->user->phone_number}}</td>
                                                 <td>{{$request->user->email}}</td>
                                                 <td>{{$request->created_at}}</td>
-                                                <td>{{$request->status}}</td>
                                                 <td>
-                                                    <button class="btn btn-danger" wire:click="update({{$request->id}})">Delete</button>
+                                                    <button class="btn btn-green" wire:click="update({{$request->id}}, {{1}})">Accept</button>
+                                                    <button class="btn btn-danger" wire:click="update({{$request->id}}, {{0}})">Reject</button>
                                                 </td>
                                             </tr>
                                             @endforeach
