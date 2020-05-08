@@ -23,6 +23,7 @@
     <!--/Section-->
 
     <!--Section-->
+    @guest    
     <section class="categories">
         <div class="container">
             <div class="card mb-0 box-shadow-0">
@@ -33,16 +34,17 @@
                             <h5 class=" mb-0 font-weight-light">Cara baru bisnis properti di kota malang! Kini anda juga bisa bergabung untuk investasi rumah kost eksklusif di Myrra Residence cukup dengan modal 150 juta. Dengan modal 150 juta, anda berpeluang meraih keuntungan maksimal dari hasil sewa dan jual beli rumah kost dengan cara patungan TANPA RIBA.
                                 Dapatkan juga Peluang untuk ikut mendapakan Komisi yang Besar dengan ikut mereferensikan produk kami … Yuk Gabung Bersama kami</h5>
                         </div>
-                        @guest
+                        
                         <div class="col-lg-2 col-md-6 col-sm-12 ">
                             <a href="register" class="btn btn-primary btn-lg mb-sm-0">Join Now</a>
                         </div>
-                        @endguest
+                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    @endguest
     <!--/Section-->
 
     <section class="sptb bg-putih" id="why">

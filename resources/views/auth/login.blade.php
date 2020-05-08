@@ -43,7 +43,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label class="form-label text-dark" for="email">Email</label>
-                                        <input id="email" name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="example@mail.com">
+                                    <input id="email" name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="example@mail.com" value="{{old('email')}}">
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -81,13 +81,4 @@
             </div>
         </div>
     </div>
-
-    <script src="{{url('/assets/js/vendors/jquery-3.2.1.min.js')}}"></script>
-
-	<!-- Bootstrap js -->
-	<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/popper.min.js')}}"></script>
-	<script src="{{url('/assets/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js')}}"></script>
-
-	<!-- Custom Js-->
-	<script src="{{url('/assets/js/admin-custom.js')}}"></script>
 @endsection
