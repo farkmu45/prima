@@ -98,7 +98,7 @@
                                             </span>
                                             @enderror
                                         </div>
-                                        <button type="submit" class="btn btn-primary ">Add Product</button>
+                                        <button type="submit" class="btn btn-primary ">Add Payment</button>
                                 </form>
                             </div>
                         </div>

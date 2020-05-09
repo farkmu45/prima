@@ -74,8 +74,8 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
         if (request()->photo) {
             Storage::delete($user->photo);
             $data['photo'] = request()->file('photo')->store('userImages');
-        } 
-        
+        }
+
         if (request()->id_photo) {
             Storage::delete($user->id_photo);
             $data['id_photo'] = request()->file('id_photo')->store('userImages');
@@ -207,13 +207,13 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             return view('admin.member-list');
         });
 
-        Route::patch('/members/{member}', function (User $member) {
-            $member->update([
-                'role_id' => request()->role_id
-            ]);
+        // Route::patch('/members/{member}', function (User $member) {
+        //     $member->update([
+        //         'role_id' => request()->role_id
+        //     ]);
 
-            return redirect('/admin/members');
-        });
+        //     return redirect('/admin/members');
+        // });
 
         Route::get('/members/orders', function () {
             return view('admin.member-order');
@@ -244,9 +244,23 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             return view('admin.referral-list');
         });
 
-        Route::get('/requests', function ()
-        {
+        Route::get('/requests', function () {
             return view('admin.agent-request');
+        });
+
+        Route::get('/cashout', function () {
+            return view('admin.cashout');
+        });
+
+        Route::patch('/cashout/{cashout}', function (\App\Cashout $cashout) {
+            $cashout->update(['paid_off' => true]);
+            $user = User::find($cashout->user_id);
+
+            $user->update([
+                'wallet' => 0
+            ]);
+            
+            return redirect('/admin/cashout');
         });
     });
 });

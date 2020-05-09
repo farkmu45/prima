@@ -40,7 +40,6 @@
 													<th>Referral Code</th>
 													<th>Commission</th>
 													<th>Status</th>
-													<th>Edit Position</th>
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -64,18 +63,6 @@
 														<p class="badge badge-danger">Deactivated</p>
 													</td>
 													@endif
-													<td>
-														<form action="/admin/members/{{$member->id}}" method="post">
-															@csrf
-															@method('patch')
-															<select class="form-control" name="role_id" onchange="this.form.submit()">
-																<option value="2" {{$member->role->id == 2 ? 'selected' : ''}}>Member</option>
-																<option value="3" {{$member->role->id == 3 ? 'selected' : ''}}>Agent 1</option>
-																<option value="4" {{$member->role->id == 4 ? 'selected' : ''}}>Agent 2</option>
-																<option value="5" {{$member->role->id == 5 ? 'selected' : ''}}>Agent 3</option>
-															</select>
-														</form>
-													</td>
 													@if ($member->deleted_at)
 													<td><button class="btn btn-success" wire:click="activate({{$member->id}})">Activate</button></td>
 													@else

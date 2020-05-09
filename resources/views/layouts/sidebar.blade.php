@@ -53,6 +53,7 @@
 								class="angle fa fa-angle-right"></i></a>
 						<ul class="slide-menu">
 							<li><a class="slide-item" href="/admin/requests">Request List</a></li>
+							<li><a class="slide-item" href="/admin/cashout">Cashout List</a></li>
 						</ul>
 					</li>
 				</ul>
