@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Payment;
 use App\Product;
 use App\UserOrder;
 use Livewire\Component;
@@ -17,8 +18,6 @@ class Pricing extends Component
 
     public function order($payment)
     {
-
-        // dd(auth()->user()->id);
         $order = UserOrder::create([
             'code' => 'INV'.substr(uniqid('', true), -7),
             'payment_id' => $payment,

@@ -40,15 +40,18 @@
                                                 <div class="tab-pane active show" id="tab1">
                                                     <dl class="card-text">
                                                         <dt>PENDAPATAN ANDA: </dt>
-                                                        <dd>Rp. {{number_format(100000,0,',','.')}}</dd>
+                                                        <dd>Rp. {{number_format(auth()->user()->wallet,0,',','.')}}</dd>
                                                     </dl>
                                                     <dl class="card-text">
                                                         <dt>MINIMAL CASHOUT: </dt>
                                                         <dd>Rp. 500.000</dd>
                                                     </dl>
-                                                    <p class="mb-2 mt-5">Pendapatan anda telah memenuhi minimal cashout, silahkan klik tombol dibawah untuk melakukan cashout</p>
-                                                    <button onclick="submitCashout" type="submit" class="btn btn-primary">CASHOUT</button>
-                                                    <p class="mb-0 mt-9"><strong>Catatan:</strong> Pastikan anda telah mengisi data diri berupa info rekening dan info data diri (KTP)</p>
+
+                                                   @if (auth()->user()->wallet > 500000)    
+                                                   <p class="mb-2 mt-5">Pendapatan anda telah memenuhi minimal cashout, silahkan klik tombol dibawah untuk melakukan cashout</p>
+                                                   <button onclick="submitCashout" type="submit" class="btn btn-primary">CASHOUT</button>
+                                                   <p class="mb-0 mt-9"><strong>Catatan:</strong> Pastikan anda telah mengisi data diri berupa info rekening dan info data diri (KTP)</p>
+                                                   @endif                                             
                                                 </div>
                                             </div>
                                         </div>

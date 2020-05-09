@@ -38,6 +38,7 @@
 													<th>Phone Number</th>
 													<th>Position</th>
 													<th>Referral Code</th>
+													<th>Wallet</th>
 													<th>Commission</th>
 													<th>Status</th>
 													<th>Action</th>
@@ -53,6 +54,7 @@
 													<td>{{$agent->phone_number}}</td>
 													<td>{{$agent->role->name}}</td>
 													<td>{{$agent->referral_code == null ? 'Empty' : $agent->referral_code }}</td>
+													<td>Rp. {{number_format($agent->wallet,0,',','.') }}</td>
 													<td>{{$agent->role->commission}}%</td>
 													@if (!$agent->deleted_at)
 													<td>

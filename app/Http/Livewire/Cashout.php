@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Cashout as AppCashout;
 use Livewire\Component;
 
 class Cashout extends Component
 {
     public function render()
     {
-        
-        return view('livewire.cashout');
+        $cashout = AppCashout::all();
+        return view('livewire.cashout', ['cashout' => $cashout]);
     }
 }

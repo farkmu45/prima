@@ -37,23 +37,36 @@
                                                 <th>Phone Number</th>
                                                 <th>Bank</th>
                                                 <th>Account Number</th>
+                                                <th>Amount</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{-- @foreach ($agentRequests as $key => $request)
+                                            @foreach ($cashout as $key => $cashout)
                                             <tr>
                                                 <td>{{$key + 1}}</td>
-                                                <td>{{$request->user->name}}</td>
-                                                <td>{{$request->user->phone_number}}</td>
-                                                <td>{{$request->user->email}}</td>
-                                                <td>{{$request->created_at}}</td>
+                                                <td>{{$cashout->user->name}}</td>
+                                                <td>{{$cashout->user->phone_number}}</td>
+                                                <td>{{$cashout->user->bank_name}}</td>
+                                                <td>{{$cashout->user->account_number}}</td>
+                                                <td>Rp. {{number_format($cashout->amount,0,',','.')}}</td>
                                                 <td>
-                                                    <button class="btn btn-green" wire:click="update({{$request->id}}, {{1}})">Accept</button>
-                                                    <button class="btn btn-danger" wire:click="update({{$request->id}}, {{0}})">Reject</button>
+                                                    @if ($cashout->paid_off)
+                                                    <p class="badge badge-success">Paid</p>
+                                                    @else
+                                                    <p class="badge badge-warning">Unpaid</p>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    @if ($cashout->paid_off)
+                                                    <button class="btn btn-green" disabled wire:click="update({{$request->id}})">Pay</button>
+                                                    @else
+                                                    <button class="btn btn-green" wire:click="update({{$request->id}})">Pay</button>
+                                                    @endif
                                                 </td>
                                             </tr>
-                                            @endforeach --}}
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

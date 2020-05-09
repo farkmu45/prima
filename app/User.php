@@ -37,9 +37,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    public function refer()
+    {
+        return $this->hasOne(Referral::class, 'user_id');
+    }
+
     public function referrals()
     {
-        return $this->hasMany(Referral::class);
+        return $this->hasMany(Referral::class, 'referrer_id');
     }
 
     public function role()

@@ -1,6 +1,7 @@
 <?php
 
 use App\Product;
+use App\Referral;
 use App\User;
 use App\UserOrder;
 use Illuminate\Support\Facades\Cookie;
@@ -220,6 +221,19 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
         });
 
         Route::patch('/members/orders/{order}', function (UserOrder $order) {
+
+            if ($order->status == '3') {
+                return redirect()->back();
+            }
+
+            if (request()->orderId == strval(request()->orderId)) {
+                $total_commission = $order->user->refer->referrer->role->commission / 100 * $order->payment->price;
+                $order->user->refer->referrer->update([
+                    'wallet' => $total_commission
+                ]);
+            }
+
+
             $order->update([
                 'status' => strval(request()->orderId)
             ]);
@@ -259,7 +273,7 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             $user->update([
                 'wallet' => 0
             ]);
-            
+
             return redirect('/admin/cashout');
         });
     });
