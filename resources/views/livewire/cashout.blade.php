@@ -60,9 +60,9 @@
                                                 </td>
                                                 <td>
                                                     @if ($cashout->paid_off)
-                                                    <button class="btn btn-green" disabled wire:click="update({{$request->id}})">Pay</button>
+                                                    <button class="btn btn-green" disabled wire:click="update({{$cashout->id}}, {{$cashout->paid_off}})">Pay</button>
                                                     @else
-                                                    <button class="btn btn-green" wire:click="update({{$request->id}})">Pay</button>
+                                                    <button class="btn btn-green" wire:click="update({{$cashout->id}}, {{$cashout->paid_off}})">Pay</button>
                                                     @endif
                                                 </td>
                                             </tr>

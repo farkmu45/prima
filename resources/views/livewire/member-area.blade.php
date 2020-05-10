@@ -44,14 +44,53 @@
                                                     </dl>
                                                     <dl class="card-text">
                                                         <dt>MINIMAL CASHOUT: </dt>
-                                                        <dd>Rp. 500.000</dd>
+                                                        <dd>Rp. 10.000</dd>
                                                     </dl>
 
-                                                   @if (auth()->user()->wallet > 500000)    
-                                                   <p class="mb-2 mt-5">Pendapatan anda telah memenuhi minimal cashout, silahkan klik tombol dibawah untuk melakukan cashout</p>
-                                                   <button onclick="submitCashout" type="submit" class="btn btn-primary">CASHOUT</button>
-                                                   <p class="mb-0 mt-9"><strong>Catatan:</strong> Pastikan anda telah mengisi data diri berupa info rekening dan info data diri (KTP)</p>
-                                                   @endif                                             
+                                                    @if ($cashoutCount > 0)
+                                                    <div class="alert alert-success mt-4" role="alert">
+                                                        Penarikan dana anda sedang kami proses, tunggu sebentar ya :)
+                                                    </div>
+                                                    @else
+                                                    @if (auth()->user()->wallet > 10000)
+                                                    <p class="mb-2 mt-5">Pendapatan anda telah memenuhi minimal cashout, silahkan klik tombol dibawah untuk melakukan cashout</p>
+                                                    <form id="cashout" action="/cashout" method="post">
+                                                        @csrf
+                                                        <input type="number" name="amount" class="form-control" style="width: 300px" placeholder="Jumlah uang">
+                                                        @error('amount')
+                                                        <p class="mt-2" style="color: red">{{$message}}</p>
+                                                        @enderror
+                                                        <button type="submit" class="btn btn-primary mt-3">CASHOUT</button>
+                                                    </form>
+
+                                                    @error('user_error')
+                                                    <div class="alert alert-danger mt-4" role="alert">
+                                                        {{$message}}
+                                                    </div>
+                                                    @enderror
+
+                                                    @error('photo_error')
+                                                    <div class="alert alert-danger mt-4" role="alert">
+                                                        {{$message}}
+                                                    </div>
+                                                    @enderror
+
+                                                    @error('contact_error')
+                                                    <div class="alert alert-danger mt-4" role="alert">
+                                                        {{$message}}
+                                                    </div>
+                                                    @enderror
+
+                                                    @error('nik_error')
+                                                    <div class="alert alert-danger mt-4" role="alert">
+                                                        {{$message}}
+                                                    </div>
+                                                    @enderror
+
+                                                    <p class="mb-0 mt-9"><strong>Catatan:</strong> Pastikan anda telah mengisi data diri berupa info rekening dan data KTP</p>
+                                                    @endif
+
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -64,15 +103,6 @@
             </div>
         </div>
     </section>
-
-    <form id="cashout" action="" hidden method="post"></form>
-
-    <script>
-        function submitCashout(params) {
-            var form = document.getElementById('cashout')
-            form.submit()
-        }
-    </script>
     <!--/User Dashboard-->
 
     <!--Footer Section-->

@@ -93,7 +93,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputPassword4" class="col-form-label">Bedroom</label>
-                                        <input type="number" class="form-control @error('bedroom') is-invalid @enderror" value="{{old('bedroom')}}" name="bedroom" placeholder="Product Bedroom">
+                                            <input type="number" class="form-control @error('bedroom') is-invalid @enderror" value="{{old('bedroom')}}" name="bedroom" placeholder="Product Bedroom">
                                             @error('bedroom')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

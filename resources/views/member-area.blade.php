@@ -39,5 +39,5 @@
 
 
 @section('content')
-	<livewire:member-area>
+	<livewire:member-area :cashoutCount="$cashoutCount">
 @endsection

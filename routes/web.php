@@ -1,5 +1,6 @@
 <?php
 
+use App\Cashout;
 use App\Product;
 use App\Referral;
 use App\User;
@@ -33,7 +34,8 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
 
 
     Route::get('/member/dashboard', function () {
-        return view('member-area');
+        $cashoutCount = Cashout::where('user_id', auth()->user()->id)->where('paid_off',0)->count();
+        return view('member-area', ['cashoutCount' => $cashoutCount]);
     })->middleware('password.confirm');
 
     Route::get('/member/order', function () {
@@ -51,7 +53,7 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
     Route::put('/member/profile', function () {
         $data = request()->validate([
             'name' => 'string|required|max:60',
-            'id_number' => 'nullable|numeric|min:16|max:16',
+            'id_number' => 'nullable|numeric|digits:16',
             'place_of_birth' => 'nullable|max:60|alpha',
             'date_of_birth' => 'nullable|date',
             'phone_number' => 'numeric|required',
@@ -62,7 +64,7 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
             'city' => 'nullable|alpha|max:100',
             'province' => 'nullable|alpha|max:100',
             'bank_name' => 'nullable|alpha|max:100',
-            'account_number' => 'nullable|numeric|max:120',
+            'account_number' => 'nullable|numeric|digits_between:10,30',
             'account_name' => 'nullable|string',
             'photo' => 'nullable|file|between:0,2048|mimes:jpeg,jpg,png',
             'id_photo' => 'nullable|file|between:0,2048|mimes:jpeg,jpg,png'
@@ -74,17 +76,65 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
         $data['id_photo'] = $user->id_photo;
         if (request()->photo) {
             Storage::delete($user->photo);
-            $data['photo'] = request()->file('photo')->store('userImages');
+            $data['photo'] = request()->file('photo')->store('photoImages');
         }
 
         if (request()->id_photo) {
             Storage::delete($user->id_photo);
-            $data['id_photo'] = request()->file('id_photo')->store('userImages');
+            $data['id_photo'] = request()->file('id_photo')->store('idcardphotoImages');
         }
-        // $user->update(['id_photo' => $id_photo, 'photo' => $photo]);
+
         $user->update($data);
 
         return redirect('/member/profile');
+    });
+
+    Route::post('/cashout', function () {   
+        $user = auth()->user();
+        $cashoutCount = Cashout::where('user_id', $user->id)->where('paid_off', 0)->count();
+
+        if ($cashoutCount > 0) {
+            return redirect()->back();
+        }
+
+        if (!($user->bank || $user->account_number || $user->account_name)) {
+            return redirect()->back()->withErrors(['user_error' => 'Isi kembali data bank anda']);
+        } 
+        
+        if (!($user->photo || $user->id_photo)) {
+            return redirect()->back()->withErrors(['photo_error' => 'Isi kembali data foto anda']);
+        } 
+        
+        if (!($user->phone_number || $user->email)) {
+            return redirect()->back()->withErrors(['contact_error' => 'Isi kembali data kontak anda (Email, Nomor HP)']);
+        } 
+        
+        if (!($user->id_number)) {
+            return redirect()->back()->withErrors(['nik_error' => 'Isi kembali data NIK anda ']);
+        }
+
+
+        $data = request()->validate([
+            'amount' => 'required|numeric|between:1000,' . $user->wallet
+        ]);
+
+        $data['phone_number'] = $user->phone_number;
+        $data['bank_account_number'] = $user->account_number;
+        $data['bank_name'] = $user->bank_name;
+        $data['account_name'] = $user->account_name;
+
+
+        $data['user_id'] = $user->id;
+
+        $wallet = $user->wallet - $data['amount'];
+
+        $user->update([
+            'wallet' => $wallet,
+        ]);
+
+        Cashout::create($data);
+
+        return redirect()->back();
     });
 });
 

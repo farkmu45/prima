@@ -61,4 +61,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->role_id == 1;
     }
+
+    public function cashout()
+    {
+        return $this->hasMany(Cashout::class);
+    }
 }

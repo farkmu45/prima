@@ -9,10 +9,10 @@
   <div class="horizontal-main bg-dark-transparent clearfix">
       <div class="horizontal-mainwrapper container clearfix">
           <div class="desktoplogo">
-              <a href="index.html"><img src="{{url('/assets/images/brand/logo1.png')}}" alt=""></a>
+              <a href="/"><img src="{{url('/assets/images/brand/logo1.png')}}" alt=""></a>
           </div>
           <div class="desktoplogo-1">
-              <a href="index.html"><img src="{{url('/assets/images/brand/logo1.png')}}" alt=""></a>
+              <a href="/"><img src="{{url('/assets/images/brand/logo1.png')}}" alt=""></a>
           </div>
           <nav class="horizontalMenu clearfix d-md-flex">
               <ul class="horizontalMenu-list">
