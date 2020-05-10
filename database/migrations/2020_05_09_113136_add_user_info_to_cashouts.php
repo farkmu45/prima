@@ -14,10 +14,10 @@ class AddUserInfoToCashouts extends Migration
     public function up()
     {
         Schema::table('cashouts', function (Blueprint $table) {
-            $table->string('phone_number')->change();
-            $table->string('bank_account_number')->change();
-            $table->string('bank_name')->change();
-            $table->string('account_name')->change();
+            $table->string('phone_number');
+            $table->string('bank_account_number');
+            $table->string('bank_name');
+            $table->string('account_name');
         });
     }
 
