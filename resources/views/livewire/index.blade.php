@@ -221,6 +221,11 @@
                 <div class="col-lg-6">
                     <!-- Wrapper for carousel items -->
 
+                    @if (sizeof($products) == 0)
+                        <h5 class="text-center mt-8">Belum ada penawaran spesial</h1>
+                        <h5 class="text-center mb-8">Kembali lagi nanti ya :)</h1>
+                    @endif
+
                     @foreach ($products as $product)
                     @if ($product->show_status == '1')
                     <div class="item">

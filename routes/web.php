@@ -11,9 +11,6 @@ use Illuminate\Support\Facades\Storage;
 
 
 Route::get('/', function () {
-    if (Cookie::get('referral')) {
-        return view('index');
-    }
     return view('index');
 });
 

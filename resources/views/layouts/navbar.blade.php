@@ -44,7 +44,12 @@
 
                   @guest    
                   <li aria-haspopup="true">
-                      <span><a class="btn btn-secondary " href="/login">Login | Register</a></span>
+
+                    @if (Cookie::get('referral'))
+                        <span><a class="btn btn-secondary " href="/register">Register</a></span>
+                    @else
+                        <span><a class="btn btn-secondary " href="/login">Login | Register</a></span>
+                    @endif
                   </li>
                   @endguest
               </ul>
