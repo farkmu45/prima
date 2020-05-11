@@ -45,7 +45,7 @@
                         <div class="pricingTable2-header">
                             <h3>{{$payment->name}}</h3>
                         </div>
-                        <div class="pricing-plans">
+                        <div class="pricing-plans" style="background-color: #429039">
                             <span class="price-value1">Rp. {{number_format($payment->price,0,',','.')}}</span>
                         </div>
                         <div class="pricingContent2">
