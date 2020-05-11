@@ -28,14 +28,14 @@ class MemberList extends Component
 
     public function activate($id)
     {
-        $user = User::where('id', $id)->where('role_id', 2);
+        $user = User::where('id', $id)->where('role_id', 3);
         $user->restore();
         return redirect('/admin/members');
     }
 
     public function delete($id)
     {
-        $user = User::where('id', $id)->where('role_id',2);
+        $user = User::where('id', $id)->where('role_id',3);
         $user->delete();
         return redirect('/admin/members');
     }
@@ -43,6 +43,6 @@ class MemberList extends Component
     public function render()
     {
 
-        return view('livewire.member-list', ['members' => User::where('role_id', 2)->withTrashed()->get(), 'roles' => Role::all()]);
+        return view('livewire.member-list', ['members' => User::where('role_id', 3)->withTrashed()->get()]);
     }
 }

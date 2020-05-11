@@ -146,22 +146,6 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             return view('admin.dashboard');
         });
 
-        Route::get('/agents', function () {
-            return view('admin.agent-list');
-        });
-
-        Route::get('/agents/orders', function () {
-            return view('admin.agent-order');
-        });
-
-        Route::patch('/agents/orders/{order}', function (UserOrder $order) {
-            $order->update([
-                'status' => strval(request()->orderId)
-            ]);
-
-            return redirect('/admin/agents/orders');
-        });
-
         Route::get('/products', function () {
             return view('admin.product-list');
         });
@@ -255,14 +239,6 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             return view('admin.member-list');
         });
 
-        // Route::patch('/members/{member}', function (User $member) {
-        //     $member->update([
-        //         'role_id' => request()->role_id
-        //     ]);
-
-        //     return redirect('/admin/members');
-        // });
-
         Route::get('/members/orders', function () {
             return view('admin.member-order');
         });
@@ -304,11 +280,7 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
         Route::get('/referrals', function () {
             return view('admin.referral-list');
         });
-
-        Route::get('/requests', function () {
-            return view('admin.agent-request');
-        });
-
+        
         Route::get('/cashout', function () {
             return view('admin.cashout');
         });
