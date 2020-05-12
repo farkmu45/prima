@@ -38,7 +38,8 @@
 													<th>Phone Number</th>
 													<th>Position</th>
 													<th>Referral Code</th>
-													<th>Commission</th>
+													<th>Alternate Referral Code</th>
+													<th>Wallet</th>
 													<th>Status</th>
 													<th>Action</th>
 												</tr>
@@ -53,7 +54,8 @@
 													<td>{{$member->phone_number}}</td>
 													<td>{{$member->role->name}}</td>
 													<td>{{$member->referral_code == null ? '' : $member->referral_code }}</td>
-													<td>{{$member->role->commission}}%</td>
+													<td>{{$member->referral_code == null ? '' : $member->referral_code }}</td>
+													<td>{{$member->wallet}}</td>
 													@if (!$member->deleted_at)
 													<td>
 														<p class="badge badge-success">Active</p>

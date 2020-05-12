@@ -34,21 +34,26 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-12 col-md-12">
-
-                                    @if (auth()->user()->role_id == 2)    
-                                    <p>Menu ini hanya tersedia untuk agen</p>
-                                    <p>Klik tombol dibawah untuk mengirim permintaan menjadi agen</p>
-                                        @if ($request == 0)    
-                                        <form wire:submit.prevent="send" method="post">
-                                            <button class="btn btn-primary" type="submit">Kirim Permintaan</button>
-                                        </form>
+                                    <p class="mt-5"><b>Link referral anda :</b> {{request()->getHttpHost().'/'.auth()->user()->referral_code}}</p>
+                                    <p class="mt-5">
+                                        @if (auth()->user()->alt_referral_code)
+                                            <b>Link referral alternatif anda : </b> {{request()->getHttpHost().'/'.auth()->user()->alt_referral_code}}</p>
                                         @else
-                                        <button class="btn btn-primary" disabled type="submit">Permintaan diproses</button>
+                                            <b>Link referral alternatif anda : </b> Belum ditambahkan</p>
                                         @endif
-
-                                    @else
-
-                                    <p class="mt-5"><b>Link referral anda :</b> {{request()->getHttpHost().'/r/'.auth()->user()->referral_code}}</p>
+                                    <form action="/member/referral" method="post">
+                                        @csrf
+                                        <div class="d-flex">
+                                            <p class="m-0 align-self-center">{{request()->getHttpHost().'/'}}</p> 
+                                            <input class="form-control @error('commission') is-invalid @enderror" style="width: 200px;" type="text" name="alt_referral_code" id="">
+                                            @error('alt_referral_code')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                    <button class="btn btn-primary">{{auth()->user()->alt_referral_code ? 'Ubah' : 'Tambah Link'}}</button>
+                                    </form>
                                     <div class="table-responsive border-top mt-5">
                                         <table class="table table-bordered table-hover text-nowrap">
                                             <thead>
@@ -74,8 +79,6 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                        
-                                    @endif
                                 </div>
                             </div>
                         </div>

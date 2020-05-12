@@ -52,8 +52,18 @@
                             <ul>
                                 <li>ITJ : <b>{{number_format($payment->itj,0,',','.')}}</b></li>
                                 <li>Uang Muka : <b>{{number_format($payment->down_payment,0,',','.')}}</b></li>
-                                <li>Jumlah Angsuran : <b>{{number_format($payment->installment_amount,0,',','.')}}</b></li>
-                                <li>Pelunasan : <b>{{number_format($payment->repayment,0,',','.')}}</b></li>
+
+                                @if ($payment->installment)
+                                    <li>Jumlah Angsuran : <b>{{number_format($payment->installment,0,',','.')}}</b></li>
+                                @endif
+
+                                @if ($payment->installment_amount)
+                                    <li>Jumlah Angsuran : <b>{{number_format($payment->installment_amount,0,',','.')}}</b></li>
+                                @endif
+
+                                @if ($payment->repayment)
+                                    <li>Pelunasan : <b>{{number_format($payment->repayment,0,',','.')}}</b></li>
+                                @endif
                             </ul>
                         </div><!-- CONTENT BOX-->
                         <div class="pricingTable2-sign-up">

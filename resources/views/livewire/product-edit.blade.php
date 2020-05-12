@@ -110,7 +110,7 @@
                                             </span>
                                             @enderror
                                         </div>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-5">
                                             <label for="inputPassword4" class="col-form-label">Room Video</label>
                                             <input type="text" class="form-control @error('room_video') is-invalid @enderror" wire:model="room_video" name="room_video" placeholder="Product Bedroom">
                                             @error('room_video')
@@ -119,10 +119,19 @@
                                             </span>
                                             @enderror
                                         </div>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-5">
                                             <label for="inputPassword4" class="col-form-label">Survey Video</label>
                                             <input type="text" class="form-control @error('survey_video') is-invalid @enderror" wire:model="survey_video" name="survey_video" placeholder="Product Bathroom">
                                             @error('survey_video')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                        <label for="inputPassword4" class="col-form-label">Commission</label>
+                                        <input type="number" class="form-control @error('commission') is-invalid @enderror" wire:model="commission" name="commission">
+                                            @error('commission')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -178,6 +187,14 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                    <a href="{{url($pdf)}}">File link</a>
+                                        <label class="form-label" for="pdf">PDF</label>
+                                        <input type="file" name="pdf" id="pdf">
+                                        @error('pdf')
+                                            <p style="color: red">{{$message}}</p>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label class="col-form-label">Description</label>

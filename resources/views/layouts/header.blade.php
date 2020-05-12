@@ -3,8 +3,8 @@
 <div class="app-header1 header py-1 d-flex">
     <div class="container-fluid">
         <div class="d-flex">
-            <a class="header-brand" href="index.html">
-                <img src="" class="header-brand-img" alt="Prima Logo">
+        <a class="header-brand" href="/admin/dashboard">
+                <img src="{{url('assets/images/brand/logo.png')}}" class="header-brand-img">
             </a>
             <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
             <div class="header-navicon">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="dropdown ">
                     <a href="#" class="nav-link pr-0 leading-none user-img" data-toggle="dropdown">
-                        <img src="../assets/images/faces/male/25.jpg" alt="" class="avatar avatar-md brround">
+                    <img src="{{url('assets/images/default.png')}}" alt="" class="avatar avatar-md brround">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow ">
                         <a class="dropdown-item" href="/admin/profile">

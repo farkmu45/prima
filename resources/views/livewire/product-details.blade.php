@@ -40,6 +40,7 @@
                                         <li><a href="#tab-4" data-toggle="tab" class="">Video 3D Kamar</a></li>
                                         <li><a href="#tab-5" data-toggle="tab" class="">Video Survey Online Myrra</a></li>
                                         <li><a href="#tab-6" data-toggle="tab" class="">Deskripsi</a></li>
+                                        <li><a href="#tab-7" data-toggle="tab" class="">PDF</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -88,7 +89,7 @@
                                 <iframe width="100%" height="450px" src="{{$product->room_video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div class="tab-pane" id="tab-5">
-                                <iframe width="100%" height="450px" src="{{$product->room_video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="100%" height="450px" src="{{$product->survey_video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div class="tab-pane" id="tab-6">
                                 <h3 class="card-title mb-3 font-weight-semibold">Description</h3>
@@ -119,6 +120,19 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab-7">
+                                <div class="row">
+                                    <div class="col-lg-6  col-md-12">
+                                        <div class="card">
+                                            <div class="item-card">
+                                            <a href="{{url($product->pdf)}}" target="_blank" rel="noopener noreferrer">
+                                                    Link PDF
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

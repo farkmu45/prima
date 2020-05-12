@@ -16,12 +16,20 @@
           </div>
           <nav class="horizontalMenu clearfix d-md-flex">
               <ul class="horizontalMenu-list">
-                  <li aria-haspopup="true"><a href="#home">Beranda</a></li>
-                  <li aria-haspopup="true"><a href="#why">Kenapa Investasi</a></li>
-                  <li aria-haspopup="true"><a href="#invest">Investasi Online</a></li>
-                  <li aria-haspopup="true"><a href="#about">Profil</a></li>
-                  <li aria-haspopup="true"><a href="#special">Penawaran Spesial</a></li>
-                  <li aria-haspopup="true"><a href="#product">Produk</a></li>
+
+                @if (!Request::is('member/*'))
+                    @if (Request::is('product/*'))
+                    @else
+                        <li aria-haspopup="true"><a href="#home">Beranda</a></li>
+                        <li aria-haspopup="true"><a href="#why">Kenapa Investasi</a></li>
+                        <li aria-haspopup="true"><a href="#invest">Investasi Online</a></li>
+                        <li aria-haspopup="true"><a href="#about">Profil</a></li>
+                        <li aria-haspopup="true"><a href="#special">Penawaran Spesial</a></li>
+                        <li aria-haspopup="true"><a href="#product">Produk</a></li>
+                    @endif
+
+
+                @endif
 
                   @auth
                   @if (auth()->user()->role_id == 1)    

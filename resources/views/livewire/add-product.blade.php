@@ -32,7 +32,7 @@
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="name">Name</label>
-                                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" value="{{old('name')}}" name="name" placeholder="Product Name">
+                                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" value="{{old('name')}}" name="name">
                                                 @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -43,7 +43,7 @@
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="name">Unit Business</label>
-                                            <input type="text" class="form-control @error('unit') is-invalid @enderror" id="name" value="{{old('unit')}}" name="unit" placeholder="Product Unit">
+                                            <input type="text" class="form-control @error('unit') is-invalid @enderror" id="name" value="{{old('unit')}}" name="unit">
                                                 @error('unit')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -54,7 +54,7 @@
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label">Address</label>
-                                            <input type="text" class="form-control @error('adress') is-invalid @enderror" value="{{old('address')}}" name="address" placeholder="Product Name">
+                                            <input type="text" class="form-control @error('adress') is-invalid @enderror" value="{{old('address')}}" name="address">
                                                 @error('address')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -65,7 +65,7 @@
                                         <div class="form-group col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="price">Price</label>
-                                            <input type="number" class="form-control @error('price') is-invalid @enderror" value="{{old('price')}}" name="price" placeholder="Product Price">
+                                            <input type="number" class="form-control @error('price') is-invalid @enderror" value="{{old('price')}}" name="price">
                                                 @error('price')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -75,7 +75,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputEmail4" class="col-form-label">Type</label>
-                                        <input type="text" class="form-control @error('type') is-invalid @enderror" value="{{old('type')}}" name="type" placeholder="Product Type">
+                                        <input type="text" class="form-control @error('type') is-invalid @enderror" value="{{old('type')}}" name="type">
                                             @error('type')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputPassword4" class="col-form-label">AC</label>
-                                        <input type="number" class="form-control @error('ac') is-invalid @enderror" value="{{old('ac')}}" name="ac" placeholder="Product Ac">
+                                        <input type="number" class="form-control @error('ac') is-invalid @enderror" value="{{old('ac')}}" name="ac">
                                             @error('ac')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -93,7 +93,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputPassword4" class="col-form-label">Bedroom</label>
-                                            <input type="number" class="form-control @error('bedroom') is-invalid @enderror" value="{{old('bedroom')}}" name="bedroom" placeholder="Product Bedroom">
+                                            <input type="number" class="form-control @error('bedroom') is-invalid @enderror" value="{{old('bedroom')}}" name="bedroom">
                                             @error('bedroom')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -102,26 +102,35 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="inputPassword4" class="col-form-label">Bathroom</label>
-                                        <input type="number" class="form-control @error('bathroom') is-invalid @enderror" value="{{old('bathroom')}}" name="bathroom" placeholder="Product Bathroom">
+                                        <input type="number" class="form-control @error('bathroom') is-invalid @enderror" value="{{old('bathroom')}}" name="bathroom">
                                             @error('bathroom')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                             @enderror
                                         </div>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-5">
                                             <label for="inputPassword4" class="col-form-label">Room Video</label>
-                                        <input type="text" class="form-control @error('room_video') is-invalid @enderror" value="{{old('room_video')}}" name="room_video" placeholder="Product Bedroom">
+                                        <input type="text" class="form-control @error('room_video') is-invalid @enderror" value="{{old('room_video')}}" name="room_video">
                                             @error('room_video')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                             @enderror
                                         </div>
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-5">
                                             <label for="inputPassword4" class="col-form-label">Survey Video</label>
-                                        <input type="text" class="form-control @error('survey_video') is-invalid @enderror" value="{{old('sirvey_video')}}" name="survey_video" placeholder="Product Bathroom">
+                                        <input type="text" class="form-control @error('survey_video') is-invalid @enderror" value="{{old('survey_video')}}" name="survey_video">
                                             @error('survey_video')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                        <label for="inputPassword4" class="col-form-label">Commission</label>
+                                        <input type="number" class="form-control @error('commission') is-invalid @enderror" value="{{old('commission')}}" name="commission">
+                                            @error('commission')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -167,8 +176,15 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label class="form-label" for="pdf">PDF</label>
+                                        <input type="file" name="pdf" id="pdf">
+                                        @error('pdf')
+                                            <p style="color: red">{{$message}}</p>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
                                         <label class="col-form-label">Description</label>
-                                    <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="4" placeholder="Product Description">{{old('description')}}</textarea>
+                                    <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="4">{{old('description')}}</textarea>
                                         @error('description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

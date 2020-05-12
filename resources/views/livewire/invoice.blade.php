@@ -48,7 +48,7 @@
                                 <th>Item</th>
                                 <th>Pembayaran</th>
                                 <th>ITJ</th>
-                                <th class="text-right">Total Harga</th>
+                                <th class="text-right">Harga</th>
                             </tr>
                             <tr>
                                 <td class="text-center">1</td>
@@ -73,7 +73,7 @@
                             <tr>
                                 <td></td>
                                 <td colspan="3" class="font-weight-semibold text-uppercase text-right">Total</td>
-                                <td class="font-weight-bold text-right fs-18">RP. {{number_format($invoice->payment->price,0,',','.')}}</td>
+                                <td class="font-weight-bold text-right fs-18">RP. {{number_format($invoice->payment->itj,0,',','.')}}</td>
                             </tr>
                             <tr>
                                 <td></td>

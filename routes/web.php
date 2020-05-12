@@ -47,6 +47,19 @@ Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
         return view('agent-referral');
     })->middleware('password.confirm');
 
+    Route::post('/member/referral', function ()
+    {
+        $user = auth()->user();
+
+        $data = request()->validate([
+            'alt_referral_code' => 'string|max:15|unique:users'
+        ]);
+
+        $user->update($data);
+
+        return redirect()->back();
+    });
+
     Route::put('/member/profile', function () {
         $data = request()->validate([
             'name' => 'string|required|max:60',
@@ -171,12 +184,12 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
                 'front_view' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png'],
                 'first_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png'],
                 'second_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png'],
+                'commission' => ['required', 'numeric', 'min:0'],
+                'pdf' => ['file', 'between:0,5012', 'mimes:pdf'],
                 'description' => ['string', 'required'],
                 'show_status' => ['in:0,1']
             ]);
 
-
-            Product::where('show_status', '1')->update(['show_status' => '0']);
             if (request()->photo) {
                 Storage::delete($product->photo);
                 $data['photo'] = request()->file('photo')->store('productImages');
@@ -195,6 +208,11 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             if (request()->second_floor) {
                 Storage::delete($product->second_floor);
                 $data['second_floor'] = request()->file('second_floor')->store('productImages');
+            }
+
+            if (request()->pdf) {
+                Storage::delete($product->pdf);
+                $data['pdf'] = request()->file('pdf')->store('productPdf');
             }
 
             $product->update($data);
@@ -222,6 +240,8 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
                 'front_view' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
                 'first_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
                 'second_floor' => ['file', 'between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
+                'pdf' => ['file', 'between:0,5012', 'mimes:pdf'],
+                'commission' => ['numeric', 'required', 'min:0'],
                 'description' => ['string', 'required'],
             ]);
 
@@ -229,6 +249,7 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             $data['front_view'] = request()->file('front_view')->store('productImages');
             $data['first_floor'] = request()->file('first_floor')->store('productImages');
             $data['second_floor'] = request()->file('second_floor')->store('productImages');
+            $data['pdf'] = request()->file('pdf')->store('productPdf');
 
             Product::create($data);
 
@@ -249,8 +270,8 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
                 return redirect()->back();
             }
 
-            if (request()->orderId == strval(request()->orderId)) {
-                $total_commission = $order->user->refer->referrer->role->commission / 100 * $order->payment->price;
+            if (strval(request()->orderId) == '3') {
+                $total_commission = $order->payment->products->commission;
                 $order->user->refer->referrer->update([
                     'wallet' => $total_commission
                 ]);
@@ -299,8 +320,20 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
 });
 
 
-Route::get('/r/{user:referral_code}', function (\App\User $user) {
+Route::get('/{referral_code}', function ($code) {
+
+    $user = 0;
+
+    if (User::where('referral_code', $code)->first() !== null) {
+        $user = User::where('referral_code', $code)->first();
+    } else if(User::where('alt_referral_code', $code)->first() !== null) {
+        $user = User::where('alt_referral_code', $code)->first();
+    } else {
+        abort(404);
+    }
+    
     abort_if($user->role_id <= 2, 404);
+
     Cookie::queue('referral', $user, 1440);
-    return redirect('/');
+    return redirect('/')->with('welcome-message', 'SELAMAT DATANG!!');
 })->middleware('guest');

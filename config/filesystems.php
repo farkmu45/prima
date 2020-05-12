@@ -83,6 +83,7 @@ return [
         public_path('productImages') => storage_path('app/productImages'),
         public_path('photoImages') => storage_path('app/photoImages'),
         public_path('idcardphotoImages') => storage_path('app/idcardphotoImages'),
+        public_path('productPdf') => storage_path('app/productPdf'),
     ],
 
 ];

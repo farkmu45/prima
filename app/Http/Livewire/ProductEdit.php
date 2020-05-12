@@ -24,6 +24,8 @@ class ProductEdit extends Component
     public $description;
     public $product_id;
     public $show_status;
+    public $commission;
+    public $pdf;
 
 
     public function updated($field)
@@ -45,7 +47,9 @@ class ProductEdit extends Component
             'first_floor' => ['between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
             'second_floor' => ['between:0,2048', 'mimes:jpeg,jpg,png', 'required'],
             'description' => ['string', 'required'],
-            'show_status' => ['in:0,1']
+            'show_status' => ['in:0,1'],
+            'commission' => ['required', 'numeric', 'min:0'],
+            'pdf' => ['between:0,5012', 'mimes:pdf', 'required']
         ]);
     }
 
@@ -68,11 +72,13 @@ class ProductEdit extends Component
         $this->first_floor = $product->first_floor;
         $this->second_floor = $product->second_floor;
         $this->description = $product->description;
+        $this->commission = $product->commission;
+        $this->pdf = $product->pdf;
     }
 
 
     public function render()
     {
-        return view('livewire.product-edit')->withPhoto($this->photo)->withFrontView($this->front_view)->withFirstFloor($this->first_floor)->withSecondFloor($this->second_floor)->withId($this->product_id)->withShow_Status($this->show_status);
+        return view('livewire.product-edit')->withPhoto($this->photo)->withFrontView($this->front_view)->withFirstFloor($this->first_floor)->withSecondFloor($this->second_floor)->withId($this->product_id)->withShow_Status($this->show_status)->withPdf($this->pdf);
     }
 }

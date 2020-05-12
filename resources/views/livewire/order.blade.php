@@ -37,15 +37,15 @@
                                                 <div class="tab-pane active show" id="tab1">
                                                     <dl class="card-text">
                                                         <dt>BANK: </dt>
-                                                        <dd>BRI</dd>
+                                                        <dd>BNI Syariah</dd>
                                                     </dl>
                                                     <dl class="card-text">
                                                         <dt>No. Rekening: </dt>
-                                                        <dd> 67542897653214</dd>
+                                                        <dd>919989998</dd>
                                                     </dl>
                                                     <dl class="card-text">
                                                         <dt>Atas Nama: </dt>
-                                                        <dd>PRIMA</dd>
+                                                        <dd>PT Prima Berkah Bersama</dd>
                                                     </dl>
                                                     <p class="mb-0"><strong>Catatan:</strong> Lakukan pembayaran melalui bank diatas sesuai dengan pemesanan yang telah anda lakukan</p>
                                                     
@@ -74,7 +74,6 @@
                                                     <th>Tipe</th>
                                                     <th>Tanggal</th>
                                                     <th>ITJ</th>
-                                                    <th>Harga</th>
                                                     <th>Status</th>
                                                 </tr>
                                             </thead>
@@ -89,7 +88,6 @@
                                                     <td>{{$order->payment->products->type}}</td>
                                                     <td>{{date('d-M-y', strtotime($order->created_at))}} </td>
                                                     <td class="font-weight-semibold fs-16">Rp. {{number_format($order->payment->itj,0,',','.')}} </td>
-                                                    <td class="font-weight-semibold fs-16">Rp. {{number_format($order->payment->price,0,',','.')}} </td>
                                                     <td>
                                                         @if ($order->status == '1')
                                                         <p href="#" class="badge badge-danger">Pending</p>
