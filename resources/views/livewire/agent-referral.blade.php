@@ -41,9 +41,8 @@
                                         @else
                                             <b>Link referral alternatif anda : </b> Belum ditambahkan</p>
                                         @endif
-                                    <form action="/member/referral" method="post">
+                                    <form action="/member/referral" method="post" class="form-inline">
                                         @csrf
-                                        <div class="d-flex">
                                             <p class="m-0 align-self-center">{{request()->getHttpHost().'/'}}</p> 
                                             <input class="form-control @error('commission') is-invalid @enderror" style="width: 200px;" type="text" name="alt_referral_code" id="">
                                             @error('alt_referral_code')
@@ -51,8 +50,7 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                             @enderror
-                                        </div>
-                                    <button class="btn btn-primary">{{auth()->user()->alt_referral_code ? 'Ubah' : 'Tambah Link'}}</button>
+                                    <button class="btn btn-primary ml-1">{{auth()->user()->alt_referral_code ? 'Ubah' : 'Tambah Link'}}</button>
                                     </form>
                                     <div class="table-responsive border-top mt-5">
                                         <table class="table table-bordered table-hover text-nowrap">
