@@ -14,8 +14,8 @@ class FixColumnsInProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('pdf')->change();
-            $table->unsignedBigInteger('commission')->change();
+            $table->string('pdf');
+            $table->unsignedBigInteger('commission');
         });
     }
 
