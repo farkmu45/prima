@@ -54,7 +54,7 @@
 													<td>{{$member->phone_number}}</td>
 													<td>{{$member->role->name}}</td>
 													<td>{{$member->referral_code == null ? '' : $member->referral_code }}</td>
-													<td>{{$member->referral_code == null ? '' : $member->referral_code }}</td>
+													<td>{{$member->alt_referral_code == null ? '' : $member->alt_referral_code }}</td>
 													<td>{{$member->wallet}}</td>
 													@if (!$member->deleted_at)
 													<td>
