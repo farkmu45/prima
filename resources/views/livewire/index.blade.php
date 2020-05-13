@@ -232,7 +232,9 @@
                                 <div class="card mb-0">
                                     <div class="item-card4-imgs">
                                         <a href="col-left.html"></a>
-                                        <img src="{{url($product->photo)}}" alt="img" class="cover-image">
+                                        <div style="width: 100%; height:100%; object-fit:cover">
+                                            <img src="{{url($product->photo)}}" alt="img" class="cover-image">
+                                        </div>
                                     </div>
                                     <div class="card-body">
                                         <div class="item-card4-desc">
