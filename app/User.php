@@ -66,4 +66,16 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Cashout::class);
     }
+
+    public function hasVerifiedPhone()
+    {
+        return (bool) $this->verified;
+    }
+
+    public function markPhoneAsVerified()
+    {
+        return $this->forceFill([
+            'verified' => true,
+        ])->save();
+    }
 }

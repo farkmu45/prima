@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/verifyphone', 'Auth\PhoneVerificationController@show');
+    Route::post('/verifyphone', 'Auth\PhoneVerificationController@verify');
+    Route::post('/resendphone', 'Auth\PhoneVerificationController@resend');
+});
+
+
 Route::get('/', function () {
     return view('index');
 });
@@ -20,7 +27,7 @@ Route::get('/product/{product}', function (\App\Product $product) {
 });
 
 
-Route::group(['middleware' => ['verified', 'isNotAdmin']], function () {
+Route::group(['middleware' => ['phoneVerified','verified', 'isNotAdmin']], function () {
     Route::get('/product/{product}/pricing', function (\App\Product $product) {
         return view('pricing', ['product' => $product]);
     });
@@ -271,7 +278,7 @@ Route::group(['middleware' => ['verified', 'isAdmin']], function () {
             }
 
             if (strval(request()->orderId) == '3') {
-                $total_commission = $order->payment->products->commission;
+                $total_commission = $order->user->refer->referrer->wallet + $order->payment->products->commission;
                 $order->user->refer->referrer->update([
                     'wallet' => $total_commission
                 ]);
