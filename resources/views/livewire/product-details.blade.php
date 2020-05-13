@@ -40,7 +40,7 @@
                                         <li><a href="#tab-4" data-toggle="tab" class="">Video 3D Kamar</a></li>
                                         <li><a href="#tab-5" data-toggle="tab" class="">Video Survey Online Myrra</a></li>
                                         <li><a href="#tab-6" data-toggle="tab" class="">Deskripsi</a></li>
-                                        <li><a href="#tab-7" data-toggle="tab" class="">PDF</a></li>
+                                        <li><a href="#tab-7" data-toggle="tab" class="">Brosur</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -127,13 +127,9 @@
                             <div class="tab-pane" id="tab-7">
                                 <div class="row">
                                     <div class="col-lg-6  col-md-12">
-                                        <div class="card">
-                                            <div class="item-card">
-                                            <a href="{{url($product->pdf)}}" target="_blank" rel="noopener noreferrer">
-                                                    Link PDF
+                                            <a download class="btn btn-primary" href="{{url($product->pdf)}}" target="_blank" rel="noopener noreferrer">
+                                                    Download PDF
                                                 </a>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

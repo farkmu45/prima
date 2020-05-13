@@ -189,7 +189,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                    <a href="{{url($pdf)}}">File link</a>
+                                    <a href="{{url($pdf)}}" download>File link</a>
                                         <label class="form-label" for="pdf">PDF</label>
                                         <input type="file" name="pdf" id="pdf">
                                         @error('pdf')

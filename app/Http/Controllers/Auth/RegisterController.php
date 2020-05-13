@@ -6,11 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Referral;
 use App\User;
+use App\Verify\Service;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\MessageBag;
 
 class RegisterController extends Controller
 {
@@ -27,6 +30,8 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    protected $verify;
+
     /**
      * Where to redirect users after registration.
      *
@@ -39,8 +44,9 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Service $verify)
     {
+        $this->verify = $verify;
         $this->middleware('guest');
     }
 
@@ -102,5 +108,25 @@ class RegisterController extends Controller
             'referral_code' => $code,
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    protected function registered(Request $request, User $user)
+    {
+        $verification = $this->verify->startVerification($user->phone_number, 'sms');
+        if (!$verification->isValid()) {
+            $user->delete();
+
+            $errors = new MessageBag();
+            foreach ($verification->getErrors() as $error) {
+                $errors->add('verification', $error);
+            }
+
+            return view('auth.register')->withErrors($errors);
+        }
+
+        $messages = new MessageBag();
+        $messages->add('verification', "Code sent to {$request->user()->phone_number}");
+
+        return redirect('/verifyphone')->with('messages', $messages);
     }
 }

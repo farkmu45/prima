@@ -176,7 +176,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label" for="pdf">PDF</label>
+                                        <label class="form-label" for="pdf">Brosur</label>
                                         <input type="file" name="pdf" id="pdf">
                                         @error('pdf')
                                             <p style="color: red">{{$message}}</p>
