@@ -2,7 +2,7 @@
             <div class="container">
                 <a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
                 <span class="smllogo"><img src="{{url('/assets/images/brand/logo.png')}}" width="120" alt="" /></span>
-                <a href="tel:08113766666" class="callusbtn"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                {{-- <a href="/member/dashboard" class="callusbtn">Rp. 200.000.000</a> --}}
             </div>
         </div>
   
