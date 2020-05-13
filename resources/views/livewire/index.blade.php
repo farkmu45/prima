@@ -218,52 +218,49 @@
                 <h2>Penawaran Spesial</h2>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <!-- Wrapper for carousel items -->
-
-                    @if (sizeof($products) == 0)
-                        <h5 class="text-center mt-8">Belum ada penawaran spesial</h1>
-                        <h5 class="text-center mb-8">Kembali lagi nanti ya :)</h1>
-                    @endif
-
-                    @foreach ($products as $product)
+                <!-- Wrapper for carousel items -->
+                
+                @if (sizeof($products) == 0)
+                    <h5 class="text-center mt-8">Belum ada penawaran spesial</h1>
+                    <h5 class="text-center mb-8">Kembali lagi nanti ya :)</h1>
+                @endif
+                        
+                @foreach ($products as $product)
                     @if ($product->show_status == '1')
-                    <div class="item">
-                        <div class="card mb-0">
-                            <div class="item-card7-imgs">
-                                <a href="col-left.html"></a>
-                                <img src="{{url($product->photo)}}" alt="img" class="cover-image">
-                            </div>
-                            <div class="card-body">
-                                <div class="item-card7-desc">
-                                    <div class="item-card7-text">
-                                        <a href="" class="text-dark">
-                                            <h4 class="">{{$product->name}}</h4>
-                                        </a>
-                                        <p class=""><i class="icon icon-location-pin text-muted mr-1"></i> {{$product->address}} </p>
+                        <div class="col-lg-4">
+                            <div class="item">
+                                <div class="card mb-0">
+                                    <div class="item-card4-imgs">
+                                        <a href="col-left.html"></a>
+                                        <img src="{{url($product->photo)}}" alt="img" class="cover-image">
                                     </div>
-                                    <ul class="item-cards7-ic mb-0">
-                                        <li><a href="#"><i class="fa fa-arrows-alt text-muted mr-1"></i> {{$product->type}} Luas</a></li>
-                                        <li><a href="#" class="icons"><i class="fa fa-bed text-muted mr-1"></i> {{$product->bedroom}} Kamar Tidur</a></li>
-                                        <li><a href="#" class="icons"><i class="fa fa-car text-muted mr-1"></i> {{$product->ac}} AC</a></li>
-                                        <li><a href="#" class="icons"><i class="fa fa-bath text-muted mr-1"></i> {{$product->bathroom}} Kamar Mandi</a></li>
-                                    </ul>
-                                    <h5 class="font-weight-bold mb-0">Rp. {{number_format($product->price,0,',','.')}} <span class="fs-12  font-weight-normal">Per Kamar</span></h5>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="d-flex mb-0">
-                                    <a href="/product/{{$product->id}}" class="btn btn-info">Tertarik?</a>
+                                    <div class="card-body">
+                                        <div class="item-card4-desc">
+                                            <div class="item-card4-text">
+                                                <a href="" class="text-dark">
+                                                    <h4 class="">{{$product->name}}</h4>
+                                                </a>
+                                                <p class=""><i class="icon icon-location-pin text-muted mr-1"></i> {{$product->address}} </p>
+                                            </div>
+                                            <ul class="item-cards7-ic mb-0">
+                                                <li><a href="#"><i class="fa fa-arrows-alt text-muted mr-1"></i> {{$product->type}} Luas</a></li>
+                                                <li><a href="#" class="icons"><i class="fa fa-bed text-muted mr-1"></i> {{$product->bedroom}} Kamar Tidur</a></li>
+                                                <li><a href="#" class="icons"><i class="fa fa-car text-muted mr-1"></i> {{$product->ac}} AC</a></li>
+                                                <li><a href="#" class="icons"><i class="fa fa-bath text-muted mr-1"></i> {{$product->bathroom}} Kamar Mandi</a></li>
+                                            </ul>
+                                            <h5 class="font-weight-bold mb-0">Rp. {{number_format($product->price,0,',','.')}} <span class="fs-12  font-weight-normal">Per Kamar</span></h5>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="d-flex mb-0">
+                                            <a href="/product/{{$product->id}}" class="btn btn-info">Tertarik?</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endif
-                    @endforeach
-
-
-
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
