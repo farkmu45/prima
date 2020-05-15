@@ -55,7 +55,7 @@
 													<td>{{$member->role->name}}</td>
 													<td>{{$member->referral_code == null ? '' : $member->referral_code }}</td>
 													<td>{{$member->alt_referral_code == null ? '' : $member->alt_referral_code }}</td>
-													<td>{{$member->wallet}}</td>
+													<td>Rp. {{$member->wallet ? 0 : number_format($member->alt_referral_code,0,',','.')}}</td>
 													@if (!$member->deleted_at)
 													<td>
 														<p class="badge badge-success">Active</p>

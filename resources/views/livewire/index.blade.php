@@ -8,12 +8,15 @@
 
     <!--Start Section-->
     <section>
-        <div class="banner-1 cover-image sptb-2 sptb-tab bg-background2" data-image-src="{{url('/assets/images/banners/banner1.jpg')}}">
+        <div class="banner-1 cover-image sptb-2 sptb-tab bg-background2"
+            data-image-src="{{url('/assets/images/banners/banner1.jpg')}}">
             <div class="header-text mb-0">
                 <div class="container">
                     <div class="text-center text-white mb-7 mt-5">
                         <h1 class="mb-5">CUMA DISINI BELI RUMAH KOST DI MALANG BISA PATUNGAN MULAI 150 JUTA </h1>
-                        <p>Solusi terbaik bagi anda yang ingin investasi rumah kost dengan harga terjangkau di kota malang. Myrra residence menawarkan rumah kost eksklusif yang bisa dibeli dengan cara patungan mulai 150 juta per kamar kost
+                        <p>Solusi terbaik bagi anda yang ingin investasi rumah kost dengan harga terjangkau di kota
+                            malang. Myrra residence menawarkan rumah kost eksklusif yang bisa dibeli dengan cara
+                            patungan mulai 150 juta per kamar kost
                         </p>
                     </div>
                 </div>
@@ -23,7 +26,7 @@
     <!--/Section-->
 
     <!--Section-->
-    @guest    
+    @guest
     <section class="categories">
         <div class="container">
             <div class="card mb-0 box-shadow-0">
@@ -31,14 +34,18 @@
                     <div class="row">
                         <div class="col-lg-10 col-md-6 col-sm-12 d-catmb mb-4 mb-lg-0">
                             <h5 class=" mb-1 font-weight-reguler">Ingin mendapat penghasilan?</h5>
-                            <h5 class=" mb-0 font-weight-light">Cara baru bisnis properti di kota malang! Kini anda juga bisa bergabung untuk investasi rumah kost eksklusif di Myrra Residence cukup dengan modal 150 juta. Dengan modal 150 juta, anda berpeluang meraih keuntungan maksimal dari hasil sewa dan jual beli rumah kost dengan cara patungan TANPA RIBA.
-                                Dapatkan juga Peluang untuk ikut mendapakan Komisi yang Besar dengan ikut mereferensikan produk kami … Yuk Gabung Bersama kami</h5>
+                            <h5 class=" mb-0 font-weight-light">Cara baru bisnis properti di kota malang! Kini anda juga
+                                bisa bergabung untuk investasi rumah kost eksklusif di Myrra Residence cukup dengan
+                                modal 150 juta. Dengan modal 150 juta, anda berpeluang meraih keuntungan maksimal dari
+                                hasil sewa dan jual beli rumah kost dengan cara patungan TANPA RIBA.
+                                Dapatkan juga Peluang untuk ikut mendapakan Komisi yang Besar dengan ikut mereferensikan
+                                produk kami … Yuk Gabung Bersama kami</h5>
                         </div>
-                        
+
                         <div class="col-lg-2 col-md-6 col-sm-12 ">
                             <a href="register" class="btn btn-primary btn-lg mb-sm-0">Join Now</a>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -92,7 +99,8 @@
                                 </div>
                                 <div class="servic-data mt-3">
                                     <h4 class="font-weight-semibold mb-2 text-primary">Penangkal Inflasi</h4>
-                                    <p class="text-muted mb-0">Investasi Properti sebagai penangkal terjadinya Inflasi</p>
+                                    <p class="text-muted mb-0">Investasi Properti sebagai penangkal terjadinya Inflasi
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +117,8 @@
                                 </div>
                                 <div class="servic-data mt-3">
                                     <h4 class="font-weight-semibold mb-2 text-primary">Aman</h4>
-                                    <p class="text-muted mb-0">Transaksi Jual-Beli, Legalitas Aman & Sertifikat Hak Milik atas nama pembeli </p>
+                                    <p class="text-muted mb-0">Transaksi Jual-Beli, Legalitas Aman & Sertifikat Hak
+                                        Milik atas nama pembeli </p>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +133,8 @@
                                 </div>
                                 <div class="servic-data mt-3">
                                     <h4 class="font-weight-semibold mb-2 text-primary">Menguntungkan</h4>
-                                    <p class="text-muted mb-0">Mendapatkan keuntungan Capital Gain yang pasti naik setiap tahunnya</p>
+                                    <p class="text-muted mb-0">Mendapatkan keuntungan Capital Gain yang pasti naik
+                                        setiap tahunnya</p>
                                 </div>
                             </div>
                         </div>
@@ -157,25 +167,26 @@
                 <h2>Cara Mudah Investasi Properti melalui Online</h2>
             </div>
             <div class="row">
-                <div class="col-12 col-md-12 col-lg-12 col-xl-6">
-                    <div class="row">
-                        <div class="col-sm-12 col-lg-12 col-md-6 ">
-                            <div class="item-card overflow-hidden">
-                                <div class="card text-center overflow-hidden">
-                                    <div class="card-img">
-                                        <img src="{{url('/assets/images/product/promo.png')}}" alt="img" class="cover-image">
-                                    </div>
+                <div class="col-lg-12 col-md-12 col-xl-6 col-sm-12 mt-5">
+                    <div class="item-card overflow-hidden" style="height: 100%;">
+                        <div class="item-card" style="height: 100%;">
+                            <div class="card overflow-hidden mb-0" style="height: 100%;">
+                                <div class="card-img" style="height: 100%;">
+                                    <img src="{{url('/assets/images/product/promo.png')}}" alt="img" class="cover-image"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12 col-xl-6 col-sm-12">
-                    <div class="item-card overflow-hidden">
-                        <div class="item-card">
-                            <div class="card overflow-hidden mb-0">
-                                <div class="card-img">
-                                    <iframe width="100%" height="390" src="https://www.youtube.com/embed/s59zPq2XPpc" frameborder="0" allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="col-lg-12 col-md-12 col-xl-6 col-sm-12 mt-5">
+                    <div class="item-card overflow-hidden" style="height: 100%;">
+                        <div class="item-card" style="height: 100%;">
+                            <div class="card overflow-hidden mb-0" style="height: 100%;">
+                                <div class="card-img" style="height: 100%;">
+                                    <video src="{{url('/assets/video.mp4')}}" controls
+                                        style="width: 100%; height: 100%; object-fit: cover;"
+                                        class="cover-image"></video>
                                 </div>
                             </div>
                         </div>
@@ -191,19 +202,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="item-card overflow-hidden">
-                        <div class="card text-center overflow-hidden mb-lg-0">
-                            <div class="card-img">
-                                <img src="{{url('/assets/images/product/deprima.jpeg')}}" alt="img" class="cover-image">
+                    <div class="item-card overflow-hidden" style="height: 100%;">
+                        <div class="card text-center overflow-hidden mb-lg-0" style="height: 100%;">
+                            <div class="card-img" style="height: 100%;">
+                                <img src="{{url('/assets/images/product/deprima.jpeg')}}" alt="img" class="cover-image"
+                                    style="height: 100%; width: 100%; object-fit: cover;">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="text-justify">
-                        <h2 class="mb-4">Sekilas Tentang Primaland</h2>
-                        <h4 class="leading-normal">PRIMALAND merupakan Perusahaan yang bergerak di Bidang Developer, Konsultan, dan Desain, yang dirintis pertama kali sejak tahun 2008</h4>
-                        <p class="leading-normal">Pada Tahun 2016 PRIMALAND bertranformasi menjadi Developer Properti Syariah Pertama dan Terbesar di Malang yang fokus membangun Hunian Islami dengan system pembayaran Syariah. <br> Adapun beberapa Proyek yang telah terbangun dan dikembangkan antara lain De Prima Tunggulwulung, Rumah Kost Watu Gong, Myrra Residence, Adyna Residence, Azzahra Residence, Azzahra Townhouse, Rumah Kos Salvia Merjosari, Hunian Islami berkonsep Jepang Annira Residence, dan Hunian Islami di Bondowoso De Prima Bondowoso Tahun 2020 , dengan wajah baru, semangat baru dan harapan baru, PRIMALAND bertekad menjadi Perusahaan yang berkontribusi nyata dalam melahirkan Pemimpin Umat dan Generasi Emas melalui bisnis properti Syariah serta membangun Hunian Islami di seluruh Indonesia</p>
+                        <h2 class="mb-4 mt-5">Sekilas Tentang Primaland</h2>
+                        <h4 class="leading-normal">PRIMALAND merupakan Perusahaan yang bergerak di Bidang Developer,
+                            Konsultan, dan Desain, yang dirintis pertama kali sejak tahun 2008</h4>
+                        <p class="leading-normal">Pada Tahun 2016 PRIMALAND bertranformasi menjadi Developer Properti
+                            Syariah Pertama dan Terbesar di Malang yang fokus membangun Hunian Islami dengan system
+                            pembayaran Syariah. <br> Adapun beberapa Proyek yang telah terbangun dan dikembangkan antara
+                            lain De Prima Tunggulwulung, Rumah Kost Watu Gong, Myrra Residence, Adyna Residence, Azzahra
+                            Residence, Azzahra Townhouse, Rumah Kos Salvia Merjosari, Hunian Islami berkonsep Jepang
+                            Annira Residence, dan Hunian Islami di Bondowoso De Prima Bondowoso Tahun 2020 , dengan
+                            wajah baru, semangat baru dan harapan baru, PRIMALAND bertekad menjadi Perusahaan yang
+                            berkontribusi nyata dalam melahirkan Pemimpin Umat dan Generasi Emas melalui bisnis properti
+                            Syariah serta membangun Hunian Islami di seluruh Indonesia</p>
                     </div>
                 </div>
             </div>
@@ -219,14 +240,14 @@
             </div>
             <div class="row justify-content-center">
                 <!-- Wrapper for carousel items -->
-                
+
                 @if (sizeof($products) == 0)
-                    <h5 class="text-center mt-8">Belum ada penawaran spesial</h1>
+                <h5 class="text-center mt-8">Belum ada penawaran spesial</h1>
                     <h5 class="text-center mb-8">Kembali lagi nanti ya :)</h1>
-                @endif
-                        
-                @foreach ($products as $product)
-                    @if ($product->show_status == '1')
+                        @endif
+
+                        @foreach ($products as $product)
+                        @if ($product->show_status == '1')
                         <div class="col-lg-4">
                             <div class="item">
                                 <div class="card mb-0">
@@ -242,15 +263,22 @@
                                                 <a href="" class="text-dark">
                                                     <h4 class="">{{$product->name}}</h4>
                                                 </a>
-                                                <p class=""><i class="icon icon-location-pin text-muted mr-1"></i> {{$product->address}} </p>
+                                                <p class=""><i class="icon icon-location-pin text-muted mr-1"></i>
+                                                    {{$product->address}} </p>
                                             </div>
                                             <ul class="item-cards7-ic mb-0">
-                                                <li><a href="#"><i class="fa fa-arrows-alt text-muted mr-1"></i> {{$product->type}} Luas</a></li>
-                                                <li><a href="#" class="icons"><i class="fa fa-bed text-muted mr-1"></i> {{$product->bedroom}} Kamar Tidur</a></li>
-                                                <li><a href="#" class="icons"><i class="fa fa-car text-muted mr-1"></i> {{$product->ac}} AC</a></li>
-                                                <li><a href="#" class="icons"><i class="fa fa-bath text-muted mr-1"></i> {{$product->bathroom}} Kamar Mandi</a></li>
+                                                <li><a href="#"><i class="fa fa-arrows-alt text-muted mr-1"></i>
+                                                        {{$product->type}} Luas</a></li>
+                                                <li><a href="#" class="icons"><i class="fa fa-bed text-muted mr-1"></i>
+                                                        {{$product->bedroom}} Kamar Tidur</a></li>
+                                                <li><a href="#" class="icons"><i class="fa fa-car text-muted mr-1"></i>
+                                                        {{$product->ac}} AC</a></li>
+                                                <li><a href="#" class="icons"><i class="fa fa-bath text-muted mr-1"></i>
+                                                        {{$product->bathroom}} Kamar Mandi</a></li>
                                             </ul>
-                                            <h5 class="font-weight-bold mb-0">Rp. {{number_format($product->price,0,',','.')}} <span class="fs-12  font-weight-normal">Per Kamar</span></h5>
+                                            <h5 class="font-weight-bold mb-0">Rp.
+                                                {{number_format($product->price,0,',','.')}} <span
+                                                    class="fs-12  font-weight-normal">Per Kamar</span></h5>
                                         </div>
                                     </div>
                                     <div class="card-footer">
@@ -261,8 +289,8 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
-                @endforeach
+                        @endif
+                        @endforeach
             </div>
         </div>
     </section>
@@ -331,7 +359,9 @@
                         <div class="col-lg-8 col-md-12">
                             <h5>Disclaimer</h5>
                             <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto">
-                            <p>Portal ini merupakan alat bantu / tools pemasaran / penjualan obyek real estate / perumahan untuk mempermudah para marketing untuk melakukan pemasaran property via online . Dan bukan portal penggalangan dana.</p>
+                            <p>Portal ini merupakan alat bantu / tools pemasaran / penjualan obyek real estate /
+                                perumahan untuk mempermudah para marketing untuk melakukan pemasaran property via online
+                                . Dan bukan portal penggalangan dana.</p>
                         </div>
                     </div>
                 </div>
@@ -340,7 +370,8 @@
                 <div class="container">
                     <div class="row d-flex">
                         <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center ">
-                            Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com" class="fs-14">PrimaITech</a> All rights reserved.
+                            Copyright © 2020 Investasi Prima. Support by <a href="https://primaitech.com"
+                                class="fs-14">PrimaITech</a> All rights reserved.
                         </div>
                     </div>
                 </div>
