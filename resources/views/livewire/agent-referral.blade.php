@@ -52,6 +52,16 @@
                                             @enderror
                                     <button class="btn btn-primary ml-1">{{auth()->user()->alt_referral_code ? 'Ubah' : 'Tambah Link'}}</button>
                                     </form>
+                                    <p class="mt-5"><b>Bagikan link :</b>
+                                    <a href="sms:?&body={{rawurlencode('lorem ipsum dolor sit amet')}}" class="btn" style="background-color: #34aedf; color:white">
+                                        <i class="fa fa-comment"></i> SMS
+                                    </a>
+                                    <a href="https://api.whatsapp.com/send?text={{rawurlencode('lorem ipsum')}}" class="btn" style="background-color: #009688; color: white">
+                                        <i class="fa fa-whatsapp"></i> Whatsapp
+                                    </a>
+                                    <a href="mailto:?subject=Undangan%20Investasi%20Prima&body={{rawurlencode('lorem ipsum')}}" class="btn" style="background-color: #d4473a; color: white">
+                                        <i class="fa fa-envelope"></i> Email
+                                    </a>
                                     <div class="table-responsive border-top mt-5">
                                         <table class="table table-bordered table-hover text-nowrap">
                                             <thead>
